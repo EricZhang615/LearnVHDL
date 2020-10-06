@@ -1,1 +1,1 @@
-a personal project for learning Git and VHDL coding.
+a personal project to learning Git and VHDL coding.
