@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="TrafficLightsControl">
+		<CBX_INST_ENTRY INSTANCE_NAME="|TrafficLightsControl|crossover1000:crossover|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_klh.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

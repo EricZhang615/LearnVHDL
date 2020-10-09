@@ -1,0 +1,207 @@
+Simulator report for TrafficLightsControl
+Fri Oct 09 22:47:22 2020
+Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------+
+; Simulator Summary                           ;
++-----------------------------+---------------+
+; Type                        ; Value         ;
++-----------------------------+---------------+
+; Simulation Start Time       ; 0 ps          ;
+; Simulation End Time         ; 5.0 s         ;
+; Simulation Netlist Size     ; 23 nodes      ;
+; Simulation Coverage         ;      92.11 %  ;
+; Total Number of Transitions ; 70289         ;
+; Simulation Breakpoints      ; 0             ;
+; Family                      ; MAX II        ;
+; Device                      ; EPM1270T144C5 ;
++-----------------------------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On         ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      92.11 % ;
+; Total nodes checked                                 ; 23           ;
+; Total output ports checked                          ; 38           ;
+; Total output ports with complete 1/0-value coverage ; 35           ;
+; Total output ports with no 1/0-value coverage       ; 3            ;
+; Total output ports with no 1-value coverage         ; 3            ;
+; Total output ports with no 0-value coverage         ; 3            ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                               ;
++--------------------------------------------------------+---------------------------------------------------------------+------------------+
+; Node Name                                              ; Output Port Name                                              ; Output Port Type ;
++--------------------------------------------------------+---------------------------------------------------------------+------------------+
+; |TrafficLightsControl|crossover1000:crossover|c[8]     ; |TrafficLightsControl|crossover1000:crossover|c[8]            ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[7]     ; |TrafficLightsControl|crossover1000:crossover|c[7]            ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[6]     ; |TrafficLightsControl|crossover1000:crossover|c[6]            ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[5]     ; |TrafficLightsControl|crossover1000:crossover|c[5]            ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|Equal0~0 ; |TrafficLightsControl|crossover1000:crossover|Equal0~0        ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|c[0]     ; |TrafficLightsControl|crossover1000:crossover|c[0]            ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[4]     ; |TrafficLightsControl|crossover1000:crossover|c[4]            ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[3]     ; |TrafficLightsControl|crossover1000:crossover|c[3]            ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[2]     ; |TrafficLightsControl|crossover1000:crossover|c[2]            ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[1]     ; |TrafficLightsControl|crossover1000:crossover|Equal0~1        ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|c[1]     ; |TrafficLightsControl|crossover1000:crossover|c[1]            ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~0   ; |TrafficLightsControl|crossover1000:crossover|Add0~0          ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~5   ; |TrafficLightsControl|crossover1000:crossover|Add0~5          ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~5   ; |TrafficLightsControl|crossover1000:crossover|Add0~7COUT1_66  ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~10  ; |TrafficLightsControl|crossover1000:crossover|Add0~10         ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~10  ; |TrafficLightsControl|crossover1000:crossover|Add0~12COUT1_64 ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~15  ; |TrafficLightsControl|crossover1000:crossover|Add0~15         ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~15  ; |TrafficLightsControl|crossover1000:crossover|Add0~17COUT1_62 ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~20  ; |TrafficLightsControl|crossover1000:crossover|Add0~20         ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~20  ; |TrafficLightsControl|crossover1000:crossover|Add0~22         ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~20  ; |TrafficLightsControl|crossover1000:crossover|Add0~22COUT1_54 ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~25  ; |TrafficLightsControl|crossover1000:crossover|Add0~25         ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~25  ; |TrafficLightsControl|crossover1000:crossover|Add0~27         ; cout             ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~30  ; |TrafficLightsControl|crossover1000:crossover|Add0~30         ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~30  ; |TrafficLightsControl|crossover1000:crossover|Add0~32         ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~30  ; |TrafficLightsControl|crossover1000:crossover|Add0~32COUT1_56 ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~35  ; |TrafficLightsControl|crossover1000:crossover|Add0~35         ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~35  ; |TrafficLightsControl|crossover1000:crossover|Add0~37         ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~35  ; |TrafficLightsControl|crossover1000:crossover|Add0~37COUT1_60 ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~40  ; |TrafficLightsControl|crossover1000:crossover|Add0~40         ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~40  ; |TrafficLightsControl|crossover1000:crossover|Add0~42         ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~40  ; |TrafficLightsControl|crossover1000:crossover|Add0~42COUT1_58 ; cout1            ;
+; |TrafficLightsControl|clk                              ; |TrafficLightsControl|clk~corein                              ; combout          ;
+; |TrafficLightsControl|rst                              ; |TrafficLightsControl|rst~corein                              ; combout          ;
+; |TrafficLightsControl|test_output                      ; |TrafficLightsControl|test_output                             ; padio            ;
++--------------------------------------------------------+---------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                         ;
++-------------------------------------------------------+-------------------------------------------------------+------------------+
+; Node Name                                             ; Output Port Name                                      ; Output Port Type ;
++-------------------------------------------------------+-------------------------------------------------------+------------------+
+; |TrafficLightsControl|crossover1000:crossover|Add0~5  ; |TrafficLightsControl|crossover1000:crossover|Add0~7  ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~10 ; |TrafficLightsControl|crossover1000:crossover|Add0~12 ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~15 ; |TrafficLightsControl|crossover1000:crossover|Add0~17 ; cout0            ;
++-------------------------------------------------------+-------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                         ;
++-------------------------------------------------------+-------------------------------------------------------+------------------+
+; Node Name                                             ; Output Port Name                                      ; Output Port Type ;
++-------------------------------------------------------+-------------------------------------------------------+------------------+
+; |TrafficLightsControl|crossover1000:crossover|Add0~5  ; |TrafficLightsControl|crossover1000:crossover|Add0~7  ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~10 ; |TrafficLightsControl|crossover1000:crossover|Add0~12 ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~15 ; |TrafficLightsControl|crossover1000:crossover|Add0~17 ; cout0            ;
++-------------------------------------------------------+-------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Fri Oct 09 22:47:21 2020
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off TrafficLightsControl -c TrafficLightsControl
+Info: Using vector source file "C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsControl.vwf"
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of TrafficLightsControl.vwf called TrafficLightsControl.sim_ori.vwf has been created in the db folder
+Info: Inverted registers were found during simulation
+    Info: Register: |TrafficLightsControl|crossover1000:crossover|clk_tmp
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      92.11 %
+Info: Number of transitions in simulation is 70289
+Info: Vector file TrafficLightsControl.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4320 megabytes
+    Info: Processing ended: Fri Oct 09 22:47:22 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

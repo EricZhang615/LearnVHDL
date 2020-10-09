@@ -1,0 +1,30 @@
+|TrafficLightsControl
+clk => crossover1000:crossover.clk
+rst => crossover1000:crossover.rst
+test_output <= crossover1000:crossover.clkout
+
+
+|TrafficLightsControl|crossover1000:crossover
+clk => clk_tmp.CLK
+clk => c[0].CLK
+clk => c[1].CLK
+clk => c[2].CLK
+clk => c[3].CLK
+clk => c[4].CLK
+clk => c[5].CLK
+clk => c[6].CLK
+clk => c[7].CLK
+clk => c[8].CLK
+rst => clk_tmp.PRESET
+rst => c[0].ACLR
+rst => c[1].ACLR
+rst => c[2].ACLR
+rst => c[3].ACLR
+rst => c[4].ACLR
+rst => c[5].ACLR
+rst => c[6].ACLR
+rst => c[7].ACLR
+rst => c[8].ACLR
+clkout <= clk_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
