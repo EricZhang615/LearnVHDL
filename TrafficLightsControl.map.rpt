@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TrafficLightsControl
-Fri Oct 09 22:42:22 2020
+Sat Oct 10 01:43:21 2020
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -15,7 +15,8 @@ Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Inverted Register Statistics
- 10. Analysis & Synthesis Messages
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -41,13 +42,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Fri Oct 09 22:42:22 2020    ;
+; Analysis & Synthesis Status ; Successful - Sat Oct 10 01:43:21 2020    ;
 ; Quartus II 64-Bit Version   ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name               ; TrafficLightsControl                     ;
 ; Top-level Entity Name       ; TrafficLightsControl                     ;
 ; Family                      ; MAX II                                   ;
-; Total logic elements        ; 21                                       ;
-; Total pins                  ; 3                                        ;
+; Total logic elements        ; 35                                       ;
+; Total pins                  ; 11                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
 +-----------------------------+------------------------------------------+
@@ -144,6 +145,7 @@ applicable agreement for further details.
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+
 ; MainComp.vhd                     ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/MainComp.vhd      ;
 ; crossover1000.vhd                ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/crossover1000.vhd ;
+; counter.vhd                      ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/counter.vhd       ;
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+
 
 
@@ -152,33 +154,33 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 21    ;
-;     -- Combinational with no register       ; 11    ;
+; Total logic elements                        ; 35    ;
+;     -- Combinational with no register       ; 19    ;
 ;     -- Register only                        ; 3     ;
-;     -- Combinational with a register        ; 7     ;
+;     -- Combinational with a register        ; 13    ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 9     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- 2 input functions                    ; 8     ;
-;     -- 1 input functions                    ; 1     ;
-;     -- 0 input functions                    ; 0     ;
+;     -- 4 input functions                    ; 14    ;
+;     -- 3 input functions                    ; 2     ;
+;     -- 2 input functions                    ; 13    ;
+;     -- 1 input functions                    ; 2     ;
+;     -- 0 input functions                    ; 1     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 13    ;
-;     -- arithmetic mode                      ; 8     ;
+;     -- normal mode                          ; 22    ;
+;     -- arithmetic mode                      ; 13    ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 0     ;
-;     -- asynchronous clear/load mode         ; 10    ;
+;     -- synchronous clear/load mode          ; 6     ;
+;     -- asynchronous clear/load mode         ; 16    ;
 ;                                             ;       ;
-; Total registers                             ; 10    ;
-; Total logic cells in carry chains           ; 9     ;
-; I/O pins                                    ; 3     ;
-; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 10    ;
-; Total fan-out                               ; 77    ;
-; Average fan-out                             ; 3.21  ;
+; Total registers                             ; 16    ;
+; Total logic cells in carry chains           ; 15    ;
+; I/O pins                                    ; 11    ;
+; Maximum fan-out node                        ; rst   ;
+; Maximum fan-out                             ; 16    ;
+; Total fan-out                               ; 144   ;
+; Average fan-out                             ; 3.13  ;
 +---------------------------------------------+-------+
 
 
@@ -187,7 +189,8 @@ applicable agreement for further details.
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
 ; Compilation Hierarchy Node   ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                           ; Library Name ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
-; |TrafficLightsControl        ; 21 (0)      ; 10           ; 0          ; 3    ; 0            ; 11 (0)       ; 3 (0)             ; 7 (0)            ; 9 (0)           ; 0 (0)      ; |TrafficLightsControl                         ; work         ;
+; |TrafficLightsControl        ; 35 (1)      ; 16           ; 0          ; 11   ; 0            ; 19 (1)       ; 3 (0)             ; 13 (0)           ; 15 (0)          ; 0 (0)      ; |TrafficLightsControl                         ; work         ;
+;    |counter:maincounter|     ; 13 (13)     ; 6            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 6 (6)            ; 6 (6)           ; 0 (0)      ; |TrafficLightsControl|counter:maincounter     ; work         ;
 ;    |crossover1000:crossover| ; 21 (21)     ; 10           ; 0          ; 0    ; 0            ; 11 (11)      ; 3 (3)             ; 7 (7)            ; 9 (9)           ; 0 (0)      ; |TrafficLightsControl|crossover1000:crossover ; work         ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -198,11 +201,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 10    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 16    ;
+; Number of registers using Synchronous Clear  ; 6     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 10    ;
-; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Asynchronous Load  ; 6     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
@@ -213,9 +216,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; crossover1000:crossover|clk_tmp        ; 2       ;
+; crossover1000:crossover|clk_tmp        ; 7       ;
 ; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TrafficLightsControl|counter:maincounter|TrafficState[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 
 
 +-------------------------------+
@@ -224,7 +236,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Fri Oct 09 22:42:21 2020
+    Info: Processing started: Sat Oct 10 01:43:20 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TrafficLightsControl -c TrafficLightsControl
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 2 design units, including 1 entities, in source file maincomp.vhd
@@ -233,17 +245,21 @@ Info: Found 2 design units, including 1 entities, in source file maincomp.vhd
 Info: Found 2 design units, including 1 entities, in source file crossover1000.vhd
     Info: Found design unit 1: crossover1000-crossover1000_arch
     Info: Found entity 1: crossover1000
+Info: Found 2 design units, including 1 entities, in source file counter.vhd
+    Info: Found design unit 1: counter-counter_arch
+    Info: Found entity 1: counter
 Info: Elaborating entity "TrafficLightsControl" for the top level hierarchy
 Info: Elaborating entity "crossover1000" for hierarchy "crossover1000:crossover"
+Info: Elaborating entity "counter" for hierarchy "counter:maincounter"
 Info: Registers with preset signals will power-up high
-Info: Implemented 24 device resources after synthesis - the final resource count might be different
+Info: Implemented 46 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 1 output pins
-    Info: Implemented 21 logic cells
+    Info: Implemented 9 output pins
+    Info: Implemented 35 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4455 megabytes
-    Info: Processing ended: Fri Oct 09 22:42:23 2020
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Processing ended: Sat Oct 10 01:43:21 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 

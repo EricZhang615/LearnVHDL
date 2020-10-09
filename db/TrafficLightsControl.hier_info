@@ -1,7 +1,16 @@
 |TrafficLightsControl
 clk => crossover1000:crossover.clk
 rst => crossover1000:crossover.rst
-test_output <= crossover1000:crossover.clkout
+rst => counter:maincounter.rst
+TS[0] <= counter:maincounter.TrafficState[0]
+TS[1] <= counter:maincounter.TrafficState[1]
+TS[2] <= counter:maincounter.TrafficState[2]
+CS[0] <= counter:maincounter.CountSec[0]
+CS[1] <= counter:maincounter.CountSec[1]
+CS[2] <= counter:maincounter.CountSec[2]
+CS[3] <= counter:maincounter.CountSec[3]
+CS[4] <= counter:maincounter.CountSec[4]
+CS[5] <= counter:maincounter.CountSec[5]
 
 
 |TrafficLightsControl|crossover1000:crossover
@@ -26,5 +35,29 @@ rst => c[6].ACLR
 rst => c[7].ACLR
 rst => c[8].ACLR
 clkout <= clk_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TrafficLightsControl|counter:maincounter
+clk => cnt_tmp[0].CLK
+clk => cnt_tmp[1].CLK
+clk => cnt_tmp[2].CLK
+clk => cnt_tmp[3].CLK
+clk => cnt_tmp[4].CLK
+clk => cnt_tmp[5].CLK
+rst => cnt_tmp[0].ACLR
+rst => cnt_tmp[1].ACLR
+rst => cnt_tmp[2].ACLR
+rst => cnt_tmp[3].PRESET
+rst => cnt_tmp[4].ACLR
+rst => cnt_tmp[5].PRESET
+TrafficState[0] <= TrafficState.DB_MAX_OUTPUT_PORT_TYPE
+TrafficState[1] <= TrafficState.DB_MAX_OUTPUT_PORT_TYPE
+TrafficState[2] <= TrafficState.DB_MAX_OUTPUT_PORT_TYPE
+CountSec[0] <= cnt_tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+CountSec[1] <= cnt_tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+CountSec[2] <= cnt_tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+CountSec[3] <= cnt_tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+CountSec[4] <= cnt_tmp[4].DB_MAX_OUTPUT_PORT_TYPE
+CountSec[5] <= cnt_tmp[5].DB_MAX_OUTPUT_PORT_TYPE
 
 

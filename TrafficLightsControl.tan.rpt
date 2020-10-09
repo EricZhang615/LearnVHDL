@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for TrafficLightsControl
-Fri Oct 09 22:42:27 2020
+Sat Oct 10 01:43:25 2020
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -36,15 +36,15 @@ applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                                                                                         ;
-+------------------------------+-------+---------------+----------------------------------+---------------------------------+------------------------------+------------+----------+--------------+
-; Type                         ; Slack ; Required Time ; Actual Time                      ; From                            ; To                           ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+-------+---------------+----------------------------------+---------------------------------+------------------------------+------------+----------+--------------+
-; Worst-case tco               ; N/A   ; None          ; 8.553 ns                         ; crossover1000:crossover|clk_tmp ; test_output                  ; clk        ; --       ; 0            ;
-; Clock Setup: 'clk'           ; N/A   ; None          ; 129.82 MHz ( period = 7.703 ns ) ; crossover1000:crossover|c[8]    ; crossover1000:crossover|c[8] ; clk        ; clk      ; 0            ;
-; Total number of failed paths ;       ;               ;                                  ;                                 ;                              ;            ;          ; 0            ;
-+------------------------------+-------+---------------+----------------------------------+---------------------------------+------------------------------+------------+----------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                          ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------+--------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                           ; To                             ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------+--------------------------------+------------+----------+--------------+
+; Worst-case tco               ; N/A   ; None          ; 18.520 ns                        ; counter:maincounter|cnt_tmp[1] ; TS[0]                          ; clk        ; --       ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 114.53 MHz ( period = 8.731 ns ) ; counter:maincounter|cnt_tmp[5] ; counter:maincounter|cnt_tmp[5] ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                ;                                ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------+--------------------------------+------------+----------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -112,87 +112,141 @@ applicable agreement for further details.
 +-------+------------------------------------------------+---------------------------------+---------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
 ; Slack ; Actual fmax (period)                           ; From                            ; To                              ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
 +-------+------------------------------------------------+---------------------------------+---------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
-; N/A   ; 129.82 MHz ( period = 7.703 ns )               ; crossover1000:crossover|c[8]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 6.994 ns                ;
-; N/A   ; 130.60 MHz ( period = 7.657 ns )               ; crossover1000:crossover|c[6]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 6.948 ns                ;
-; N/A   ; 131.65 MHz ( period = 7.596 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 6.887 ns                ;
-; N/A   ; 132.10 MHz ( period = 7.570 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 6.861 ns                ;
-; N/A   ; 132.15 MHz ( period = 7.567 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 6.858 ns                ;
-; N/A   ; 132.26 MHz ( period = 7.561 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 6.852 ns                ;
-; N/A   ; 132.71 MHz ( period = 7.535 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 6.826 ns                ;
-; N/A   ; 132.77 MHz ( period = 7.532 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 6.823 ns                ;
-; N/A   ; 133.92 MHz ( period = 7.467 ns )               ; crossover1000:crossover|c[8]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 6.758 ns                ;
-; N/A   ; 133.94 MHz ( period = 7.466 ns )               ; crossover1000:crossover|c[8]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 6.757 ns                ;
-; N/A   ; 133.98 MHz ( period = 7.464 ns )               ; crossover1000:crossover|c[8]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 6.755 ns                ;
-; N/A   ; 134.14 MHz ( period = 7.455 ns )               ; crossover1000:crossover|c[8]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 6.746 ns                ;
-; N/A   ; 134.19 MHz ( period = 7.452 ns )               ; crossover1000:crossover|c[8]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 6.743 ns                ;
-; N/A   ; 134.21 MHz ( period = 7.451 ns )               ; crossover1000:crossover|c[8]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 6.742 ns                ;
-; N/A   ; 134.68 MHz ( period = 7.425 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 6.716 ns                ;
-; N/A   ; 134.79 MHz ( period = 7.419 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 6.710 ns                ;
-; N/A   ; 135.26 MHz ( period = 7.393 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 6.684 ns                ;
-; N/A   ; 135.32 MHz ( period = 7.390 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 6.681 ns                ;
-; N/A   ; 135.32 MHz ( period = 7.390 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 6.681 ns                ;
-; N/A   ; 135.48 MHz ( period = 7.381 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 6.672 ns                ;
-; N/A   ; 135.96 MHz ( period = 7.355 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 6.646 ns                ;
-; N/A   ; 136.02 MHz ( period = 7.352 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 6.643 ns                ;
-; N/A   ; 137.97 MHz ( period = 7.248 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 6.539 ns                ;
-; N/A   ; 138.24 MHz ( period = 7.234 ns )               ; crossover1000:crossover|c[4]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 6.525 ns                ;
-; N/A   ; 138.29 MHz ( period = 7.231 ns )               ; crossover1000:crossover|c[4]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 6.522 ns                ;
-; N/A   ; 138.70 MHz ( period = 7.210 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 6.501 ns                ;
-; N/A   ; 141.06 MHz ( period = 7.089 ns )               ; crossover1000:crossover|c[4]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 6.380 ns                ;
-; N/A   ; 143.72 MHz ( period = 6.958 ns )               ; crossover1000:crossover|c[5]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 6.249 ns                ;
-; N/A   ; 146.24 MHz ( period = 6.838 ns )               ; crossover1000:crossover|c[5]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 6.129 ns                ;
-; N/A   ; 147.21 MHz ( period = 6.793 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 6.084 ns                ;
-; N/A   ; 147.47 MHz ( period = 6.781 ns )               ; crossover1000:crossover|c[6]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 6.072 ns                ;
-; N/A   ; 147.97 MHz ( period = 6.758 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 6.049 ns                ;
-; N/A   ; 148.48 MHz ( period = 6.735 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[3]    ; clk        ; clk      ; None                        ; None                      ; 6.026 ns                ;
-; N/A   ; 149.25 MHz ( period = 6.700 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[3]    ; clk        ; clk      ; None                        ; None                      ; 5.991 ns                ;
-; N/A   ; 152.49 MHz ( period = 6.558 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|c[3]    ; clk        ; clk      ; None                        ; None                      ; 5.849 ns                ;
-; N/A   ; 154.04 MHz ( period = 6.492 ns )               ; crossover1000:crossover|c[4]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 5.783 ns                ;
-; N/A   ; 157.13 MHz ( period = 6.364 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[1]    ; clk        ; clk      ; None                        ; None                      ; 5.655 ns                ;
-; N/A   ; 162.81 MHz ( period = 6.142 ns )               ; crossover1000:crossover|c[7]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 5.433 ns                ;
-; N/A   ; 163.16 MHz ( period = 6.129 ns )               ; crossover1000:crossover|c[6]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 5.420 ns                ;
-; N/A   ; 168.58 MHz ( period = 5.932 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 5.223 ns                ;
-; N/A   ; 169.00 MHz ( period = 5.917 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 5.208 ns                ;
-; N/A   ; 169.03 MHz ( period = 5.916 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 5.207 ns                ;
-; N/A   ; 169.18 MHz ( period = 5.911 ns )               ; crossover1000:crossover|c[7]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 5.202 ns                ;
-; N/A   ; 169.32 MHz ( period = 5.906 ns )               ; crossover1000:crossover|c[7]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 5.197 ns                ;
-; N/A   ; 169.41 MHz ( period = 5.903 ns )               ; crossover1000:crossover|c[7]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 5.194 ns                ;
-; N/A   ; 169.66 MHz ( period = 5.894 ns )               ; crossover1000:crossover|c[7]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 5.185 ns                ;
-; N/A   ; 169.75 MHz ( period = 5.891 ns )               ; crossover1000:crossover|c[7]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 5.182 ns                ;
-; N/A   ; 169.78 MHz ( period = 5.890 ns )               ; crossover1000:crossover|c[7]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 5.181 ns                ;
-; N/A   ; 170.04 MHz ( period = 5.881 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 5.172 ns                ;
-; N/A   ; 170.33 MHz ( period = 5.871 ns )               ; crossover1000:crossover|c[5]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 5.162 ns                ;
-; N/A   ; 171.85 MHz ( period = 5.819 ns )               ; crossover1000:crossover|c[6]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 5.110 ns                ;
-; N/A   ; 172.21 MHz ( period = 5.807 ns )               ; crossover1000:crossover|c[6]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 5.098 ns                ;
-; N/A   ; 172.29 MHz ( period = 5.804 ns )               ; crossover1000:crossover|c[6]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 5.095 ns                ;
-; N/A   ; 172.32 MHz ( period = 5.803 ns )               ; crossover1000:crossover|c[6]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 5.094 ns                ;
-; N/A   ; 172.98 MHz ( period = 5.781 ns )               ; crossover1000:crossover|c[4]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 5.072 ns                ;
-; N/A   ; 173.49 MHz ( period = 5.764 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|c[3]    ; clk        ; clk      ; None                        ; None                      ; 5.055 ns                ;
-; N/A   ; 175.41 MHz ( period = 5.701 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 4.992 ns                ;
-; N/A   ; 175.69 MHz ( period = 5.692 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[0]    ; clk        ; clk      ; None                        ; None                      ; 4.983 ns                ;
-; N/A   ; 177.62 MHz ( period = 5.630 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[1]    ; clk        ; clk      ; None                        ; None                      ; 4.921 ns                ;
-; N/A   ; 184.16 MHz ( period = 5.430 ns )               ; crossover1000:crossover|c[5]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 4.721 ns                ;
-; N/A   ; 194.86 MHz ( period = 5.132 ns )               ; crossover1000:crossover|c[5]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 4.423 ns                ;
-; N/A   ; 195.43 MHz ( period = 5.117 ns )               ; crossover1000:crossover|c[5]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 4.408 ns                ;
-; N/A   ; 195.47 MHz ( period = 5.116 ns )               ; crossover1000:crossover|c[5]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 4.407 ns                ;
-; N/A   ; 217.11 MHz ( period = 4.606 ns )               ; crossover1000:crossover|c[4]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 3.897 ns                ;
-; N/A   ; 232.23 MHz ( period = 4.306 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 3.597 ns                ;
-; N/A   ; 240.67 MHz ( period = 4.155 ns )               ; crossover1000:crossover|c[4]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 3.446 ns                ;
-; N/A   ; 246.31 MHz ( period = 4.060 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 3.351 ns                ;
-; N/A   ; 277.09 MHz ( period = 3.609 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 2.900 ns                ;
-; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; crossover1000:crossover|c[0]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 2.433 ns                ;
-; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; crossover1000:crossover|c[1]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 1.997 ns                ;
-; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; crossover1000:crossover|clk_tmp ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 1.953 ns                ;
+; N/A   ; 114.53 MHz ( period = 8.731 ns )               ; counter:maincounter|cnt_tmp[5]  ; counter:maincounter|cnt_tmp[3]  ; clk        ; clk      ; None                        ; None                      ; 8.022 ns                ;
+; N/A   ; 114.53 MHz ( period = 8.731 ns )               ; counter:maincounter|cnt_tmp[5]  ; counter:maincounter|cnt_tmp[2]  ; clk        ; clk      ; None                        ; None                      ; 8.022 ns                ;
+; N/A   ; 114.53 MHz ( period = 8.731 ns )               ; counter:maincounter|cnt_tmp[5]  ; counter:maincounter|cnt_tmp[1]  ; clk        ; clk      ; None                        ; None                      ; 8.022 ns                ;
+; N/A   ; 114.53 MHz ( period = 8.731 ns )               ; counter:maincounter|cnt_tmp[5]  ; counter:maincounter|cnt_tmp[0]  ; clk        ; clk      ; None                        ; None                      ; 8.022 ns                ;
+; N/A   ; 114.53 MHz ( period = 8.731 ns )               ; counter:maincounter|cnt_tmp[5]  ; counter:maincounter|cnt_tmp[4]  ; clk        ; clk      ; None                        ; None                      ; 8.022 ns                ;
+; N/A   ; 114.53 MHz ( period = 8.731 ns )               ; counter:maincounter|cnt_tmp[5]  ; counter:maincounter|cnt_tmp[5]  ; clk        ; clk      ; None                        ; None                      ; 8.022 ns                ;
+; N/A   ; 117.16 MHz ( period = 8.535 ns )               ; counter:maincounter|cnt_tmp[1]  ; counter:maincounter|cnt_tmp[3]  ; clk        ; clk      ; None                        ; None                      ; 7.826 ns                ;
+; N/A   ; 117.16 MHz ( period = 8.535 ns )               ; counter:maincounter|cnt_tmp[1]  ; counter:maincounter|cnt_tmp[2]  ; clk        ; clk      ; None                        ; None                      ; 7.826 ns                ;
+; N/A   ; 117.16 MHz ( period = 8.535 ns )               ; counter:maincounter|cnt_tmp[1]  ; counter:maincounter|cnt_tmp[1]  ; clk        ; clk      ; None                        ; None                      ; 7.826 ns                ;
+; N/A   ; 117.16 MHz ( period = 8.535 ns )               ; counter:maincounter|cnt_tmp[1]  ; counter:maincounter|cnt_tmp[0]  ; clk        ; clk      ; None                        ; None                      ; 7.826 ns                ;
+; N/A   ; 117.16 MHz ( period = 8.535 ns )               ; counter:maincounter|cnt_tmp[1]  ; counter:maincounter|cnt_tmp[4]  ; clk        ; clk      ; None                        ; None                      ; 7.826 ns                ;
+; N/A   ; 117.16 MHz ( period = 8.535 ns )               ; counter:maincounter|cnt_tmp[1]  ; counter:maincounter|cnt_tmp[5]  ; clk        ; clk      ; None                        ; None                      ; 7.826 ns                ;
+; N/A   ; 119.02 MHz ( period = 8.402 ns )               ; counter:maincounter|cnt_tmp[4]  ; counter:maincounter|cnt_tmp[3]  ; clk        ; clk      ; None                        ; None                      ; 7.693 ns                ;
+; N/A   ; 119.02 MHz ( period = 8.402 ns )               ; counter:maincounter|cnt_tmp[4]  ; counter:maincounter|cnt_tmp[2]  ; clk        ; clk      ; None                        ; None                      ; 7.693 ns                ;
+; N/A   ; 119.02 MHz ( period = 8.402 ns )               ; counter:maincounter|cnt_tmp[4]  ; counter:maincounter|cnt_tmp[1]  ; clk        ; clk      ; None                        ; None                      ; 7.693 ns                ;
+; N/A   ; 119.02 MHz ( period = 8.402 ns )               ; counter:maincounter|cnt_tmp[4]  ; counter:maincounter|cnt_tmp[0]  ; clk        ; clk      ; None                        ; None                      ; 7.693 ns                ;
+; N/A   ; 119.02 MHz ( period = 8.402 ns )               ; counter:maincounter|cnt_tmp[4]  ; counter:maincounter|cnt_tmp[4]  ; clk        ; clk      ; None                        ; None                      ; 7.693 ns                ;
+; N/A   ; 119.02 MHz ( period = 8.402 ns )               ; counter:maincounter|cnt_tmp[4]  ; counter:maincounter|cnt_tmp[5]  ; clk        ; clk      ; None                        ; None                      ; 7.693 ns                ;
+; N/A   ; 120.26 MHz ( period = 8.315 ns )               ; counter:maincounter|cnt_tmp[3]  ; counter:maincounter|cnt_tmp[3]  ; clk        ; clk      ; None                        ; None                      ; 7.606 ns                ;
+; N/A   ; 120.26 MHz ( period = 8.315 ns )               ; counter:maincounter|cnt_tmp[3]  ; counter:maincounter|cnt_tmp[2]  ; clk        ; clk      ; None                        ; None                      ; 7.606 ns                ;
+; N/A   ; 120.26 MHz ( period = 8.315 ns )               ; counter:maincounter|cnt_tmp[3]  ; counter:maincounter|cnt_tmp[1]  ; clk        ; clk      ; None                        ; None                      ; 7.606 ns                ;
+; N/A   ; 120.26 MHz ( period = 8.315 ns )               ; counter:maincounter|cnt_tmp[3]  ; counter:maincounter|cnt_tmp[0]  ; clk        ; clk      ; None                        ; None                      ; 7.606 ns                ;
+; N/A   ; 120.26 MHz ( period = 8.315 ns )               ; counter:maincounter|cnt_tmp[3]  ; counter:maincounter|cnt_tmp[4]  ; clk        ; clk      ; None                        ; None                      ; 7.606 ns                ;
+; N/A   ; 120.26 MHz ( period = 8.315 ns )               ; counter:maincounter|cnt_tmp[3]  ; counter:maincounter|cnt_tmp[5]  ; clk        ; clk      ; None                        ; None                      ; 7.606 ns                ;
+; N/A   ; 122.85 MHz ( period = 8.140 ns )               ; counter:maincounter|cnt_tmp[0]  ; counter:maincounter|cnt_tmp[3]  ; clk        ; clk      ; None                        ; None                      ; 7.431 ns                ;
+; N/A   ; 122.85 MHz ( period = 8.140 ns )               ; counter:maincounter|cnt_tmp[0]  ; counter:maincounter|cnt_tmp[2]  ; clk        ; clk      ; None                        ; None                      ; 7.431 ns                ;
+; N/A   ; 122.85 MHz ( period = 8.140 ns )               ; counter:maincounter|cnt_tmp[0]  ; counter:maincounter|cnt_tmp[1]  ; clk        ; clk      ; None                        ; None                      ; 7.431 ns                ;
+; N/A   ; 122.85 MHz ( period = 8.140 ns )               ; counter:maincounter|cnt_tmp[0]  ; counter:maincounter|cnt_tmp[0]  ; clk        ; clk      ; None                        ; None                      ; 7.431 ns                ;
+; N/A   ; 122.85 MHz ( period = 8.140 ns )               ; counter:maincounter|cnt_tmp[0]  ; counter:maincounter|cnt_tmp[4]  ; clk        ; clk      ; None                        ; None                      ; 7.431 ns                ;
+; N/A   ; 122.85 MHz ( period = 8.140 ns )               ; counter:maincounter|cnt_tmp[0]  ; counter:maincounter|cnt_tmp[5]  ; clk        ; clk      ; None                        ; None                      ; 7.431 ns                ;
+; N/A   ; 128.22 MHz ( period = 7.799 ns )               ; counter:maincounter|cnt_tmp[2]  ; counter:maincounter|cnt_tmp[3]  ; clk        ; clk      ; None                        ; None                      ; 7.090 ns                ;
+; N/A   ; 128.22 MHz ( period = 7.799 ns )               ; counter:maincounter|cnt_tmp[2]  ; counter:maincounter|cnt_tmp[2]  ; clk        ; clk      ; None                        ; None                      ; 7.090 ns                ;
+; N/A   ; 128.22 MHz ( period = 7.799 ns )               ; counter:maincounter|cnt_tmp[2]  ; counter:maincounter|cnt_tmp[1]  ; clk        ; clk      ; None                        ; None                      ; 7.090 ns                ;
+; N/A   ; 128.22 MHz ( period = 7.799 ns )               ; counter:maincounter|cnt_tmp[2]  ; counter:maincounter|cnt_tmp[0]  ; clk        ; clk      ; None                        ; None                      ; 7.090 ns                ;
+; N/A   ; 128.22 MHz ( period = 7.799 ns )               ; counter:maincounter|cnt_tmp[2]  ; counter:maincounter|cnt_tmp[4]  ; clk        ; clk      ; None                        ; None                      ; 7.090 ns                ;
+; N/A   ; 128.22 MHz ( period = 7.799 ns )               ; counter:maincounter|cnt_tmp[2]  ; counter:maincounter|cnt_tmp[5]  ; clk        ; clk      ; None                        ; None                      ; 7.090 ns                ;
+; N/A   ; 155.79 MHz ( period = 6.419 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 5.710 ns                ;
+; N/A   ; 158.23 MHz ( period = 6.320 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 5.611 ns                ;
+; N/A   ; 160.08 MHz ( period = 6.247 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 5.538 ns                ;
+; N/A   ; 161.45 MHz ( period = 6.194 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 5.485 ns                ;
+; N/A   ; 162.07 MHz ( period = 6.170 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 5.461 ns                ;
+; N/A   ; 162.65 MHz ( period = 6.148 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 5.439 ns                ;
+; N/A   ; 164.07 MHz ( period = 6.095 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 5.386 ns                ;
+; N/A   ; 164.55 MHz ( period = 6.077 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 5.368 ns                ;
+; N/A   ; 166.56 MHz ( period = 6.004 ns )               ; crossover1000:crossover|c[4]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 5.295 ns                ;
+; N/A   ; 166.72 MHz ( period = 5.998 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 5.289 ns                ;
+; N/A   ; 168.21 MHz ( period = 5.945 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 5.236 ns                ;
+; N/A   ; 169.35 MHz ( period = 5.905 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 5.196 ns                ;
+; N/A   ; 169.75 MHz ( period = 5.891 ns )               ; crossover1000:crossover|c[8]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 5.182 ns                ;
+; N/A   ; 169.84 MHz ( period = 5.888 ns )               ; crossover1000:crossover|c[8]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 5.179 ns                ;
+; N/A   ; 170.07 MHz ( period = 5.880 ns )               ; crossover1000:crossover|c[8]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 5.171 ns                ;
+; N/A   ; 170.88 MHz ( period = 5.852 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 5.143 ns                ;
+; N/A   ; 170.97 MHz ( period = 5.849 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 5.140 ns                ;
+; N/A   ; 171.47 MHz ( period = 5.832 ns )               ; crossover1000:crossover|c[4]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 5.123 ns                ;
+; N/A   ; 173.04 MHz ( period = 5.779 ns )               ; crossover1000:crossover|c[4]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 5.070 ns                ;
+; N/A   ; 173.31 MHz ( period = 5.770 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 5.061 ns                ;
+; N/A   ; 173.43 MHz ( period = 5.766 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 5.057 ns                ;
+; N/A   ; 175.04 MHz ( period = 5.713 ns )               ; crossover1000:crossover|c[7]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 5.004 ns                ;
+; N/A   ; 175.13 MHz ( period = 5.710 ns )               ; crossover1000:crossover|c[7]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 5.001 ns                ;
+; N/A   ; 175.35 MHz ( period = 5.703 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[1]    ; clk        ; clk      ; None                        ; None                      ; 4.994 ns                ;
+; N/A   ; 175.38 MHz ( period = 5.702 ns )               ; crossover1000:crossover|c[7]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 4.993 ns                ;
+; N/A   ; 176.34 MHz ( period = 5.671 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 4.962 ns                ;
+; N/A   ; 176.46 MHz ( period = 5.667 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 4.958 ns                ;
+; N/A   ; 178.54 MHz ( period = 5.601 ns )               ; crossover1000:crossover|c[5]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 4.892 ns                ;
+; N/A   ; 178.64 MHz ( period = 5.598 ns )               ; crossover1000:crossover|c[5]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 4.889 ns                ;
+; N/A   ; 178.89 MHz ( period = 5.590 ns )               ; crossover1000:crossover|c[5]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 4.881 ns                ;
+; N/A   ; 180.67 MHz ( period = 5.535 ns )               ; crossover1000:crossover|c[5]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 4.826 ns                ;
+; N/A   ; 181.26 MHz ( period = 5.517 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 4.808 ns                ;
+; N/A   ; 182.05 MHz ( period = 5.493 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 4.784 ns                ;
+; N/A   ; 182.32 MHz ( period = 5.485 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 4.776 ns                ;
+; N/A   ; 183.79 MHz ( period = 5.441 ns )               ; crossover1000:crossover|c[6]    ; crossover1000:crossover|c[5]    ; clk        ; clk      ; None                        ; None                      ; 4.732 ns                ;
+; N/A   ; 183.89 MHz ( period = 5.438 ns )               ; crossover1000:crossover|c[6]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 4.729 ns                ;
+; N/A   ; 184.16 MHz ( period = 5.430 ns )               ; crossover1000:crossover|c[6]    ; crossover1000:crossover|c[7]    ; clk        ; clk      ; None                        ; None                      ; 4.721 ns                ;
+; N/A   ; 184.37 MHz ( period = 5.424 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 4.715 ns                ;
+; N/A   ; 184.57 MHz ( period = 5.418 ns )               ; crossover1000:crossover|c[8]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 4.709 ns                ;
+; N/A   ; 184.67 MHz ( period = 5.415 ns )               ; crossover1000:crossover|c[8]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 4.706 ns                ;
+; N/A   ; 184.95 MHz ( period = 5.407 ns )               ; crossover1000:crossover|c[8]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 4.698 ns                ;
+; N/A   ; 187.02 MHz ( period = 5.347 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[3]    ; clk        ; clk      ; None                        ; None                      ; 4.638 ns                ;
+; N/A   ; 187.76 MHz ( period = 5.326 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 4.617 ns                ;
+; N/A   ; 189.83 MHz ( period = 5.268 ns )               ; crossover1000:crossover|c[8]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 4.559 ns                ;
+; N/A   ; 190.55 MHz ( period = 5.248 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[3]    ; clk        ; clk      ; None                        ; None                      ; 4.539 ns                ;
+; N/A   ; 190.84 MHz ( period = 5.240 ns )               ; crossover1000:crossover|c[7]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 4.531 ns                ;
+; N/A   ; 190.95 MHz ( period = 5.237 ns )               ; crossover1000:crossover|c[7]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 4.528 ns                ;
+; N/A   ; 191.24 MHz ( period = 5.229 ns )               ; crossover1000:crossover|c[7]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 4.520 ns                ;
+; N/A   ; 191.31 MHz ( period = 5.227 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 4.518 ns                ;
+; N/A   ; 191.94 MHz ( period = 5.210 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 4.501 ns                ;
+; N/A   ; 195.01 MHz ( period = 5.128 ns )               ; crossover1000:crossover|c[5]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 4.419 ns                ;
+; N/A   ; 195.12 MHz ( period = 5.125 ns )               ; crossover1000:crossover|c[5]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 4.416 ns                ;
+; N/A   ; 195.20 MHz ( period = 5.123 ns )               ; crossover1000:crossover|c[7]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 4.414 ns                ;
+; N/A   ; 198.18 MHz ( period = 5.046 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|c[1]    ; clk        ; clk      ; None                        ; None                      ; 4.337 ns                ;
+; N/A   ; 199.80 MHz ( period = 5.005 ns )               ; crossover1000:crossover|c[2]    ; crossover1000:crossover|c[3]    ; clk        ; clk      ; None                        ; None                      ; 4.296 ns                ;
+; N/A   ; 200.88 MHz ( period = 4.978 ns )               ; crossover1000:crossover|c[5]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 4.269 ns                ;
+; N/A   ; 201.29 MHz ( period = 4.968 ns )               ; crossover1000:crossover|c[6]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 4.259 ns                ;
+; N/A   ; 201.41 MHz ( period = 4.965 ns )               ; crossover1000:crossover|c[6]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 4.256 ns                ;
+; N/A   ; 201.73 MHz ( period = 4.957 ns )               ; crossover1000:crossover|c[6]    ; crossover1000:crossover|c[6]    ; clk        ; clk      ; None                        ; None                      ; 4.248 ns                ;
+; N/A   ; 203.62 MHz ( period = 4.911 ns )               ; crossover1000:crossover|c[4]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 4.202 ns                ;
+; N/A   ; 206.02 MHz ( period = 4.854 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 4.145 ns                ;
+; N/A   ; 206.36 MHz ( period = 4.846 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 4.137 ns                ;
+; N/A   ; 207.56 MHz ( period = 4.818 ns )               ; crossover1000:crossover|c[6]    ; crossover1000:crossover|c[8]    ; clk        ; clk      ; None                        ; None                      ; 4.109 ns                ;
+; N/A   ; 215.80 MHz ( period = 4.634 ns )               ; crossover1000:crossover|c[4]    ; crossover1000:crossover|c[4]    ; clk        ; clk      ; None                        ; None                      ; 3.925 ns                ;
+; N/A   ; 230.31 MHz ( period = 4.342 ns )               ; crossover1000:crossover|c[3]    ; crossover1000:crossover|c[3]    ; clk        ; clk      ; None                        ; None                      ; 3.633 ns                ;
+; N/A   ; 232.02 MHz ( period = 4.310 ns )               ; crossover1000:crossover|c[4]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 3.601 ns                ;
+; N/A   ; 232.45 MHz ( period = 4.302 ns )               ; crossover1000:crossover|c[4]    ; crossover1000:crossover|c[2]    ; clk        ; clk      ; None                        ; None                      ; 3.593 ns                ;
+; N/A   ; 238.61 MHz ( period = 4.191 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|c[0]    ; clk        ; clk      ; None                        ; None                      ; 3.482 ns                ;
+; N/A   ; 259.88 MHz ( period = 3.848 ns )               ; crossover1000:crossover|c[0]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 3.139 ns                ;
+; N/A   ; 262.47 MHz ( period = 3.810 ns )               ; crossover1000:crossover|c[1]    ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 3.101 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; crossover1000:crossover|clk_tmp ; crossover1000:crossover|clk_tmp ; clk        ; clk      ; None                        ; None                      ; 2.147 ns                ;
 +-------+------------------------------------------------+---------------------------------+---------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
 
 
-+------------------------------------------------------------------------------------------------+
-; tco                                                                                            ;
-+-------+--------------+------------+---------------------------------+-------------+------------+
-; Slack ; Required tco ; Actual tco ; From                            ; To          ; From Clock ;
-+-------+--------------+------------+---------------------------------+-------------+------------+
-; N/A   ; None         ; 8.553 ns   ; crossover1000:crossover|clk_tmp ; test_output ; clk        ;
-+-------+--------------+------------+---------------------------------+-------------+------------+
++-----------------------------------------------------------------------------------------+
+; tco                                                                                     ;
++-------+--------------+------------+--------------------------------+-------+------------+
+; Slack ; Required tco ; Actual tco ; From                           ; To    ; From Clock ;
++-------+--------------+------------+--------------------------------+-------+------------+
+; N/A   ; None         ; 18.520 ns  ; counter:maincounter|cnt_tmp[1] ; TS[0] ; clk        ;
+; N/A   ; None         ; 18.465 ns  ; counter:maincounter|cnt_tmp[5] ; TS[0] ; clk        ;
+; N/A   ; None         ; 18.279 ns  ; counter:maincounter|cnt_tmp[0] ; TS[0] ; clk        ;
+; N/A   ; None         ; 17.811 ns  ; counter:maincounter|cnt_tmp[4] ; TS[2] ; clk        ;
+; N/A   ; None         ; 17.777 ns  ; counter:maincounter|cnt_tmp[3] ; TS[1] ; clk        ;
+; N/A   ; None         ; 17.752 ns  ; counter:maincounter|cnt_tmp[2] ; TS[0] ; clk        ;
+; N/A   ; None         ; 17.619 ns  ; counter:maincounter|cnt_tmp[5] ; TS[2] ; clk        ;
+; N/A   ; None         ; 17.565 ns  ; counter:maincounter|cnt_tmp[4] ; TS[1] ; clk        ;
+; N/A   ; None         ; 17.384 ns  ; counter:maincounter|cnt_tmp[3] ; TS[0] ; clk        ;
+; N/A   ; None         ; 17.245 ns  ; counter:maincounter|cnt_tmp[3] ; TS[2] ; clk        ;
+; N/A   ; None         ; 17.232 ns  ; counter:maincounter|cnt_tmp[5] ; TS[1] ; clk        ;
+; N/A   ; None         ; 17.184 ns  ; counter:maincounter|cnt_tmp[4] ; TS[0] ; clk        ;
+; N/A   ; None         ; 16.860 ns  ; counter:maincounter|cnt_tmp[2] ; TS[1] ; clk        ;
+; N/A   ; None         ; 16.605 ns  ; counter:maincounter|cnt_tmp[3] ; CS[3] ; clk        ;
+; N/A   ; None         ; 16.129 ns  ; counter:maincounter|cnt_tmp[0] ; CS[0] ; clk        ;
+; N/A   ; None         ; 16.121 ns  ; counter:maincounter|cnt_tmp[5] ; CS[5] ; clk        ;
+; N/A   ; None         ; 15.607 ns  ; counter:maincounter|cnt_tmp[1] ; CS[1] ; clk        ;
+; N/A   ; None         ; 15.450 ns  ; counter:maincounter|cnt_tmp[4] ; CS[4] ; clk        ;
+; N/A   ; None         ; 15.397 ns  ; counter:maincounter|cnt_tmp[2] ; CS[2] ; clk        ;
++-------+--------------+------------+--------------------------------+-------+------------+
 
 
 +--------------------------+
@@ -201,48 +255,56 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Classic Timing Analyzer
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Fri Oct 09 22:42:27 2020
+    Info: Processing started: Sat Oct 10 01:43:25 2020
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off TrafficLightsControl -c TrafficLightsControl
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Started post-fitting delay annotation
 Info: Delay annotation completed successfully
 Warning: Found pins functioning as undefined clocks and/or memory enables
     Info: Assuming node "clk" is an undefined clock
-Info: Clock "clk" has Internal fmax of 129.82 MHz between source register "crossover1000:crossover|c[8]" and destination register "crossover1000:crossover|c[8]" (period= 7.703 ns)
-    Info: + Longest register to register delay is 6.994 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X9_Y5_N9; Fanout = 2; REG Node = 'crossover1000:crossover|c[8]'
-        Info: 2: + IC(2.699 ns) + CELL(0.740 ns) = 3.439 ns; Loc. = LC_X9_Y6_N9; Fanout = 7; COMB Node = 'crossover1000:crossover|Equal0~0'
-        Info: 3: + IC(2.494 ns) + CELL(1.061 ns) = 6.994 ns; Loc. = LC_X9_Y5_N9; Fanout = 2; REG Node = 'crossover1000:crossover|c[8]'
-        Info: Total cell delay = 1.801 ns ( 25.75 % )
-        Info: Total interconnect delay = 5.193 ns ( 74.25 % )
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "crossover1000:crossover|clk_tmp" as buffer
+Info: Clock "clk" has Internal fmax of 114.53 MHz between source register "counter:maincounter|cnt_tmp[5]" and destination register "counter:maincounter|cnt_tmp[3]" (period= 8.731 ns)
+    Info: + Longest register to register delay is 8.022 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X7_Y10_N6; Fanout = 7; REG Node = 'counter:maincounter|cnt_tmp[5]'
+        Info: 2: + IC(2.558 ns) + CELL(0.740 ns) = 3.298 ns; Loc. = LC_X3_Y9_N4; Fanout = 1; COMB Node = 'counter:maincounter|P1~0'
+        Info: 3: + IC(0.534 ns) + CELL(0.200 ns) = 4.032 ns; Loc. = LC_X3_Y9_N5; Fanout = 6; COMB Node = 'counter:maincounter|P1~1'
+        Info: 4: + IC(2.230 ns) + CELL(1.760 ns) = 8.022 ns; Loc. = LC_X7_Y10_N4; Fanout = 7; REG Node = 'counter:maincounter|cnt_tmp[3]'
+        Info: Total cell delay = 2.700 ns ( 33.66 % )
+        Info: Total interconnect delay = 5.322 ns ( 66.34 % )
     Info: - Smallest clock skew is 0.000 ns
-        Info: + Shortest clock path from clock "clk" to destination register is 3.819 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 10.025 ns
             Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 10; CLK Node = 'clk'
-            Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X9_Y5_N9; Fanout = 2; REG Node = 'crossover1000:crossover|c[8]'
-            Info: Total cell delay = 2.081 ns ( 54.49 % )
-            Info: Total interconnect delay = 1.738 ns ( 45.51 % )
-        Info: - Longest clock path from clock "clk" to source register is 3.819 ns
+            Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X14_Y8_N9; Fanout = 7; REG Node = 'crossover1000:crossover|clk_tmp'
+            Info: 3: + IC(4.912 ns) + CELL(0.918 ns) = 10.025 ns; Loc. = LC_X7_Y10_N4; Fanout = 7; REG Node = 'counter:maincounter|cnt_tmp[3]'
+            Info: Total cell delay = 3.375 ns ( 33.67 % )
+            Info: Total interconnect delay = 6.650 ns ( 66.33 % )
+        Info: - Longest clock path from clock "clk" to source register is 10.025 ns
             Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 10; CLK Node = 'clk'
-            Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X9_Y5_N9; Fanout = 2; REG Node = 'crossover1000:crossover|c[8]'
-            Info: Total cell delay = 2.081 ns ( 54.49 % )
-            Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+            Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X14_Y8_N9; Fanout = 7; REG Node = 'crossover1000:crossover|clk_tmp'
+            Info: 3: + IC(4.912 ns) + CELL(0.918 ns) = 10.025 ns; Loc. = LC_X7_Y10_N6; Fanout = 7; REG Node = 'counter:maincounter|cnt_tmp[5]'
+            Info: Total cell delay = 3.375 ns ( 33.67 % )
+            Info: Total interconnect delay = 6.650 ns ( 66.33 % )
     Info: + Micro clock to output delay of source is 0.376 ns
     Info: + Micro setup delay of destination is 0.333 ns
-Info: tco from clock "clk" to destination pin "test_output" through register "crossover1000:crossover|clk_tmp" is 8.553 ns
-    Info: + Longest clock path from clock "clk" to source register is 3.819 ns
+Info: tco from clock "clk" to destination pin "TS[0]" through register "counter:maincounter|cnt_tmp[1]" is 18.520 ns
+    Info: + Longest clock path from clock "clk" to source register is 10.025 ns
         Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 10; CLK Node = 'clk'
-        Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X9_Y6_N7; Fanout = 2; REG Node = 'crossover1000:crossover|clk_tmp'
-        Info: Total cell delay = 2.081 ns ( 54.49 % )
-        Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+        Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X14_Y8_N9; Fanout = 7; REG Node = 'crossover1000:crossover|clk_tmp'
+        Info: 3: + IC(4.912 ns) + CELL(0.918 ns) = 10.025 ns; Loc. = LC_X7_Y10_N2; Fanout = 7; REG Node = 'counter:maincounter|cnt_tmp[1]'
+        Info: Total cell delay = 3.375 ns ( 33.67 % )
+        Info: Total interconnect delay = 6.650 ns ( 66.33 % )
     Info: + Micro clock to output delay of source is 0.376 ns
-    Info: + Longest register to pin delay is 4.358 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X9_Y6_N7; Fanout = 2; REG Node = 'crossover1000:crossover|clk_tmp'
-        Info: 2: + IC(2.036 ns) + CELL(2.322 ns) = 4.358 ns; Loc. = PIN_62; Fanout = 0; PIN Node = 'test_output'
-        Info: Total cell delay = 2.322 ns ( 53.28 % )
-        Info: Total interconnect delay = 2.036 ns ( 46.72 % )
-Info: Quartus II 64-Bit Classic Timing Analyzer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4368 megabytes
-    Info: Processing ended: Fri Oct 09 22:42:27 2020
+    Info: + Longest register to pin delay is 8.119 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X7_Y10_N2; Fanout = 7; REG Node = 'counter:maincounter|cnt_tmp[1]'
+        Info: 2: + IC(1.406 ns) + CELL(0.511 ns) = 1.917 ns; Loc. = LC_X7_Y10_N7; Fanout = 1; COMB Node = 'counter:maincounter|TrafficState[0]~0'
+        Info: 3: + IC(0.772 ns) + CELL(0.511 ns) = 3.200 ns; Loc. = LC_X7_Y10_N0; Fanout = 1; COMB Node = 'counter:maincounter|TrafficState[0]~2'
+        Info: 4: + IC(2.597 ns) + CELL(2.322 ns) = 8.119 ns; Loc. = PIN_57; Fanout = 0; PIN Node = 'TS[0]'
+        Info: Total cell delay = 3.344 ns ( 41.19 % )
+        Info: Total interconnect delay = 4.775 ns ( 58.81 % )
+Info: Quartus II 64-Bit Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4367 megabytes
+    Info: Processing ended: Sat Oct 10 01:43:25 2020
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 

@@ -23,10 +23,10 @@ applicable agreement for further details.
 VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsControl.vwf")
 {
 	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 5000000000000;
-		NUMERATOR = 909;
-		DENOMINATOR = 5000000000000;
+		ZBEGIN = 9520900321543;
+		ZEND = 26142423757063;
+		NUMERATOR = 1149;
+		DENOMINATOR = 16621523435520;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
@@ -54,8 +54,88 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "test_output";
+		SIGNAL = "CS";
 		INDEX = 2;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "CS[5]";
+		INDEX = 3;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "CS[4]";
+		INDEX = 4;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "CS[3]";
+		INDEX = 5;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "CS[2]";
+		INDEX = 6;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "CS[1]";
+		INDEX = 7;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "CS[0]";
+		INDEX = 8;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TS";
+		INDEX = 9;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TS[2]";
+		INDEX = 10;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TS[1]";
+		INDEX = 11;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TS[0]";
+		INDEX = 12;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;

@@ -34,5 +34,5 @@ architecture TrafficLightsControl_arch of TrafficLightsControl is
 
 begin
   crossover:crossover1000 port map(clk=>clk,rst=>rst,clkout=>clk_1s);
-  counter:counter port map(clk=>clk_1s,rst=>rst,TrafficState=>TS,CountSec=>CS);
+  maincounter:counter port map(clk=>clk_1s,rst=>rst,TrafficState=>TS,CountSec=>CS);
 end TrafficLightsControl_arch;
