@@ -23,10 +23,10 @@ applicable agreement for further details.
 VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsControl.vwf")
 {
 	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 205463511776;
+		ZBEGIN = 12531244899463;
+		ZEND = 14174952993671;
 		NUMERATOR = 909;
-		DENOMINATOR = 205463511776;
+		DENOMINATOR = 1643708094208;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
@@ -54,7 +54,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "CS";
+		SIGNAL = "col_g";
 		INDEX = 2;
 		FORMAT = T;
 		SCALE = 1;
@@ -62,7 +62,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "CS[5]";
+		SIGNAL = "col_g[7]";
 		INDEX = 3;
 		FORMAT = E;
 		SCALE = 1;
@@ -70,7 +70,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "CS[4]";
+		SIGNAL = "col_g[6]";
 		INDEX = 4;
 		FORMAT = E;
 		SCALE = 1;
@@ -78,7 +78,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "CS[3]";
+		SIGNAL = "col_g[5]";
 		INDEX = 5;
 		FORMAT = E;
 		SCALE = 1;
@@ -86,7 +86,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "CS[2]";
+		SIGNAL = "col_g[4]";
 		INDEX = 6;
 		FORMAT = E;
 		SCALE = 1;
@@ -94,7 +94,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "CS[1]";
+		SIGNAL = "col_g[3]";
 		INDEX = 7;
 		FORMAT = E;
 		SCALE = 1;
@@ -102,7 +102,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "CS[0]";
+		SIGNAL = "col_g[2]";
 		INDEX = 8;
 		FORMAT = E;
 		SCALE = 1;
@@ -110,64 +110,8 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "col_g";
-		INDEX = 9;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "col_g[7]";
-		INDEX = 10;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "col_g[6]";
-		INDEX = 11;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "col_g[5]";
-		INDEX = 12;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "col_g[4]";
-		INDEX = 13;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "col_g[3]";
-		INDEX = 14;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "col_g[2]";
-		INDEX = 15;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
 		SIGNAL = "col_g[1]";
-		INDEX = 16;
+		INDEX = 9;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -175,7 +119,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "col_g[0]";
-		INDEX = 17;
+		INDEX = 10;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -183,7 +127,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "col_r";
-		INDEX = 18;
+		INDEX = 11;
 		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -191,7 +135,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "col_r[7]";
-		INDEX = 19;
+		INDEX = 12;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -199,7 +143,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "col_r[6]";
-		INDEX = 20;
+		INDEX = 13;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -207,7 +151,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "col_r[5]";
-		INDEX = 21;
+		INDEX = 14;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -215,7 +159,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "col_r[4]";
-		INDEX = 22;
+		INDEX = 15;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -223,7 +167,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "col_r[3]";
-		INDEX = 23;
+		INDEX = 16;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -231,7 +175,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "col_r[2]";
-		INDEX = 24;
+		INDEX = 17;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -239,7 +183,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "col_r[1]";
-		INDEX = 25;
+		INDEX = 18;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -247,7 +191,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "col_r[0]";
-		INDEX = 26;
+		INDEX = 19;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -255,7 +199,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "row";
-		INDEX = 27;
+		INDEX = 20;
 		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -263,7 +207,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "row[7]";
-		INDEX = 28;
+		INDEX = 21;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -271,7 +215,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "row[6]";
-		INDEX = 29;
+		INDEX = 22;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -279,7 +223,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "row[5]";
-		INDEX = 30;
+		INDEX = 23;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -287,7 +231,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "row[4]";
-		INDEX = 31;
+		INDEX = 24;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -295,7 +239,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "row[3]";
-		INDEX = 32;
+		INDEX = 25;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -303,7 +247,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "row[2]";
-		INDEX = 33;
+		INDEX = 26;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -311,7 +255,7 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "row[1]";
-		INDEX = 34;
+		INDEX = 27;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -319,7 +263,263 @@ VECTOR("C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsC
 	}
 	LINE{
 		SIGNAL = "row[0]";
+		INDEX = 28;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp0Out";
+		INDEX = 29;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp0Out[6]";
+		INDEX = 30;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp0Out[5]";
+		INDEX = 31;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp0Out[4]";
+		INDEX = 32;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp0Out[3]";
+		INDEX = 33;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp0Out[2]";
+		INDEX = 34;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp0Out[1]";
 		INDEX = 35;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp0Out[0]";
+		INDEX = 36;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp1Out";
+		INDEX = 37;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp1Out[6]";
+		INDEX = 38;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp1Out[5]";
+		INDEX = 39;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp1Out[4]";
+		INDEX = 40;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp1Out[3]";
+		INDEX = 41;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp1Out[2]";
+		INDEX = 42;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp1Out[1]";
+		INDEX = 43;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp1Out[0]";
+		INDEX = 44;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp6Out";
+		INDEX = 45;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp6Out[6]";
+		INDEX = 46;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp6Out[5]";
+		INDEX = 47;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp6Out[4]";
+		INDEX = 48;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp6Out[3]";
+		INDEX = 49;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp6Out[2]";
+		INDEX = 50;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp6Out[1]";
+		INDEX = 51;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp6Out[0]";
+		INDEX = 52;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp7Out";
+		INDEX = 53;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp7Out[6]";
+		INDEX = 54;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp7Out[5]";
+		INDEX = 55;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp7Out[4]";
+		INDEX = 56;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp7Out[3]";
+		INDEX = 57;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp7Out[2]";
+		INDEX = 58;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp7Out[1]";
+		INDEX = 59;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TubeDisp7Out[0]";
+		INDEX = 60;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;

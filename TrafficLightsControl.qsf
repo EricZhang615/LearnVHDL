@@ -53,3 +53,6 @@ set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name VECTOR_WAVEFORM_FILE TrafficLightsControl.vwf
 set_global_assignment -name VHDL_FILE counter.vhd
 set_global_assignment -name VHDL_FILE dotdisp.vhd
+set_global_assignment -name VHDL_FILE DigitalTube.vhd
+set_global_assignment -name VHDL_FILE DigitalTubeCounter.vhd
+set_global_assignment -name VHDL_FILE Stabilizer.vhd

@@ -96,39 +96,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-TrafficLightsControl
-# storage
-db|TrafficLightsControl.(0).cnf
-db|TrafficLightsControl.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-maincomp.vhd
-66d1346a10c2e9a452d62decfe4e329
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-|
-}
-# lmf
-|altera|91|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 dotdisp
 # storage
 db|TrafficLightsControl.(3).cnf
@@ -172,6 +139,173 @@ USR
 }
 # hierarchies {
 dotdisp:dot_array
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+DigitalTubeCounter
+# storage
+db|TrafficLightsControl.(4).cnf
+db|TrafficLightsControl.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+digitaltubecounter.vhd
+cf3bfd6bafc63279ec52a22511de3
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(countsec)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(tubecode7out)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(tubecode6out)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(tubecode1out)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(tubecode0out)
+3 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+DigitalTubeCounter:DTC
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+DigitalTube
+# storage
+db|TrafficLightsControl.(5).cnf
+db|TrafficLightsControl.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+digitaltube.vhd
+551121d420f63b99b5faa47a78cb40
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(tubecodein)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(tubedispout)
+6 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+DigitalTube:DT7
+DigitalTube:DT6
+DigitalTube:DT1
+DigitalTube:DT0
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+TrafficLightsControl
+# storage
+db|TrafficLightsControl.(0).cnf
+db|TrafficLightsControl.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+maincomp.vhd
+cdc72982991c80c5f4a8be86ad1b6dab
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Stabilizer
+# storage
+db|TrafficLightsControl.(6).cnf
+db|TrafficLightsControl.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+stabilizer.vhd
+c992646e35c13573fa1321ce3b5b2e1c
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Stabilizer:stab
 }
 # lmf
 |altera|91|quartus|lmf|maxplus2.lmf

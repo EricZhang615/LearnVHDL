@@ -2,25 +2,55 @@
 Timing Analyzer Summary
 --------------------------------------------------------------------------------------
 
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.954 ns
+From           : rst
+To             : Stabilizer:stab|tmp1
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 24.556 ns
-From           : counter:maincounter|cnt_tmp[1]
-To             : col_r[1]
+Actual Time    : 27.255 ns
+From           : DigitalTubeCounter:DTC|TubeCode0Out[0]
+To             : TubeDisp0Out[4]
 From Clock     : clk
 To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -1.400 ns
+From           : rst
+To             : Stabilizer:stab|tmp1
+From Clock     : --
+To Clock       : clk
 Failed Paths   : 0
 
 Type           : Clock Setup: 'clk'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 158.08 MHz ( period = 6.326 ns )
+Actual Time    : 157.06 MHz ( period = 6.367 ns )
 From           : crossover1000:crossover|c[0]
 To             : crossover1000:crossover|c[6]
 From Clock     : clk
 To Clock       : clk
 Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:maincounter|cnt_tmp[5]
+To             : DigitalTubeCounter:DTC|TubeCode7Out[0]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 69
 
 Type           : Total number of failed paths
 Slack          : 
@@ -30,7 +60,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 0
+Failed Paths   : 69
 
 --------------------------------------------------------------------------------------
 

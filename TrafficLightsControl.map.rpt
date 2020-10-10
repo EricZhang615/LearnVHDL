@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TrafficLightsControl
-Sat Oct 10 14:15:01 2020
+Sat Oct 10 19:29:08 2020
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -13,10 +13,11 @@ Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -42,13 +43,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat Oct 10 14:15:01 2020    ;
+; Analysis & Synthesis Status ; Successful - Sat Oct 10 19:29:08 2020    ;
 ; Quartus II 64-Bit Version   ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name               ; TrafficLightsControl                     ;
 ; Top-level Entity Name       ; TrafficLightsControl                     ;
 ; Family                      ; MAX II                                   ;
-; Total logic elements        ; 69                                       ;
-; Total pins                  ; 32                                       ;
+; Total logic elements        ; 154                                      ;
+; Total pins                  ; 54                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
 +-----------------------------+------------------------------------------+
@@ -138,51 +139,54 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                             ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+
-; MainComp.vhd                     ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/MainComp.vhd      ;
-; crossover1000.vhd                ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/crossover1000.vhd ;
-; counter.vhd                      ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/counter.vhd       ;
-; dotdisp.vhd                      ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/dotdisp.vhd       ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                     ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+
+; MainComp.vhd                     ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/MainComp.vhd           ;
+; crossover1000.vhd                ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/crossover1000.vhd      ;
+; counter.vhd                      ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/counter.vhd            ;
+; dotdisp.vhd                      ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/dotdisp.vhd            ;
+; DigitalTube.vhd                  ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/DigitalTube.vhd        ;
+; DigitalTubeCounter.vhd           ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/DigitalTubeCounter.vhd ;
+; Stabilizer.vhd                   ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/Stabilizer.vhd         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                 ;
-+---------------------------------------------+-------------------------------+
-; Resource                                    ; Usage                         ;
-+---------------------------------------------+-------------------------------+
-; Total logic elements                        ; 69                            ;
-;     -- Combinational with no register       ; 50                            ;
-;     -- Register only                        ; 4                             ;
-;     -- Combinational with a register        ; 15                            ;
-;                                             ;                               ;
-; Logic element usage by number of LUT inputs ;                               ;
-;     -- 4 input functions                    ; 30                            ;
-;     -- 3 input functions                    ; 12                            ;
-;     -- 2 input functions                    ; 19                            ;
-;     -- 1 input functions                    ; 3                             ;
-;     -- 0 input functions                    ; 1                             ;
-;                                             ;                               ;
-; Logic elements by mode                      ;                               ;
-;     -- normal mode                          ; 56                            ;
-;     -- arithmetic mode                      ; 13                            ;
-;     -- qfbk mode                            ; 0                             ;
-;     -- register cascade mode                ; 0                             ;
-;     -- synchronous clear/load mode          ; 6                             ;
-;     -- asynchronous clear/load mode         ; 16                            ;
-;                                             ;                               ;
-; Total registers                             ; 19                            ;
-; Total logic cells in carry chains           ; 15                            ;
-; I/O pins                                    ; 32                            ;
-; Maximum fan-out node                        ; dotdisp:dot_array|scan_cnt[2] ;
-; Maximum fan-out                             ; 21                            ;
-; Total fan-out                               ; 272                           ;
-; Average fan-out                             ; 2.69                          ;
-+---------------------------------------------+-------------------------------+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                  ;
++---------------------------------------------+--------------------------------+
+; Resource                                    ; Usage                          ;
++---------------------------------------------+--------------------------------+
+; Total logic elements                        ; 154                            ;
+;     -- Combinational with no register       ; 129                            ;
+;     -- Register only                        ; 5                              ;
+;     -- Combinational with a register        ; 20                             ;
+;                                             ;                                ;
+; Logic element usage by number of LUT inputs ;                                ;
+;     -- 4 input functions                    ; 81                             ;
+;     -- 3 input functions                    ; 38                             ;
+;     -- 2 input functions                    ; 26                             ;
+;     -- 1 input functions                    ; 3                              ;
+;     -- 0 input functions                    ; 1                              ;
+;                                             ;                                ;
+; Logic elements by mode                      ;                                ;
+;     -- normal mode                          ; 141                            ;
+;     -- arithmetic mode                      ; 13                             ;
+;     -- qfbk mode                            ; 0                              ;
+;     -- register cascade mode                ; 0                              ;
+;     -- synchronous clear/load mode          ; 6                              ;
+;     -- asynchronous clear/load mode         ; 16                             ;
+;                                             ;                                ;
+; Total registers                             ; 25                             ;
+; Total logic cells in carry chains           ; 15                             ;
+; I/O pins                                    ; 54                             ;
+; Maximum fan-out node                        ; counter:maincounter|cnt_tmp[3] ;
+; Maximum fan-out                             ; 35                             ;
+; Total fan-out                               ; 595                            ;
+; Average fan-out                             ; 2.86                           ;
++---------------------------------------------+--------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -190,12 +194,40 @@ applicable agreement for further details.
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
 ; Compilation Hierarchy Node   ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                           ; Library Name ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
-; |TrafficLightsControl        ; 69 (1)      ; 19           ; 0          ; 32   ; 0            ; 50 (1)       ; 4 (0)             ; 15 (0)           ; 15 (0)          ; 0 (0)      ; |TrafficLightsControl                         ; work         ;
-;    |counter:maincounter|     ; 17 (17)     ; 6            ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 6 (6)            ; 6 (6)           ; 0 (0)      ; |TrafficLightsControl|counter:maincounter     ; work         ;
+; |TrafficLightsControl        ; 154 (1)     ; 25           ; 0          ; 54   ; 0            ; 129 (1)      ; 5 (0)             ; 20 (0)           ; 15 (0)          ; 0 (0)      ; |TrafficLightsControl                         ; work         ;
+;    |DigitalTube:DT0|         ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTube:DT0         ; work         ;
+;    |DigitalTube:DT1|         ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTube:DT1         ; work         ;
+;    |DigitalTube:DT6|         ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTube:DT6         ; work         ;
+;    |DigitalTube:DT7|         ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTube:DT7         ; work         ;
+;    |DigitalTubeCounter:DTC|  ; 61 (61)     ; 0            ; 0          ; 0    ; 0            ; 61 (61)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTubeCounter:DTC  ; work         ;
+;    |Stabilizer:stab|         ; 7 (7)       ; 6            ; 0          ; 0    ; 0            ; 1 (1)        ; 2 (2)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|Stabilizer:stab         ; work         ;
+;    |counter:maincounter|     ; 15 (15)     ; 6            ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 6 (6)            ; 6 (6)           ; 0 (0)      ; |TrafficLightsControl|counter:maincounter     ; work         ;
 ;    |crossover1000:crossover| ; 21 (21)     ; 10           ; 0          ; 0    ; 0            ; 11 (11)      ; 3 (3)             ; 7 (7)            ; 9 (9)           ; 0 (0)      ; |TrafficLightsControl|crossover1000:crossover ; work         ;
-;    |dotdisp:dot_array|       ; 30 (30)     ; 3            ; 0          ; 0    ; 0            ; 27 (27)      ; 1 (1)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|dotdisp:dot_array       ; work         ;
+;    |dotdisp:dot_array|       ; 29 (29)     ; 3            ; 0          ; 0    ; 0            ; 26 (26)      ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|dotdisp:dot_array       ; work         ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                         ;
++-----------------------------------------------------+------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal          ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------+------------------------+
+; DigitalTubeCounter:DTC|TubeCode7Out[1]              ; DigitalTubeCounter:DTC|Mux14 ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode7Out[0]              ; DigitalTubeCounter:DTC|Mux14 ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode6Out[0]              ; DigitalTubeCounter:DTC|Mux14 ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode6Out[1]              ; DigitalTubeCounter:DTC|Mux14 ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode6Out[2]              ; DigitalTubeCounter:DTC|Mux14 ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode6Out[3]              ; DigitalTubeCounter:DTC|Mux14 ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode1Out[1]              ; DigitalTubeCounter:DTC|Mux14 ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode1Out[0]              ; DigitalTubeCounter:DTC|Mux14 ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode0Out[0]              ; DigitalTubeCounter:DTC|Mux14 ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode0Out[1]              ; DigitalTubeCounter:DTC|Mux14 ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode0Out[2]              ; DigitalTubeCounter:DTC|Mux14 ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode0Out[3]              ; DigitalTubeCounter:DTC|Mux14 ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                              ;                        ;
++-----------------------------------------------------+------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -203,7 +235,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 19    ;
+; Total registers                              ; 25    ;
 ; Number of registers using Synchronous Clear  ; 6     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 10    ;
@@ -219,7 +251,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
 ; crossover1000:crossover|clk_tmp        ; 7       ;
-; Total number of inverted registers = 1 ;         ;
+; Stabilizer:stab|clk_10ms               ; 2       ;
+; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
 
 
@@ -228,14 +261,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux27             ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux29             ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TrafficLightsControl|counter:maincounter|TrafficState[2] ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux0              ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux16             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux15             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux18             ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux22             ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux20             ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux25             ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux21             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 
 
@@ -245,7 +278,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Sat Oct 10 14:15:00 2020
+    Info: Processing started: Sat Oct 10 19:29:06 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TrafficLightsControl -c TrafficLightsControl
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 2 design units, including 1 entities, in source file maincomp.vhd
@@ -260,9 +293,42 @@ Info: Found 2 design units, including 1 entities, in source file counter.vhd
 Info: Found 2 design units, including 1 entities, in source file dotdisp.vhd
     Info: Found design unit 1: dotdisp-dotdisp_arch
     Info: Found entity 1: dotdisp
+Info: Found 2 design units, including 1 entities, in source file digitaltube.vhd
+    Info: Found design unit 1: DigitalTube-DigitalTube_arch
+    Info: Found entity 1: DigitalTube
+Info: Found 2 design units, including 1 entities, in source file digitaltubecounter.vhd
+    Info: Found design unit 1: DigitalTubeCounter-DigitalTubeCounter_arch
+    Info: Found entity 1: DigitalTubeCounter
+Info: Found 2 design units, including 1 entities, in source file stabilizer.vhd
+    Info: Found design unit 1: Stabilizer-Stabilizer_arch
+    Info: Found entity 1: Stabilizer
 Info: Elaborating entity "TrafficLightsControl" for the top level hierarchy
+Info: Elaborating entity "Stabilizer" for hierarchy "Stabilizer:stab"
+Warning (10492): VHDL Process Statement warning at Stabilizer.vhd(34): signal "clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info: Elaborating entity "crossover1000" for hierarchy "crossover1000:crossover"
 Info: Elaborating entity "counter" for hierarchy "counter:maincounter"
+Info: Elaborating entity "DigitalTubeCounter" for hierarchy "DigitalTubeCounter:DTC"
+Warning (10631): VHDL Process Statement warning at DigitalTubeCounter.vhd(20): inferring latch(es) for signal or variable "TubeCode7Out", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at DigitalTubeCounter.vhd(20): inferring latch(es) for signal or variable "TubeCode6Out", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at DigitalTubeCounter.vhd(20): inferring latch(es) for signal or variable "TubeCode1Out", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at DigitalTubeCounter.vhd(20): inferring latch(es) for signal or variable "TubeCode0Out", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "TubeCode0Out[0]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode0Out[1]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode0Out[2]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode0Out[3]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode1Out[0]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode1Out[1]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode1Out[2]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode1Out[3]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode6Out[0]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode6Out[1]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode6Out[2]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode6Out[3]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode7Out[0]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode7Out[1]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode7Out[2]" at DigitalTubeCounter.vhd(20)
+Info (10041): Inferred latch for "TubeCode7Out[3]" at DigitalTubeCounter.vhd(20)
+Info: Elaborating entity "DigitalTube" for hierarchy "DigitalTube:DT7"
 Info: Elaborating entity "dotdisp" for hierarchy "dotdisp:dot_array"
 Warning (10631): VHDL Process Statement warning at dotdisp.vhd(31): inferring latch(es) for signal or variable "row", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at dotdisp.vhd(31): inferring latch(es) for signal or variable "col_r", which holds its previous value in one or more paths through the process
@@ -311,20 +377,46 @@ Warning: LATCH primitive "dotdisp:dot_array|col_g[2]" is permanently enabled
 Warning: LATCH primitive "dotdisp:dot_array|col_g[5]" is permanently enabled
 Warning: LATCH primitive "dotdisp:dot_array|col_g[6]" is permanently enabled
 Warning: LATCH primitive "dotdisp:dot_array|col_g[7]" is permanently enabled
+Warning: Latch DigitalTubeCounter:DTC|TubeCode7Out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[2]
+Warning: Latch DigitalTubeCounter:DTC|TubeCode7Out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[4]
+Warning: Latch DigitalTubeCounter:DTC|TubeCode6Out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[0]
+Warning: Latch DigitalTubeCounter:DTC|TubeCode6Out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[4]
+Warning: Latch DigitalTubeCounter:DTC|TubeCode6Out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[5]
+Warning: Latch DigitalTubeCounter:DTC|TubeCode6Out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[5]
+Warning: Latch DigitalTubeCounter:DTC|TubeCode1Out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[1]
+Warning: Latch DigitalTubeCounter:DTC|TubeCode1Out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[0]
+Warning: Latch DigitalTubeCounter:DTC|TubeCode0Out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[4]
+Warning: Latch DigitalTubeCounter:DTC|TubeCode0Out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[4]
+Warning: Latch DigitalTubeCounter:DTC|TubeCode0Out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[5]
+Warning: Latch DigitalTubeCounter:DTC|TubeCode0Out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[3]
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "col_r[3]" is stuck at GND
     Warning (13410): Pin "col_r[4]" is stuck at GND
     Warning (13410): Pin "col_g[3]" is stuck at GND
     Warning (13410): Pin "col_g[4]" is stuck at GND
+    Warning (13410): Pin "TubeDisp7Out[5]" is stuck at VCC
+    Warning (13410): Pin "TubeDisp1Out[5]" is stuck at VCC
 Info: Registers with preset signals will power-up high
-Info: Implemented 101 device resources after synthesis - the final resource count might be different
+Info: Implemented 208 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 30 output pins
-    Info: Implemented 69 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 28 warnings
-    Info: Peak virtual memory: 4456 megabytes
-    Info: Processing ended: Sat Oct 10 14:15:01 2020
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Implemented 52 output pins
+    Info: Implemented 154 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 59 warnings
+    Info: Peak virtual memory: 4457 megabytes
+    Info: Processing ended: Sat Oct 10 19:29:08 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
 
 
