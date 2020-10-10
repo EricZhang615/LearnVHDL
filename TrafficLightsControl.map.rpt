@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TrafficLightsControl
-Sat Oct 10 01:43:21 2020
+Sat Oct 10 14:15:01 2020
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -42,13 +42,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat Oct 10 01:43:21 2020    ;
+; Analysis & Synthesis Status ; Successful - Sat Oct 10 14:15:01 2020    ;
 ; Quartus II 64-Bit Version   ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name               ; TrafficLightsControl                     ;
 ; Top-level Entity Name       ; TrafficLightsControl                     ;
 ; Family                      ; MAX II                                   ;
-; Total logic elements        ; 35                                       ;
-; Total pins                  ; 11                                       ;
+; Total logic elements        ; 69                                       ;
+; Total pins                  ; 32                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
 +-----------------------------+------------------------------------------+
@@ -146,42 +146,43 @@ applicable agreement for further details.
 ; MainComp.vhd                     ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/MainComp.vhd      ;
 ; crossover1000.vhd                ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/crossover1000.vhd ;
 ; counter.vhd                      ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/counter.vhd       ;
+; dotdisp.vhd                      ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/dotdisp.vhd       ;
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Total logic elements                        ; 35    ;
-;     -- Combinational with no register       ; 19    ;
-;     -- Register only                        ; 3     ;
-;     -- Combinational with a register        ; 13    ;
-;                                             ;       ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 14    ;
-;     -- 3 input functions                    ; 2     ;
-;     -- 2 input functions                    ; 13    ;
-;     -- 1 input functions                    ; 2     ;
-;     -- 0 input functions                    ; 1     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 22    ;
-;     -- arithmetic mode                      ; 13    ;
-;     -- qfbk mode                            ; 0     ;
-;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 6     ;
-;     -- asynchronous clear/load mode         ; 16    ;
-;                                             ;       ;
-; Total registers                             ; 16    ;
-; Total logic cells in carry chains           ; 15    ;
-; I/O pins                                    ; 11    ;
-; Maximum fan-out node                        ; rst   ;
-; Maximum fan-out                             ; 16    ;
-; Total fan-out                               ; 144   ;
-; Average fan-out                             ; 3.13  ;
-+---------------------------------------------+-------+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                 ;
++---------------------------------------------+-------------------------------+
+; Resource                                    ; Usage                         ;
++---------------------------------------------+-------------------------------+
+; Total logic elements                        ; 69                            ;
+;     -- Combinational with no register       ; 50                            ;
+;     -- Register only                        ; 4                             ;
+;     -- Combinational with a register        ; 15                            ;
+;                                             ;                               ;
+; Logic element usage by number of LUT inputs ;                               ;
+;     -- 4 input functions                    ; 30                            ;
+;     -- 3 input functions                    ; 12                            ;
+;     -- 2 input functions                    ; 19                            ;
+;     -- 1 input functions                    ; 3                             ;
+;     -- 0 input functions                    ; 1                             ;
+;                                             ;                               ;
+; Logic elements by mode                      ;                               ;
+;     -- normal mode                          ; 56                            ;
+;     -- arithmetic mode                      ; 13                            ;
+;     -- qfbk mode                            ; 0                             ;
+;     -- register cascade mode                ; 0                             ;
+;     -- synchronous clear/load mode          ; 6                             ;
+;     -- asynchronous clear/load mode         ; 16                            ;
+;                                             ;                               ;
+; Total registers                             ; 19                            ;
+; Total logic cells in carry chains           ; 15                            ;
+; I/O pins                                    ; 32                            ;
+; Maximum fan-out node                        ; dotdisp:dot_array|scan_cnt[2] ;
+; Maximum fan-out                             ; 21                            ;
+; Total fan-out                               ; 272                           ;
+; Average fan-out                             ; 2.69                          ;
++---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -189,9 +190,10 @@ applicable agreement for further details.
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
 ; Compilation Hierarchy Node   ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                           ; Library Name ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
-; |TrafficLightsControl        ; 35 (1)      ; 16           ; 0          ; 11   ; 0            ; 19 (1)       ; 3 (0)             ; 13 (0)           ; 15 (0)          ; 0 (0)      ; |TrafficLightsControl                         ; work         ;
-;    |counter:maincounter|     ; 13 (13)     ; 6            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 6 (6)            ; 6 (6)           ; 0 (0)      ; |TrafficLightsControl|counter:maincounter     ; work         ;
+; |TrafficLightsControl        ; 69 (1)      ; 19           ; 0          ; 32   ; 0            ; 50 (1)       ; 4 (0)             ; 15 (0)           ; 15 (0)          ; 0 (0)      ; |TrafficLightsControl                         ; work         ;
+;    |counter:maincounter|     ; 17 (17)     ; 6            ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 6 (6)            ; 6 (6)           ; 0 (0)      ; |TrafficLightsControl|counter:maincounter     ; work         ;
 ;    |crossover1000:crossover| ; 21 (21)     ; 10           ; 0          ; 0    ; 0            ; 11 (11)      ; 3 (3)             ; 7 (7)            ; 9 (9)           ; 0 (0)      ; |TrafficLightsControl|crossover1000:crossover ; work         ;
+;    |dotdisp:dot_array|       ; 30 (30)     ; 3            ; 0          ; 0    ; 0            ; 27 (27)      ; 1 (1)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|dotdisp:dot_array       ; work         ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -201,7 +203,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 16    ;
+; Total registers                              ; 19    ;
 ; Number of registers using Synchronous Clear  ; 6     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 10    ;
@@ -226,7 +228,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TrafficLightsControl|counter:maincounter|TrafficState[0] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux27             ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TrafficLightsControl|counter:maincounter|TrafficState[2] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux0              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux16             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux15             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux22             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux20             ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux25             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 
 
@@ -236,7 +245,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Sat Oct 10 01:43:20 2020
+    Info: Processing started: Sat Oct 10 14:15:00 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TrafficLightsControl -c TrafficLightsControl
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 2 design units, including 1 entities, in source file maincomp.vhd
@@ -248,17 +257,73 @@ Info: Found 2 design units, including 1 entities, in source file crossover1000.v
 Info: Found 2 design units, including 1 entities, in source file counter.vhd
     Info: Found design unit 1: counter-counter_arch
     Info: Found entity 1: counter
+Info: Found 2 design units, including 1 entities, in source file dotdisp.vhd
+    Info: Found design unit 1: dotdisp-dotdisp_arch
+    Info: Found entity 1: dotdisp
 Info: Elaborating entity "TrafficLightsControl" for the top level hierarchy
 Info: Elaborating entity "crossover1000" for hierarchy "crossover1000:crossover"
 Info: Elaborating entity "counter" for hierarchy "counter:maincounter"
+Info: Elaborating entity "dotdisp" for hierarchy "dotdisp:dot_array"
+Warning (10631): VHDL Process Statement warning at dotdisp.vhd(31): inferring latch(es) for signal or variable "row", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at dotdisp.vhd(31): inferring latch(es) for signal or variable "col_r", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at dotdisp.vhd(31): inferring latch(es) for signal or variable "col_g", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "col_g[0]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_g[1]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_g[2]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_g[3]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_g[4]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_g[5]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_g[6]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_g[7]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_r[0]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_r[1]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_r[2]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_r[3]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_r[4]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_r[5]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_r[6]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "col_r[7]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "row[0]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "row[1]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "row[2]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "row[3]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "row[4]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "row[5]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "row[6]" at dotdisp.vhd(31)
+Info (10041): Inferred latch for "row[7]" at dotdisp.vhd(31)
+Warning: LATCH primitive "dotdisp:dot_array|row[0]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|row[1]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|row[2]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|row[3]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|row[4]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|row[5]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|row[6]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|row[7]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|col_r[0]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|col_r[1]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|col_r[2]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|col_r[5]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|col_r[6]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|col_r[7]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|col_g[0]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|col_g[1]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|col_g[2]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|col_g[5]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|col_g[6]" is permanently enabled
+Warning: LATCH primitive "dotdisp:dot_array|col_g[7]" is permanently enabled
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "col_r[3]" is stuck at GND
+    Warning (13410): Pin "col_r[4]" is stuck at GND
+    Warning (13410): Pin "col_g[3]" is stuck at GND
+    Warning (13410): Pin "col_g[4]" is stuck at GND
 Info: Registers with preset signals will power-up high
-Info: Implemented 46 device resources after synthesis - the final resource count might be different
+Info: Implemented 101 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 9 output pins
-    Info: Implemented 35 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4455 megabytes
-    Info: Processing ended: Sat Oct 10 01:43:21 2020
+    Info: Implemented 30 output pins
+    Info: Implemented 69 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 4456 megabytes
+    Info: Processing ended: Sat Oct 10 14:15:01 2020
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:02
 

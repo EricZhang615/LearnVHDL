@@ -53,39 +53,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-TrafficLightsControl
-# storage
-db|TrafficLightsControl.(0).cnf
-db|TrafficLightsControl.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-maincomp.vhd
-48845d1c8515e118e8cb8ea5c2c8afd
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-|
-}
-# lmf
-|altera|91|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 counter
 # storage
 db|TrafficLightsControl.(2).cnf
@@ -121,6 +88,90 @@ USR
 }
 # hierarchies {
 counter:maincounter
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+TrafficLightsControl
+# storage
+db|TrafficLightsControl.(0).cnf
+db|TrafficLightsControl.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+maincomp.vhd
+66d1346a10c2e9a452d62decfe4e329
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+dotdisp
+# storage
+db|TrafficLightsControl.(3).cnf
+db|TrafficLightsControl.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+dotdisp.vhd
+958fcbc165ede21723e5cf409f0e75a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(trafficstate)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(row)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(col_r)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(col_g)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+dotdisp:dot_array
 }
 # lmf
 |altera|91|quartus|lmf|maxplus2.lmf

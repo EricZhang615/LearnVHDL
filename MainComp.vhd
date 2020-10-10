@@ -9,7 +9,7 @@ entity TrafficLightsControl is
   rst: in STD_LOGIC;
   row: out STD_LOGIC_VECTOR(7 downto 0);
   col_r: out STD_LOGIC_VECTOR(7 downto 0);	--output signal for selecting columns of red lights
-  col_g: out STD_LOGIC_VECTOR(7 downto 0)		--output signal for selecting columns of green lights
+  col_g: out STD_LOGIC_VECTOR(7 downto 0);		--output signal for selecting columns of green lights
   CS: out STD_LOGIC_VECTOR(5 downto 0)
   );
 end TrafficLightsControl;
