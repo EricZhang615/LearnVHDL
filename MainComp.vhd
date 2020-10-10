@@ -62,7 +62,15 @@ architecture TrafficLightsControl_arch of TrafficLightsControl is
     );
   end component;
 
+  component Stabilizer
+    port(
+    clk: in STD_LOGIC;
+    InputButton: in STD_LOGIC;
+    OutputButton: out STD_LOGIC
+    );
+  end component;
 
+  signal rst_stb: STD_LOGIC;
   signal clk_1s: STD_LOGIC;
   signal ts: STD_LOGIC_VECTOR(2 downto 0);
   signal cs: STD_LOGIC_VECTOR(5 downto 0);
@@ -73,8 +81,9 @@ architecture TrafficLightsControl_arch of TrafficLightsControl is
 
 
 begin
-  crossover:crossover1000 port map(clk=>clk,rst=>rst,clkout=>clk_1s);
-  maincounter:counter port map(clk=>clk_1s,rst=>rst,TrafficState=>ts,CountSec=>cs);
+  stab:Stabilizer port map(clk=>clk,InputButton=>rst,OutputButton=>rst_stb);
+  crossover:crossover1000 port map(clk=>clk,rst=>rst_stb,clkout=>clk_1s);
+  maincounter:counter port map(clk=>clk_1s,rst=>rst_stb,TrafficState=>ts,CountSec=>cs);
   DTC:DigitalTubeCounter port map(CountSec=>cs,TubeCode7Out=>TubeCode7,TubeCode6Out=>TubeCode6,TubeCode1Out=>TubeCode1,TubeCode0Out=>TubeCode0);
   DT7:DigitalTube port map(TubeCodeIn=>TubeCode7,TubeDispOut=>TubeDisp7Out);
   DT6:DigitalTube port map(TubeCodeIn=>TubeCode6,TubeDispOut=>TubeDisp6Out);
