@@ -1,5 +1,5 @@
 Simulator report for TrafficLightsControl
-Sat Oct 10 14:18:26 2020
+Tue Oct 13 19:20:17 2020
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+---------------+
 ; Simulation Start Time       ; 0 ps          ;
 ; Simulation End Time         ; 45.0 s        ;
-; Simulation Netlist Size     ; 99 nodes      ;
-; Simulation Coverage         ;      89.74 %  ;
-; Total Number of Transitions ; 1606141       ;
+; Simulation Netlist Size     ; 222 nodes     ;
+; Simulation Coverage         ;      91.90 %  ;
+; Total Number of Transitions ; 3053102       ;
 ; Simulation Breakpoints      ; 0             ;
 ; Family                      ; MAX II        ;
 ; Device                      ; EPM1270T144C5 ;
@@ -94,167 +94,305 @@ Please use Quartus II 64-Bit to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      89.74 % ;
-; Total nodes checked                                 ; 99           ;
-; Total output ports checked                          ; 117          ;
-; Total output ports with complete 1/0-value coverage ; 105          ;
-; Total output ports with no 1/0-value coverage       ; 9            ;
-; Total output ports with no 1-value coverage         ; 10           ;
-; Total output ports with no 0-value coverage         ; 11           ;
+; Total coverage as a percentage                      ;      91.90 % ;
+; Total nodes checked                                 ; 222          ;
+; Total output ports checked                          ; 247          ;
+; Total output ports with complete 1/0-value coverage ; 227          ;
+; Total output ports with no 1/0-value coverage       ; 17           ;
+; Total output ports with no 1-value coverage         ; 17           ;
+; Total output ports with no 0-value coverage         ; 20           ;
 +-----------------------------------------------------+--------------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Complete 1/0-Value Coverage                                                                                                                     ;
-+-------------------------------------------------------------+----------------------------------------------------------------+------------------+
-; Node Name                                                   ; Output Port Name                                               ; Output Port Type ;
-+-------------------------------------------------------------+----------------------------------------------------------------+------------------+
-; |TrafficLightsControl|dotdisp:dot_array|Mux3~0              ; |TrafficLightsControl|dotdisp:dot_array|Mux3~0                 ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux3~1              ; |TrafficLightsControl|dotdisp:dot_array|Mux3~1                 ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux3~2              ; |TrafficLightsControl|dotdisp:dot_array|Mux3~2                 ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux3~3              ; |TrafficLightsControl|dotdisp:dot_array|Mux3~3                 ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux3~4              ; |TrafficLightsControl|dotdisp:dot_array|Mux3~4                 ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux3~5              ; |TrafficLightsControl|dotdisp:dot_array|Mux3~5                 ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux3~6              ; |TrafficLightsControl|dotdisp:dot_array|Mux3~6                 ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux3~7              ; |TrafficLightsControl|dotdisp:dot_array|Mux3~7                 ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|scan_cnt[1]         ; |TrafficLightsControl|dotdisp:dot_array|Mux1~0                 ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|scan_cnt[1]         ; |TrafficLightsControl|dotdisp:dot_array|scan_cnt[1]            ; regout           ;
-; |TrafficLightsControl|counter:maincounter|cnt_tmp[2]        ; |TrafficLightsControl|counter:maincounter|cnt_tmp[2]~1         ; cout0            ;
-; |TrafficLightsControl|counter:maincounter|cnt_tmp[2]        ; |TrafficLightsControl|counter:maincounter|cnt_tmp[2]~1COUT1_22 ; cout1            ;
-; |TrafficLightsControl|counter:maincounter|cnt_tmp[0]        ; |TrafficLightsControl|counter:maincounter|cnt_tmp[0]~3         ; cout0            ;
-; |TrafficLightsControl|counter:maincounter|cnt_tmp[0]        ; |TrafficLightsControl|counter:maincounter|cnt_tmp[0]~3COUT1_18 ; cout1            ;
-; |TrafficLightsControl|counter:maincounter|cnt_tmp[1]        ; |TrafficLightsControl|counter:maincounter|cnt_tmp[1]~5         ; cout0            ;
-; |TrafficLightsControl|counter:maincounter|cnt_tmp[1]        ; |TrafficLightsControl|counter:maincounter|cnt_tmp[1]~5COUT1_20 ; cout1            ;
-; |TrafficLightsControl|counter:maincounter|cnt_tmp[3]        ; |TrafficLightsControl|counter:maincounter|cnt_tmp[3]~7         ; cout             ;
-; |TrafficLightsControl|counter:maincounter|LessThan3~0       ; |TrafficLightsControl|counter:maincounter|LessThan3~0          ; combout          ;
-; |TrafficLightsControl|counter:maincounter|TrafficState[2]~0 ; |TrafficLightsControl|counter:maincounter|TrafficState[2]~0    ; combout          ;
-; |TrafficLightsControl|counter:maincounter|TrafficState[0]~1 ; |TrafficLightsControl|counter:maincounter|TrafficState[0]~1    ; combout          ;
-; |TrafficLightsControl|counter:maincounter|TrafficState[0]~3 ; |TrafficLightsControl|counter:maincounter|TrafficState[0]~3    ; combout          ;
-; |TrafficLightsControl|counter:maincounter|TrafficState[1]~4 ; |TrafficLightsControl|counter:maincounter|TrafficState[1]~4    ; combout          ;
-; |TrafficLightsControl|counter:maincounter|TrafficState[0]~5 ; |TrafficLightsControl|counter:maincounter|TrafficState[0]~5    ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux25~0             ; |TrafficLightsControl|dotdisp:dot_array|Mux25~0                ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux20~0             ; |TrafficLightsControl|dotdisp:dot_array|Mux20~0                ; combout          ;
-; |TrafficLightsControl|counter:maincounter|TrafficState[1]~6 ; |TrafficLightsControl|counter:maincounter|TrafficState[1]~6    ; combout          ;
-; |TrafficLightsControl|counter:maincounter|TrafficState[2]~7 ; |TrafficLightsControl|counter:maincounter|TrafficState[2]~7    ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux21~0             ; |TrafficLightsControl|dotdisp:dot_array|Mux21~0                ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux21~1             ; |TrafficLightsControl|dotdisp:dot_array|Mux21~1                ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux3~8              ; |TrafficLightsControl|dotdisp:dot_array|Mux3~8                 ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux22~0             ; |TrafficLightsControl|dotdisp:dot_array|Mux22~0                ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux3~9              ; |TrafficLightsControl|dotdisp:dot_array|Mux3~9                 ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux24~0             ; |TrafficLightsControl|dotdisp:dot_array|Mux24~0                ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux25~1             ; |TrafficLightsControl|dotdisp:dot_array|Mux25~1                ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux25~2             ; |TrafficLightsControl|dotdisp:dot_array|Mux25~2                ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux26~2             ; |TrafficLightsControl|dotdisp:dot_array|Mux26~2                ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux0~0              ; |TrafficLightsControl|dotdisp:dot_array|Mux0~0                 ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux15~0             ; |TrafficLightsControl|dotdisp:dot_array|Mux15~0                ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux15~1             ; |TrafficLightsControl|dotdisp:dot_array|Mux15~1                ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux18~0             ; |TrafficLightsControl|dotdisp:dot_array|Mux18~0                ; combout          ;
-; |TrafficLightsControl|crossover1000:crossover|clk_tmp       ; |TrafficLightsControl|crossover1000:crossover|clk_tmp          ; regout           ;
-; |TrafficLightsControl|counter:maincounter|P1~0              ; |TrafficLightsControl|counter:maincounter|P1~0                 ; combout          ;
-; |TrafficLightsControl|counter:maincounter|P1~1              ; |TrafficLightsControl|counter:maincounter|P1~1                 ; combout          ;
-; |TrafficLightsControl|crossover1000:crossover|c[8]          ; |TrafficLightsControl|crossover1000:crossover|c[8]             ; regout           ;
-; |TrafficLightsControl|crossover1000:crossover|c[7]          ; |TrafficLightsControl|crossover1000:crossover|c[7]             ; regout           ;
-; |TrafficLightsControl|crossover1000:crossover|c[6]          ; |TrafficLightsControl|crossover1000:crossover|c[6]             ; regout           ;
-; |TrafficLightsControl|crossover1000:crossover|c[5]          ; |TrafficLightsControl|crossover1000:crossover|c[5]             ; regout           ;
-; |TrafficLightsControl|crossover1000:crossover|Equal0~0      ; |TrafficLightsControl|crossover1000:crossover|Equal0~0         ; combout          ;
-; |TrafficLightsControl|crossover1000:crossover|c[0]          ; |TrafficLightsControl|crossover1000:crossover|c[0]             ; regout           ;
-; |TrafficLightsControl|crossover1000:crossover|c[4]          ; |TrafficLightsControl|crossover1000:crossover|c[4]             ; regout           ;
-; |TrafficLightsControl|crossover1000:crossover|c[3]          ; |TrafficLightsControl|crossover1000:crossover|c[3]             ; regout           ;
-; |TrafficLightsControl|crossover1000:crossover|c[2]          ; |TrafficLightsControl|crossover1000:crossover|c[2]             ; regout           ;
-; |TrafficLightsControl|crossover1000:crossover|c[1]          ; |TrafficLightsControl|crossover1000:crossover|Equal0~1         ; combout          ;
-; |TrafficLightsControl|crossover1000:crossover|c[1]          ; |TrafficLightsControl|crossover1000:crossover|c[1]             ; regout           ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~0        ; |TrafficLightsControl|crossover1000:crossover|Add0~0           ; combout          ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~5        ; |TrafficLightsControl|crossover1000:crossover|Add0~5           ; combout          ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~5        ; |TrafficLightsControl|crossover1000:crossover|Add0~7COUT1_66   ; cout1            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~10       ; |TrafficLightsControl|crossover1000:crossover|Add0~10          ; combout          ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~10       ; |TrafficLightsControl|crossover1000:crossover|Add0~12COUT1_64  ; cout1            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~15       ; |TrafficLightsControl|crossover1000:crossover|Add0~15          ; combout          ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~15       ; |TrafficLightsControl|crossover1000:crossover|Add0~17COUT1_62  ; cout1            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~20       ; |TrafficLightsControl|crossover1000:crossover|Add0~20          ; combout          ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~20       ; |TrafficLightsControl|crossover1000:crossover|Add0~22          ; cout0            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~20       ; |TrafficLightsControl|crossover1000:crossover|Add0~22COUT1_54  ; cout1            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~25       ; |TrafficLightsControl|crossover1000:crossover|Add0~25          ; combout          ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~25       ; |TrafficLightsControl|crossover1000:crossover|Add0~27          ; cout             ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~30       ; |TrafficLightsControl|crossover1000:crossover|Add0~30          ; combout          ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~30       ; |TrafficLightsControl|crossover1000:crossover|Add0~32          ; cout0            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~30       ; |TrafficLightsControl|crossover1000:crossover|Add0~32COUT1_56  ; cout1            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~35       ; |TrafficLightsControl|crossover1000:crossover|Add0~35          ; combout          ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~35       ; |TrafficLightsControl|crossover1000:crossover|Add0~37          ; cout0            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~35       ; |TrafficLightsControl|crossover1000:crossover|Add0~37COUT1_60  ; cout1            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~40       ; |TrafficLightsControl|crossover1000:crossover|Add0~40          ; combout          ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~40       ; |TrafficLightsControl|crossover1000:crossover|Add0~42          ; cout0            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~40       ; |TrafficLightsControl|crossover1000:crossover|Add0~42COUT1_58  ; cout1            ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux26~3             ; |TrafficLightsControl|dotdisp:dot_array|Mux26~3                ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux17~2             ; |TrafficLightsControl|dotdisp:dot_array|Mux17~2                ; combout          ;
-; |TrafficLightsControl|dotdisp:dot_array|Mux19~2             ; |TrafficLightsControl|dotdisp:dot_array|Mux19~2                ; combout          ;
-; |TrafficLightsControl|clk                                   ; |TrafficLightsControl|clk~corein                               ; combout          ;
-; |TrafficLightsControl|rst                                   ; |TrafficLightsControl|rst~corein                               ; combout          ;
-; |TrafficLightsControl|row[0]                                ; |TrafficLightsControl|row[0]                                   ; padio            ;
-; |TrafficLightsControl|row[1]                                ; |TrafficLightsControl|row[1]                                   ; padio            ;
-; |TrafficLightsControl|row[2]                                ; |TrafficLightsControl|row[2]                                   ; padio            ;
-; |TrafficLightsControl|row[3]                                ; |TrafficLightsControl|row[3]                                   ; padio            ;
-; |TrafficLightsControl|row[4]                                ; |TrafficLightsControl|row[4]                                   ; padio            ;
-; |TrafficLightsControl|row[5]                                ; |TrafficLightsControl|row[5]                                   ; padio            ;
-; |TrafficLightsControl|row[6]                                ; |TrafficLightsControl|row[6]                                   ; padio            ;
-; |TrafficLightsControl|row[7]                                ; |TrafficLightsControl|row[7]                                   ; padio            ;
-; |TrafficLightsControl|col_r[0]                              ; |TrafficLightsControl|col_r[0]                                 ; padio            ;
-; |TrafficLightsControl|col_r[1]                              ; |TrafficLightsControl|col_r[1]                                 ; padio            ;
-; |TrafficLightsControl|col_r[2]                              ; |TrafficLightsControl|col_r[2]                                 ; padio            ;
-; |TrafficLightsControl|col_r[5]                              ; |TrafficLightsControl|col_r[5]                                 ; padio            ;
-; |TrafficLightsControl|col_r[6]                              ; |TrafficLightsControl|col_r[6]                                 ; padio            ;
-; |TrafficLightsControl|col_r[7]                              ; |TrafficLightsControl|col_r[7]                                 ; padio            ;
-; |TrafficLightsControl|col_g[0]                              ; |TrafficLightsControl|col_g[0]                                 ; padio            ;
-; |TrafficLightsControl|col_g[1]                              ; |TrafficLightsControl|col_g[1]                                 ; padio            ;
-; |TrafficLightsControl|col_g[2]                              ; |TrafficLightsControl|col_g[2]                                 ; padio            ;
-; |TrafficLightsControl|col_g[5]                              ; |TrafficLightsControl|col_g[5]                                 ; padio            ;
-; |TrafficLightsControl|col_g[6]                              ; |TrafficLightsControl|col_g[6]                                 ; padio            ;
-; |TrafficLightsControl|col_g[7]                              ; |TrafficLightsControl|col_g[7]                                 ; padio            ;
-; |TrafficLightsControl|CS[0]                                 ; |TrafficLightsControl|CS[0]                                    ; padio            ;
-; |TrafficLightsControl|CS[1]                                 ; |TrafficLightsControl|CS[1]                                    ; padio            ;
-; |TrafficLightsControl|CS[2]                                 ; |TrafficLightsControl|CS[2]                                    ; padio            ;
-; |TrafficLightsControl|CS[3]                                 ; |TrafficLightsControl|CS[3]                                    ; padio            ;
-; |TrafficLightsControl|CS[5]                                 ; |TrafficLightsControl|CS[5]                                    ; padio            ;
-+-------------------------------------------------------------+----------------------------------------------------------------+------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                      ;
++--------------------------------------------------------------+----------------------------------------------------------------+------------------+
+; Node Name                                                    ; Output Port Name                                               ; Output Port Type ;
++--------------------------------------------------------------+----------------------------------------------------------------+------------------+
+; |TrafficLightsControl|dotdisp:dot_array|Mux3~0               ; |TrafficLightsControl|dotdisp:dot_array|Mux3~0                 ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux3~1               ; |TrafficLightsControl|dotdisp:dot_array|Mux3~1                 ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux3~2               ; |TrafficLightsControl|dotdisp:dot_array|Mux3~2                 ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux3~3               ; |TrafficLightsControl|dotdisp:dot_array|Mux3~3                 ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux3~4               ; |TrafficLightsControl|dotdisp:dot_array|Mux3~4                 ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux3~5               ; |TrafficLightsControl|dotdisp:dot_array|Mux3~5                 ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux3~6               ; |TrafficLightsControl|dotdisp:dot_array|Mux3~6                 ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux3~7               ; |TrafficLightsControl|dotdisp:dot_array|Mux3~7                 ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux20~0              ; |TrafficLightsControl|dotdisp:dot_array|Mux20~0                ; combout          ;
+; |TrafficLightsControl|counter:maincounter|cnt_tmp[2]         ; |TrafficLightsControl|counter:maincounter|cnt_tmp[2]~3         ; cout0            ;
+; |TrafficLightsControl|counter:maincounter|cnt_tmp[2]         ; |TrafficLightsControl|counter:maincounter|cnt_tmp[2]~3COUT1_22 ; cout1            ;
+; |TrafficLightsControl|counter:maincounter|cnt_tmp[3]         ; |TrafficLightsControl|counter:maincounter|cnt_tmp[3]~5         ; cout             ;
+; |TrafficLightsControl|counter:maincounter|cnt_tmp[0]         ; |TrafficLightsControl|counter:maincounter|cnt_tmp[0]~7         ; cout0            ;
+; |TrafficLightsControl|counter:maincounter|cnt_tmp[0]         ; |TrafficLightsControl|counter:maincounter|cnt_tmp[0]~7COUT1_18 ; cout1            ;
+; |TrafficLightsControl|counter:maincounter|cnt_tmp[1]         ; |TrafficLightsControl|counter:maincounter|cnt_tmp[1]~9         ; cout0            ;
+; |TrafficLightsControl|counter:maincounter|cnt_tmp[1]         ; |TrafficLightsControl|counter:maincounter|cnt_tmp[1]~9COUT1_20 ; cout1            ;
+; |TrafficLightsControl|counter:maincounter|TrafficState[2]~0  ; |TrafficLightsControl|counter:maincounter|TrafficState[2]~0    ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux3~0          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux3~0            ; combout          ;
+; |TrafficLightsControl|counter:maincounter|TrafficState[0]~1  ; |TrafficLightsControl|counter:maincounter|TrafficState[0]~1    ; combout          ;
+; |TrafficLightsControl|counter:maincounter|TrafficState[0]~2  ; |TrafficLightsControl|counter:maincounter|TrafficState[0]~2    ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux20~1              ; |TrafficLightsControl|dotdisp:dot_array|Mux20~1                ; combout          ;
+; |TrafficLightsControl|counter:maincounter|TrafficState[2]~4  ; |TrafficLightsControl|counter:maincounter|TrafficState[2]~4    ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux21~0              ; |TrafficLightsControl|dotdisp:dot_array|Mux21~0                ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux21~1              ; |TrafficLightsControl|dotdisp:dot_array|Mux21~1                ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux21~2              ; |TrafficLightsControl|dotdisp:dot_array|Mux21~2                ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux22~0              ; |TrafficLightsControl|dotdisp:dot_array|Mux22~0                ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux3~8               ; |TrafficLightsControl|dotdisp:dot_array|Mux3~8                 ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux25~0              ; |TrafficLightsControl|dotdisp:dot_array|Mux25~0                ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux25~1              ; |TrafficLightsControl|dotdisp:dot_array|Mux25~1                ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux26~0              ; |TrafficLightsControl|dotdisp:dot_array|Mux26~0                ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux26~1              ; |TrafficLightsControl|dotdisp:dot_array|Mux26~1                ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux0~0               ; |TrafficLightsControl|dotdisp:dot_array|Mux0~0                 ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux15~0              ; |TrafficLightsControl|dotdisp:dot_array|Mux15~0                ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux15~1              ; |TrafficLightsControl|dotdisp:dot_array|Mux15~1                ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux18~0              ; |TrafficLightsControl|dotdisp:dot_array|Mux18~0                ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux19~0              ; |TrafficLightsControl|dotdisp:dot_array|Mux19~0                ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT6|Mux6~0                 ; |TrafficLightsControl|DigitalTube:DT6|Mux6~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux10~0        ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux10~0          ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT0|Mux6~0                 ; |TrafficLightsControl|DigitalTube:DT0|Mux6~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux10~1        ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux10~1          ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux9~0         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux9~0           ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT6|Mux5~0                 ; |TrafficLightsControl|DigitalTube:DT6|Mux5~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT0|Mux5~0                 ; |TrafficLightsControl|DigitalTube:DT0|Mux5~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux9~1         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux9~1           ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux9~2         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux9~2           ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT6|Mux4~0                 ; |TrafficLightsControl|DigitalTube:DT6|Mux4~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux8~0         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux8~0           ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT0|Mux4~0                 ; |TrafficLightsControl|DigitalTube:DT0|Mux4~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux8~1         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux8~1           ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT1|Mux3~0                 ; |TrafficLightsControl|DigitalTube:DT1|Mux3~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT6|Mux3~0                 ; |TrafficLightsControl|DigitalTube:DT6|Mux3~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT7|Mux3~0                 ; |TrafficLightsControl|DigitalTube:DT7|Mux3~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux7~0         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux7~0           ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT0|Mux3~0                 ; |TrafficLightsControl|DigitalTube:DT0|Mux3~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux7~1         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux7~1           ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux6~0         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux6~0           ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT6|Mux2~0                 ; |TrafficLightsControl|DigitalTube:DT6|Mux2~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT0|Mux2~0                 ; |TrafficLightsControl|DigitalTube:DT0|Mux2~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux6~1         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux6~1           ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux6~2         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux6~2           ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT6|Mux1~0                 ; |TrafficLightsControl|DigitalTube:DT6|Mux1~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT0|Mux1~0                 ; |TrafficLightsControl|DigitalTube:DT0|Mux1~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux5~0         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux5~0           ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT6|Mux0~0                 ; |TrafficLightsControl|DigitalTube:DT6|Mux0~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux4~0         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux4~0           ; combout          ;
+; |TrafficLightsControl|DigitalTube:DT0|Mux0~0                 ; |TrafficLightsControl|DigitalTube:DT0|Mux0~0                   ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux4~1         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux4~1           ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Add0~0               ; |TrafficLightsControl|dotdisp:dot_array|Add0~0                 ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux2~0         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux2~0           ; combout          ;
+; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux1~0         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux1~0           ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux3~9               ; |TrafficLightsControl|dotdisp:dot_array|Mux3~9                 ; combout          ;
+; |TrafficLightsControl|Beep:BP|BeepSig~0                      ; |TrafficLightsControl|Beep:BP|BeepSig~0                        ; combout          ;
+; |TrafficLightsControl|Beep:BP|BeepSig~1                      ; |TrafficLightsControl|Beep:BP|BeepSig~1                        ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|clk_tmp        ; |TrafficLightsControl|crossover1000:crossover|clk_tmp          ; regout           ;
+; |TrafficLightsControl|Stabilizer:stab|tmp1                   ; |TrafficLightsControl|Stabilizer:stab|tmp1                     ; regout           ;
+; |TrafficLightsControl|Stabilizer:stab|tmp2                   ; |TrafficLightsControl|Stabilizer:stab|OutputButton~0           ; combout          ;
+; |TrafficLightsControl|counter:maincounter|P1~0               ; |TrafficLightsControl|counter:maincounter|P1~0                 ; combout          ;
+; |TrafficLightsControl|counter:maincounter|P1~1               ; |TrafficLightsControl|counter:maincounter|P1~1                 ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux5~0          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux5~0            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux5~1          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux5~1            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux14~0         ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux14~0           ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux6~0          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux6~0            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux6~1          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux6~1            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux6~2          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux6~2            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux7~0          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux7~0            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux7~1          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux7~1            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux7~2          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux7~2            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux7~3          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux7~3            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux7~4          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux7~4            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux8~0          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux8~0            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux8~1          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux8~1            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux8~2          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux8~2            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux8~3          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux8~3            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux8~4          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux8~4            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux11~0         ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux11~0           ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux9~0          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux9~0            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux9~1          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux9~1            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux9~2          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux9~2            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux11~1         ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux11~1           ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux0~0          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux0~0            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux0~1          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux0~1            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux0~2          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux0~2            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux1~0          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux1~0            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux1~1          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux1~1            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux2~0          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux2~0            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux2~1          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux2~1            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux2~2          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux2~2            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux2~3          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux2~3            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux2~4          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux2~4            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux3~1          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux3~1            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux3~2          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux3~2            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux3~3          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux3~3            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux4~0          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux4~0            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux4~1          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux4~1            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux4~2          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux4~2            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux10~0         ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux10~0           ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux10~1         ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux10~1           ; combout          ;
+; |TrafficLightsControl|Beep:BP|\P2:c3[7]                      ; |TrafficLightsControl|Beep:BP|\P2:c3[7]                        ; regout           ;
+; |TrafficLightsControl|Beep:BP|\P2:c3[6]                      ; |TrafficLightsControl|Beep:BP|\P2:c3[6]                        ; regout           ;
+; |TrafficLightsControl|Beep:BP|\P2:c3[5]                      ; |TrafficLightsControl|Beep:BP|\P2:c3[5]                        ; regout           ;
+; |TrafficLightsControl|Beep:BP|Equal0~0                       ; |TrafficLightsControl|Beep:BP|Equal0~0                         ; combout          ;
+; |TrafficLightsControl|Beep:BP|\P2:c3[4]                      ; |TrafficLightsControl|Beep:BP|\P2:c3[4]                        ; regout           ;
+; |TrafficLightsControl|Beep:BP|\P2:c3[3]                      ; |TrafficLightsControl|Beep:BP|\P2:c3[3]                        ; regout           ;
+; |TrafficLightsControl|Beep:BP|\P2:c3[1]                      ; |TrafficLightsControl|Beep:BP|\P2:c3[1]                        ; regout           ;
+; |TrafficLightsControl|Beep:BP|\P2:c3[2]                      ; |TrafficLightsControl|Beep:BP|Equal0~1                         ; combout          ;
+; |TrafficLightsControl|Beep:BP|\P2:c3[2]                      ; |TrafficLightsControl|Beep:BP|\P2:c3[2]                        ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[8]           ; |TrafficLightsControl|crossover1000:crossover|c[8]             ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[7]           ; |TrafficLightsControl|crossover1000:crossover|c[7]             ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[6]           ; |TrafficLightsControl|crossover1000:crossover|c[6]             ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[5]           ; |TrafficLightsControl|crossover1000:crossover|c[5]             ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|Equal0~0       ; |TrafficLightsControl|crossover1000:crossover|Equal0~0         ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|c[0]           ; |TrafficLightsControl|crossover1000:crossover|c[0]             ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[4]           ; |TrafficLightsControl|crossover1000:crossover|c[4]             ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[3]           ; |TrafficLightsControl|crossover1000:crossover|c[3]             ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[2]           ; |TrafficLightsControl|crossover1000:crossover|c[2]             ; regout           ;
+; |TrafficLightsControl|crossover1000:crossover|c[1]           ; |TrafficLightsControl|crossover1000:crossover|Equal0~1         ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|c[1]           ; |TrafficLightsControl|crossover1000:crossover|c[1]             ; regout           ;
+; |TrafficLightsControl|Stabilizer:stab|\crossover:c[2]        ; |TrafficLightsControl|Stabilizer:stab|\crossover:c[2]          ; regout           ;
+; |TrafficLightsControl|Stabilizer:stab|\crossover:c[0]        ; |TrafficLightsControl|Stabilizer:stab|\crossover:c[0]          ; regout           ;
+; |TrafficLightsControl|Stabilizer:stab|\crossover:c[1]        ; |TrafficLightsControl|Stabilizer:stab|\crossover:c[1]          ; regout           ;
+; |TrafficLightsControl|Beep:BP|Add2~0                         ; |TrafficLightsControl|Beep:BP|Add2~0                           ; combout          ;
+; |TrafficLightsControl|Beep:BP|Add2~5                         ; |TrafficLightsControl|Beep:BP|Add2~5                           ; combout          ;
+; |TrafficLightsControl|Beep:BP|Add2~5                         ; |TrafficLightsControl|Beep:BP|Add2~7                           ; cout0            ;
+; |TrafficLightsControl|Beep:BP|Add2~10                        ; |TrafficLightsControl|Beep:BP|Add2~10                          ; combout          ;
+; |TrafficLightsControl|Beep:BP|Add2~10                        ; |TrafficLightsControl|Beep:BP|Add2~12                          ; cout0            ;
+; |TrafficLightsControl|Beep:BP|Add2~15                        ; |TrafficLightsControl|Beep:BP|Add2~15                          ; combout          ;
+; |TrafficLightsControl|Beep:BP|Add2~15                        ; |TrafficLightsControl|Beep:BP|Add2~17                          ; cout             ;
+; |TrafficLightsControl|Beep:BP|Add2~20                        ; |TrafficLightsControl|Beep:BP|Add2~20                          ; combout          ;
+; |TrafficLightsControl|Beep:BP|Add2~20                        ; |TrafficLightsControl|Beep:BP|Add2~22                          ; cout0            ;
+; |TrafficLightsControl|Beep:BP|Add2~20                        ; |TrafficLightsControl|Beep:BP|Add2~22COUT1_46                  ; cout1            ;
+; |TrafficLightsControl|Beep:BP|Add2~25                        ; |TrafficLightsControl|Beep:BP|Add2~25                          ; combout          ;
+; |TrafficLightsControl|Beep:BP|Add2~25                        ; |TrafficLightsControl|Beep:BP|Add2~27                          ; cout0            ;
+; |TrafficLightsControl|Beep:BP|Add2~25                        ; |TrafficLightsControl|Beep:BP|Add2~27COUT1_44                  ; cout1            ;
+; |TrafficLightsControl|Beep:BP|Add2~30                        ; |TrafficLightsControl|Beep:BP|Add2~30                          ; combout          ;
+; |TrafficLightsControl|Beep:BP|Add2~30                        ; |TrafficLightsControl|Beep:BP|Add2~32                          ; cout0            ;
+; |TrafficLightsControl|Beep:BP|Add2~30                        ; |TrafficLightsControl|Beep:BP|Add2~32COUT1_42                  ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~0         ; |TrafficLightsControl|crossover1000:crossover|Add0~0           ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~5         ; |TrafficLightsControl|crossover1000:crossover|Add0~5           ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~5         ; |TrafficLightsControl|crossover1000:crossover|Add0~7COUT1_66   ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~10        ; |TrafficLightsControl|crossover1000:crossover|Add0~10          ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~10        ; |TrafficLightsControl|crossover1000:crossover|Add0~12COUT1_64  ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~15        ; |TrafficLightsControl|crossover1000:crossover|Add0~15          ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~15        ; |TrafficLightsControl|crossover1000:crossover|Add0~17COUT1_62  ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~20        ; |TrafficLightsControl|crossover1000:crossover|Add0~20          ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~20        ; |TrafficLightsControl|crossover1000:crossover|Add0~22          ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~20        ; |TrafficLightsControl|crossover1000:crossover|Add0~22COUT1_54  ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~25        ; |TrafficLightsControl|crossover1000:crossover|Add0~25          ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~25        ; |TrafficLightsControl|crossover1000:crossover|Add0~27          ; cout             ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~30        ; |TrafficLightsControl|crossover1000:crossover|Add0~30          ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~30        ; |TrafficLightsControl|crossover1000:crossover|Add0~32          ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~30        ; |TrafficLightsControl|crossover1000:crossover|Add0~32COUT1_56  ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~35        ; |TrafficLightsControl|crossover1000:crossover|Add0~35          ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~35        ; |TrafficLightsControl|crossover1000:crossover|Add0~37          ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~35        ; |TrafficLightsControl|crossover1000:crossover|Add0~37COUT1_60  ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~40        ; |TrafficLightsControl|crossover1000:crossover|Add0~40          ; combout          ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~40        ; |TrafficLightsControl|crossover1000:crossover|Add0~42          ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~40        ; |TrafficLightsControl|crossover1000:crossover|Add0~42COUT1_58  ; cout1            ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux24~2              ; |TrafficLightsControl|dotdisp:dot_array|Mux24~2                ; combout          ;
+; |TrafficLightsControl|dotdisp:dot_array|Mux17~2              ; |TrafficLightsControl|dotdisp:dot_array|Mux17~2                ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux1~2          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux1~2            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux1~3          ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux1~3            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode1Out[1] ; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode1Out[1]   ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode6Out[0] ; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode6Out[0]   ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode6Out[1] ; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode6Out[1]   ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode6Out[2] ; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode6Out[2]   ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode6Out[3] ; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode6Out[3]   ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode7Out[1] ; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode7Out[1]   ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode0Out[0] ; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode0Out[0]   ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode0Out[1] ; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode0Out[1]   ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode0Out[2] ; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode0Out[2]   ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode0Out[3] ; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode0Out[3]   ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode1Out[0] ; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode1Out[0]   ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode7Out[0] ; |TrafficLightsControl|DigitalTubeCounter:DTC|TubeCode7Out[0]   ; combout          ;
+; |TrafficLightsControl|clk                                    ; |TrafficLightsControl|clk~corein                               ; combout          ;
+; |TrafficLightsControl|rst                                    ; |TrafficLightsControl|rst~corein                               ; combout          ;
+; |TrafficLightsControl|row[0]                                 ; |TrafficLightsControl|row[0]                                   ; padio            ;
+; |TrafficLightsControl|row[1]                                 ; |TrafficLightsControl|row[1]                                   ; padio            ;
+; |TrafficLightsControl|row[2]                                 ; |TrafficLightsControl|row[2]                                   ; padio            ;
+; |TrafficLightsControl|row[3]                                 ; |TrafficLightsControl|row[3]                                   ; padio            ;
+; |TrafficLightsControl|row[4]                                 ; |TrafficLightsControl|row[4]                                   ; padio            ;
+; |TrafficLightsControl|row[5]                                 ; |TrafficLightsControl|row[5]                                   ; padio            ;
+; |TrafficLightsControl|row[6]                                 ; |TrafficLightsControl|row[6]                                   ; padio            ;
+; |TrafficLightsControl|row[7]                                 ; |TrafficLightsControl|row[7]                                   ; padio            ;
+; |TrafficLightsControl|col_r[0]                               ; |TrafficLightsControl|col_r[0]                                 ; padio            ;
+; |TrafficLightsControl|col_r[1]                               ; |TrafficLightsControl|col_r[1]                                 ; padio            ;
+; |TrafficLightsControl|col_r[2]                               ; |TrafficLightsControl|col_r[2]                                 ; padio            ;
+; |TrafficLightsControl|col_r[5]                               ; |TrafficLightsControl|col_r[5]                                 ; padio            ;
+; |TrafficLightsControl|col_r[6]                               ; |TrafficLightsControl|col_r[6]                                 ; padio            ;
+; |TrafficLightsControl|col_r[7]                               ; |TrafficLightsControl|col_r[7]                                 ; padio            ;
+; |TrafficLightsControl|col_g[0]                               ; |TrafficLightsControl|col_g[0]                                 ; padio            ;
+; |TrafficLightsControl|col_g[1]                               ; |TrafficLightsControl|col_g[1]                                 ; padio            ;
+; |TrafficLightsControl|col_g[2]                               ; |TrafficLightsControl|col_g[2]                                 ; padio            ;
+; |TrafficLightsControl|col_g[5]                               ; |TrafficLightsControl|col_g[5]                                 ; padio            ;
+; |TrafficLightsControl|col_g[6]                               ; |TrafficLightsControl|col_g[6]                                 ; padio            ;
+; |TrafficLightsControl|col_g[7]                               ; |TrafficLightsControl|col_g[7]                                 ; padio            ;
+; |TrafficLightsControl|TubeDispOut[0]                         ; |TrafficLightsControl|TubeDispOut[0]                           ; padio            ;
+; |TrafficLightsControl|TubeDispOut[1]                         ; |TrafficLightsControl|TubeDispOut[1]                           ; padio            ;
+; |TrafficLightsControl|TubeDispOut[2]                         ; |TrafficLightsControl|TubeDispOut[2]                           ; padio            ;
+; |TrafficLightsControl|TubeDispOut[3]                         ; |TrafficLightsControl|TubeDispOut[3]                           ; padio            ;
+; |TrafficLightsControl|TubeDispOut[4]                         ; |TrafficLightsControl|TubeDispOut[4]                           ; padio            ;
+; |TrafficLightsControl|TubeDispOut[5]                         ; |TrafficLightsControl|TubeDispOut[5]                           ; padio            ;
+; |TrafficLightsControl|TubeDispOut[6]                         ; |TrafficLightsControl|TubeDispOut[6]                           ; padio            ;
+; |TrafficLightsControl|TubeDispScan[0]                        ; |TrafficLightsControl|TubeDispScan[0]                          ; padio            ;
+; |TrafficLightsControl|TubeDispScan[1]                        ; |TrafficLightsControl|TubeDispScan[1]                          ; padio            ;
+; |TrafficLightsControl|TubeDispScan[6]                        ; |TrafficLightsControl|TubeDispScan[6]                          ; padio            ;
+; |TrafficLightsControl|TubeDispScan[7]                        ; |TrafficLightsControl|TubeDispScan[7]                          ; padio            ;
+; |TrafficLightsControl|BeepOut                                ; |TrafficLightsControl|BeepOut                                  ; padio            ;
++--------------------------------------------------------------+----------------------------------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Missing 1-Value Coverage                                                                                                                        ;
-+-------------------------------------------------------------+----------------------------------------------------------------+------------------+
-; Node Name                                                   ; Output Port Name                                               ; Output Port Type ;
-+-------------------------------------------------------------+----------------------------------------------------------------+------------------+
-; |TrafficLightsControl|counter:maincounter|cnt_tmp[4]        ; |TrafficLightsControl|counter:maincounter|cnt_tmp[4]~9COUT1_24 ; cout1            ;
-; |TrafficLightsControl|counter:maincounter|TrafficState[0]~2 ; |TrafficLightsControl|counter:maincounter|TrafficState[0]~2    ; combout          ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~5        ; |TrafficLightsControl|crossover1000:crossover|Add0~7           ; cout0            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~10       ; |TrafficLightsControl|crossover1000:crossover|Add0~12          ; cout0            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~15       ; |TrafficLightsControl|crossover1000:crossover|Add0~17          ; cout0            ;
-; |TrafficLightsControl|~GND                                  ; |TrafficLightsControl|~GND                                     ; combout          ;
-; |TrafficLightsControl|col_r[3]                              ; |TrafficLightsControl|col_r[3]                                 ; padio            ;
-; |TrafficLightsControl|col_r[4]                              ; |TrafficLightsControl|col_r[4]                                 ; padio            ;
-; |TrafficLightsControl|col_g[3]                              ; |TrafficLightsControl|col_g[3]                                 ; padio            ;
-; |TrafficLightsControl|col_g[4]                              ; |TrafficLightsControl|col_g[4]                                 ; padio            ;
-+-------------------------------------------------------------+----------------------------------------------------------------+------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                   ;
++-------------------------------------------------------+-----------------------------------------------------------------+------------------+
+; Node Name                                             ; Output Port Name                                                ; Output Port Type ;
++-------------------------------------------------------+-----------------------------------------------------------------+------------------+
+; |TrafficLightsControl|counter:maincounter|cnt_tmp[4]  ; |TrafficLightsControl|counter:maincounter|cnt_tmp[4]~11COUT1_24 ; cout1            ;
+; |TrafficLightsControl|counter:maincounter|LessThan3~0 ; |TrafficLightsControl|counter:maincounter|LessThan3~0           ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux14~1  ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux14~1            ; combout          ;
+; |TrafficLightsControl|Beep:BP|Add2~5                  ; |TrafficLightsControl|Beep:BP|Add2~7COUT1_50                    ; cout1            ;
+; |TrafficLightsControl|Beep:BP|Add2~10                 ; |TrafficLightsControl|Beep:BP|Add2~12COUT1_48                   ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~5  ; |TrafficLightsControl|crossover1000:crossover|Add0~7            ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~10 ; |TrafficLightsControl|crossover1000:crossover|Add0~12           ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~15 ; |TrafficLightsControl|crossover1000:crossover|Add0~17           ; cout0            ;
+; |TrafficLightsControl|~GND                            ; |TrafficLightsControl|~GND                                      ; combout          ;
+; |TrafficLightsControl|col_r[3]                        ; |TrafficLightsControl|col_r[3]                                  ; padio            ;
+; |TrafficLightsControl|col_r[4]                        ; |TrafficLightsControl|col_r[4]                                  ; padio            ;
+; |TrafficLightsControl|col_g[3]                        ; |TrafficLightsControl|col_g[3]                                  ; padio            ;
+; |TrafficLightsControl|col_g[4]                        ; |TrafficLightsControl|col_g[4]                                  ; padio            ;
+; |TrafficLightsControl|TubeDispScan[2]                 ; |TrafficLightsControl|TubeDispScan[2]                           ; padio            ;
+; |TrafficLightsControl|TubeDispScan[3]                 ; |TrafficLightsControl|TubeDispScan[3]                           ; padio            ;
+; |TrafficLightsControl|TubeDispScan[4]                 ; |TrafficLightsControl|TubeDispScan[4]                           ; padio            ;
+; |TrafficLightsControl|TubeDispScan[5]                 ; |TrafficLightsControl|TubeDispScan[5]                           ; padio            ;
++-------------------------------------------------------+-----------------------------------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Missing 0-Value Coverage                                                                                                                  ;
-+-------------------------------------------------------+----------------------------------------------------------------+------------------+
-; Node Name                                             ; Output Port Name                                               ; Output Port Type ;
-+-------------------------------------------------------+----------------------------------------------------------------+------------------+
-; |TrafficLightsControl|counter:maincounter|cnt_tmp[4]  ; |TrafficLightsControl|counter:maincounter|cnt_tmp[4]~9         ; cout0            ;
-; |TrafficLightsControl|counter:maincounter|cnt_tmp[4]  ; |TrafficLightsControl|counter:maincounter|cnt_tmp[4]~9COUT1_24 ; cout1            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~5  ; |TrafficLightsControl|crossover1000:crossover|Add0~7           ; cout0            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~10 ; |TrafficLightsControl|crossover1000:crossover|Add0~12          ; cout0            ;
-; |TrafficLightsControl|crossover1000:crossover|Add0~15 ; |TrafficLightsControl|crossover1000:crossover|Add0~17          ; cout0            ;
-; |TrafficLightsControl|~GND                            ; |TrafficLightsControl|~GND                                     ; combout          ;
-; |TrafficLightsControl|col_r[3]                        ; |TrafficLightsControl|col_r[3]                                 ; padio            ;
-; |TrafficLightsControl|col_r[4]                        ; |TrafficLightsControl|col_r[4]                                 ; padio            ;
-; |TrafficLightsControl|col_g[3]                        ; |TrafficLightsControl|col_g[3]                                 ; padio            ;
-; |TrafficLightsControl|col_g[4]                        ; |TrafficLightsControl|col_g[4]                                 ; padio            ;
-; |TrafficLightsControl|CS[4]                           ; |TrafficLightsControl|CS[4]                                    ; padio            ;
-+-------------------------------------------------------+----------------------------------------------------------------+------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                         ;
++-------------------------------------------------------------+-----------------------------------------------------------------+------------------+
+; Node Name                                                   ; Output Port Name                                                ; Output Port Type ;
++-------------------------------------------------------------+-----------------------------------------------------------------+------------------+
+; |TrafficLightsControl|counter:maincounter|cnt_tmp[4]        ; |TrafficLightsControl|counter:maincounter|cnt_tmp[4]~11         ; cout0            ;
+; |TrafficLightsControl|counter:maincounter|cnt_tmp[4]        ; |TrafficLightsControl|counter:maincounter|cnt_tmp[4]~11COUT1_24 ; cout1            ;
+; |TrafficLightsControl|counter:maincounter|LessThan3~0       ; |TrafficLightsControl|counter:maincounter|LessThan3~0           ; combout          ;
+; |TrafficLightsControl|counter:maincounter|TrafficState[1]~3 ; |TrafficLightsControl|counter:maincounter|TrafficState[1]~3     ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux14~1        ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux14~1            ; combout          ;
+; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux7~5         ; |TrafficLightsControl|DigitalTubeCounter:DTC|Mux7~5             ; combout          ;
+; |TrafficLightsControl|Beep:BP|Add2~5                        ; |TrafficLightsControl|Beep:BP|Add2~7COUT1_50                    ; cout1            ;
+; |TrafficLightsControl|Beep:BP|Add2~10                       ; |TrafficLightsControl|Beep:BP|Add2~12COUT1_48                   ; cout1            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~5        ; |TrafficLightsControl|crossover1000:crossover|Add0~7            ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~10       ; |TrafficLightsControl|crossover1000:crossover|Add0~12           ; cout0            ;
+; |TrafficLightsControl|crossover1000:crossover|Add0~15       ; |TrafficLightsControl|crossover1000:crossover|Add0~17           ; cout0            ;
+; |TrafficLightsControl|~GND                                  ; |TrafficLightsControl|~GND                                      ; combout          ;
+; |TrafficLightsControl|col_r[3]                              ; |TrafficLightsControl|col_r[3]                                  ; padio            ;
+; |TrafficLightsControl|col_r[4]                              ; |TrafficLightsControl|col_r[4]                                  ; padio            ;
+; |TrafficLightsControl|col_g[3]                              ; |TrafficLightsControl|col_g[3]                                  ; padio            ;
+; |TrafficLightsControl|col_g[4]                              ; |TrafficLightsControl|col_g[4]                                  ; padio            ;
+; |TrafficLightsControl|TubeDispScan[2]                       ; |TrafficLightsControl|TubeDispScan[2]                           ; padio            ;
+; |TrafficLightsControl|TubeDispScan[3]                       ; |TrafficLightsControl|TubeDispScan[3]                           ; padio            ;
+; |TrafficLightsControl|TubeDispScan[4]                       ; |TrafficLightsControl|TubeDispScan[4]                           ; padio            ;
+; |TrafficLightsControl|TubeDispScan[5]                       ; |TrafficLightsControl|TubeDispScan[5]                           ; padio            ;
++-------------------------------------------------------------+-----------------------------------------------------------------+------------------+
 
 
 +---------------------+
@@ -270,23 +408,24 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Sat Oct 10 14:18:21 2020
+    Info: Processing started: Tue Oct 13 19:20:10 2020
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off TrafficLightsControl -c TrafficLightsControl
 Info: Using vector source file "C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsControl.vwf"
 Info: Overwriting simulation input file with simulation results
     Info: A backup of TrafficLightsControl.vwf called TrafficLightsControl.sim_ori.vwf has been created in the db folder
 Info: Inverted registers were found during simulation
     Info: Register: |TrafficLightsControl|crossover1000:crossover|clk_tmp
+    Info: Register: |TrafficLightsControl|Stabilizer:stab|clk_10ms
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is      89.74 %
-Info: Number of transitions in simulation is 1606141
+Info: Simulation coverage is      91.90 %
+Info: Number of transitions in simulation is 3053102
 Info: Vector file TrafficLightsControl.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
 Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4323 megabytes
-    Info: Processing ended: Sat Oct 10 14:18:26 2020
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Processing ended: Tue Oct 13 19:20:17 2020
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
 
 

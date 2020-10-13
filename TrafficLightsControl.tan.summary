@@ -5,7 +5,7 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 1.777 ns
+Actual Time    : 2.036 ns
 From           : rst
 To             : Stabilizer:stab|tmp1
 From Clock     : --
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 28.600 ns
-From           : DigitalTubeCounter:DTC|TubeCode0Out[1]
-To             : TubeDispOut[2]
+Actual Time    : 32.436 ns
+From           : DigitalTubeCounter:DTC|TubeCode0Out[2]
+To             : TubeDispOut[3]
 From Clock     : clk
 To Clock       : --
 Failed Paths   : 0
@@ -25,7 +25,7 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -1.223 ns
+Actual Time    : -1.482 ns
 From           : rst
 To             : Stabilizer:stab|tmp1
 From Clock     : --
@@ -35,9 +35,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clk'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 156.99 MHz ( period = 6.370 ns )
-From           : crossover1000:crossover|c[0]
-To             : crossover1000:crossover|c[6]
+Actual Time    : 108.70 MHz ( period = 9.200 ns )
+From           : Beep:BP|\P2:c3[2]
+To             : Beep:BP|\P2:c3[5]
 From Clock     : clk
 To Clock       : clk
 Failed Paths   : 0
@@ -46,11 +46,11 @@ Type           : Clock Hold: 'clk'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : counter:maincounter|cnt_tmp[4]
-To             : DigitalTubeCounter:DTC|TubeCode1Out[1]
+From           : counter:maincounter|cnt_tmp[2]
+To             : DigitalTubeCounter:DTC|TubeCode6Out[2]
 From Clock     : clk
 To Clock       : clk
-Failed Paths   : 71
+Failed Paths   : 69
 
 Type           : Total number of failed paths
 Slack          : 
@@ -60,7 +60,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 71
+Failed Paths   : 69
 
 --------------------------------------------------------------------------------------
 

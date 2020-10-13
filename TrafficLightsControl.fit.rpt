@@ -1,5 +1,5 @@
 Fitter report for TrafficLightsControl
-Tue Oct 13 14:40:55 2020
+Tue Oct 13 19:19:11 2020
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -57,15 +57,15 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+
 ; Fitter Summary                                                       ;
 +---------------------------+------------------------------------------+
-; Fitter Status             ; Successful - Tue Oct 13 14:40:55 2020    ;
+; Fitter Status             ; Successful - Tue Oct 13 19:19:11 2020    ;
 ; Quartus II 64-Bit Version ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name             ; TrafficLightsControl                     ;
 ; Top-level Entity Name     ; TrafficLightsControl                     ;
 ; Family                    ; MAX II                                   ;
 ; Device                    ; EPM1270T144C5                            ;
 ; Timing Models             ; Final                                    ;
-; Total logic elements      ; 160 / 1,270 ( 13 % )                     ;
-; Total pins                ; 41 / 116 ( 35 % )                        ;
+; Total logic elements      ; 180 / 1,270 ( 14 % )                     ;
+; Total pins                ; 42 / 116 ( 36 % )                        ;
 ; Total virtual pins        ; 0                                        ;
 ; UFM blocks                ; 0 / 1 ( 0 % )                            ;
 +---------------------------+------------------------------------------+
@@ -146,51 +146,51 @@ applicable agreement for further details.
 The pin-out file can be found in C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsControl.pin.
 
 
-+------------------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                                ;
-+---------------------------------------------+--------------------------------+
-; Resource                                    ; Usage                          ;
-+---------------------------------------------+--------------------------------+
-; Total logic elements                        ; 160 / 1,270 ( 13 % )           ;
-;     -- Combinational with no register       ; 135                            ;
-;     -- Register only                        ; 3                              ;
-;     -- Combinational with a register        ; 22                             ;
-;                                             ;                                ;
-; Logic element usage by number of LUT inputs ;                                ;
-;     -- 4 input functions                    ; 94                             ;
-;     -- 3 input functions                    ; 35                             ;
-;     -- 2 input functions                    ; 24                             ;
-;     -- 1 input functions                    ; 3                              ;
-;     -- 0 input functions                    ; 1                              ;
-;                                             ;                                ;
-; Logic elements by mode                      ;                                ;
-;     -- normal mode                          ; 147                            ;
-;     -- arithmetic mode                      ; 13                             ;
-;     -- qfbk mode                            ; 2                              ;
-;     -- register cascade mode                ; 0                              ;
-;     -- synchronous clear/load mode          ; 9                              ;
-;     -- asynchronous clear/load mode         ; 16                             ;
-;                                             ;                                ;
-; Total registers                             ; 25 / 1,270 ( 2 % )             ;
-; Total LABs                                  ; 21 / 127 ( 17 % )              ;
-; Logic elements in carry chains              ; 15                             ;
-; User inserted logic elements                ; 0                              ;
-; Virtual pins                                ; 0                              ;
-; I/O pins                                    ; 41 / 116 ( 35 % )              ;
-;     -- Clock pins                           ; 1 / 4 ( 25 % )                 ;
-; Global signals                              ; 4                              ;
-; UFM blocks                                  ; 0 / 1 ( 0 % )                  ;
-; Global clocks                               ; 4 / 4 ( 100 % )                ;
-; JTAGs                                       ; 0 / 1 ( 0 % )                  ;
-; Average interconnect usage (total/H/V)      ; 5% / 5% / 4%                   ;
-; Peak interconnect usage (total/H/V)         ; 8% / 8% / 8%                   ;
-; Maximum fan-out node                        ; counter:maincounter|cnt_tmp[3] ;
-; Maximum fan-out                             ; 35                             ;
-; Highest non-global fan-out signal           ; counter:maincounter|cnt_tmp[3] ;
-; Highest non-global fan-out                  ; 33                             ;
-; Total fan-out                               ; 620                            ;
-; Average fan-out                             ; 3.08                           ;
-+---------------------------------------------+--------------------------------+
++-----------------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                               ;
++---------------------------------------------+-------------------------------+
+; Resource                                    ; Usage                         ;
++---------------------------------------------+-------------------------------+
+; Total logic elements                        ; 180 / 1,270 ( 14 % )          ;
+;     -- Combinational with no register       ; 146                           ;
+;     -- Register only                        ; 3                             ;
+;     -- Combinational with a register        ; 31                            ;
+;                                             ;                               ;
+; Logic element usage by number of LUT inputs ;                               ;
+;     -- 4 input functions                    ; 97                            ;
+;     -- 3 input functions                    ; 44                            ;
+;     -- 2 input functions                    ; 32                            ;
+;     -- 1 input functions                    ; 3                             ;
+;     -- 0 input functions                    ; 1                             ;
+;                                             ;                               ;
+; Logic elements by mode                      ;                               ;
+;     -- normal mode                          ; 161                           ;
+;     -- arithmetic mode                      ; 19                            ;
+;     -- qfbk mode                            ; 3                             ;
+;     -- register cascade mode                ; 0                             ;
+;     -- synchronous clear/load mode          ; 10                            ;
+;     -- asynchronous clear/load mode         ; 16                            ;
+;                                             ;                               ;
+; Total registers                             ; 34 / 1,270 ( 3 % )            ;
+; Total LABs                                  ; 21 / 127 ( 17 % )             ;
+; Logic elements in carry chains              ; 22                            ;
+; User inserted logic elements                ; 0                             ;
+; Virtual pins                                ; 0                             ;
+; I/O pins                                    ; 42 / 116 ( 36 % )             ;
+;     -- Clock pins                           ; 1 / 4 ( 25 % )                ;
+; Global signals                              ; 4                             ;
+; UFM blocks                                  ; 0 / 1 ( 0 % )                 ;
+; Global clocks                               ; 4 / 4 ( 100 % )               ;
+; JTAGs                                       ; 0 / 1 ( 0 % )                 ;
+; Average interconnect usage (total/H/V)      ; 6% / 6% / 6%                  ;
+; Peak interconnect usage (total/H/V)         ; 6% / 7% / 8%                  ;
+; Maximum fan-out node                        ; dotdisp:dot_array|scan_cnt[1] ;
+; Maximum fan-out                             ; 36                            ;
+; Highest non-global fan-out signal           ; dotdisp:dot_array|scan_cnt[1] ;
+; Highest non-global fan-out                  ; 36                            ;
+; Total fan-out                               ; 687                           ;
+; Average fan-out                             ; 3.09                          ;
++---------------------------------------------+-------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -198,7 +198,7 @@ The pin-out file can be found in C:/Users/1/Desktop/documents/DigitalExperiments
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
-; clk  ; 18    ; 1        ; 0            ; 7            ; 5           ; 19                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; clk  ; 18    ; 1        ; 0            ; 7            ; 5           ; 28                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 ; rst  ; 124   ; 2        ; 9            ; 11           ; 1           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 
@@ -208,6 +208,7 @@ The pin-out file can be found in C:/Users/1/Desktop/documents/DigitalExperiments
 +-----------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
 ; Name            ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
 +-----------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; BeepOut         ; 97    ; 3        ; 17           ; 6            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
 ; TubeDispOut[0]  ; 52    ; 4        ; 8            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; TubeDispOut[1]  ; 53    ; 4        ; 8            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; TubeDispOut[2]  ; 55    ; 4        ; 8            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
@@ -230,7 +231,7 @@ The pin-out file can be found in C:/Users/1/Desktop/documents/DigitalExperiments
 ; col_g[4]        ; 41    ; 4        ; 3            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_g[5]        ; 40    ; 4        ; 3            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_g[6]        ; 39    ; 4        ; 2            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; col_g[7]        ; 38    ; 4        ; 2            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
+; col_g[7]        ; 38    ; 4        ; 2            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_r[0]        ; 22    ; 1        ; 0            ; 6            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_r[1]        ; 21    ; 1        ; 0            ; 6            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_r[2]        ; 16    ; 1        ; 0            ; 7            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
@@ -257,7 +258,7 @@ The pin-out file can be found in C:/Users/1/Desktop/documents/DigitalExperiments
 +----------+------------------+---------------+--------------+
 ; 1        ; 19 / 26 ( 73 % ) ; 3.3V          ; --           ;
 ; 2        ; 1 / 30 ( 3 % )   ; 3.3V          ; --           ;
-; 3        ; 0 / 30 ( 0 % )   ; 3.3V          ; --           ;
+; 3        ; 1 / 30 ( 3 % )   ; 3.3V          ; --           ;
 ; 4        ; 21 / 30 ( 70 % ) ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
@@ -363,7 +364,7 @@ The pin-out file can be found in C:/Users/1/Desktop/documents/DigitalExperiments
 ; 94       ; 137        ; 3        ; GND*            ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 95       ; 138        ; 3        ; GND*            ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 96       ; 139        ; 3        ; GND*            ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
-; 97       ; 140        ; 3        ; GND*            ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 97       ; 140        ; 3        ; BeepOut         ; output ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
 ; 98       ; 141        ; 3        ; GND*            ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 99       ;            ;          ; GNDIO           ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
 ; 100      ;            ; 3        ; VCCIO3          ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
@@ -437,15 +438,18 @@ Note: User assignments will override these defaults. The user specified values a
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
 ; Compilation Hierarchy Node   ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                           ; Library Name ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
-; |TrafficLightsControl        ; 160 (1)     ; 25           ; 0          ; 41   ; 0            ; 135 (1)      ; 3 (0)             ; 22 (0)           ; 15 (0)          ; 2 (0)      ; |TrafficLightsControl                         ; work         ;
+; |TrafficLightsControl        ; 180 (1)     ; 34           ; 0          ; 42   ; 0            ; 146 (1)      ; 3 (0)             ; 31 (0)           ; 22 (0)          ; 3 (0)      ; |TrafficLightsControl                         ; work         ;
+;    |Beep:BP|                 ; 19 (19)     ; 9            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 9 (9)            ; 7 (7)           ; 1 (1)      ; |TrafficLightsControl|Beep:BP                 ; work         ;
 ;    |DigitalTube:DT0|         ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTube:DT0         ; work         ;
+;    |DigitalTube:DT1|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTube:DT1         ; work         ;
 ;    |DigitalTube:DT6|         ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTube:DT6         ; work         ;
+;    |DigitalTube:DT7|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTube:DT7         ; work         ;
 ;    |DigitalTubeComp:DigTube| ; 18 (18)     ; 1            ; 0          ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTubeComp:DigTube ; work         ;
 ;    |DigitalTubeCounter:DTC|  ; 56 (56)     ; 0            ; 0          ; 0    ; 0            ; 56 (56)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTubeCounter:DTC  ; work         ;
 ;    |Stabilizer:stab|         ; 6 (6)       ; 6            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 5 (5)            ; 0 (0)           ; 1 (1)      ; |TrafficLightsControl|Stabilizer:stab         ; work         ;
 ;    |counter:maincounter|     ; 14 (14)     ; 6            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 6 (6)            ; 6 (6)           ; 0 (0)      ; |TrafficLightsControl|counter:maincounter     ; work         ;
 ;    |crossover1000:crossover| ; 20 (20)     ; 10           ; 0          ; 0    ; 0            ; 10 (10)      ; 2 (2)             ; 8 (8)            ; 9 (9)           ; 1 (1)      ; |TrafficLightsControl|crossover1000:crossover ; work         ;
-;    |dotdisp:dot_array|       ; 31 (31)     ; 2            ; 0          ; 0    ; 0            ; 29 (29)      ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|dotdisp:dot_array       ; work         ;
+;    |dotdisp:dot_array|       ; 30 (30)     ; 2            ; 0          ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|dotdisp:dot_array       ; work         ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -496,20 +500,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; TubeDispScan[5] ; Output   ; --            ;
 ; TubeDispScan[6] ; Output   ; --            ;
 ; TubeDispScan[7] ; Output   ; --            ;
+; BeepOut         ; Output   ; --            ;
 +-----------------+----------+---------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                         ;
-+---------------------------------+--------------+---------+---------------------------+--------+----------------------+------------------+
-; Name                            ; Location     ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ;
-+---------------------------------+--------------+---------+---------------------------+--------+----------------------+------------------+
-; DigitalTubeCounter:DTC|Mux14~1  ; LC_X8_Y6_N9  ; 12      ; Latch enable              ; yes    ; Global Clock         ; GCLK2            ;
-; Stabilizer:stab|OutputButton~0  ; LC_X10_Y8_N5 ; 16      ; Async. clear, Async. load ; yes    ; Global Clock         ; GCLK3            ;
-; clk                             ; PIN_18       ; 19      ; Clock                     ; yes    ; Global Clock         ; GCLK0            ;
-; counter:maincounter|P1~1        ; LC_X7_Y6_N8  ; 6       ; Sync. clear               ; no     ; --                   ; --               ;
-; crossover1000:crossover|clk_tmp ; LC_X11_Y5_N7 ; 7       ; Clock                     ; yes    ; Global Clock         ; GCLK1            ;
-+---------------------------------+--------------+---------+---------------------------+--------+----------------------+------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                          ;
++---------------------------------+---------------+---------+---------------------------+--------+----------------------+------------------+
+; Name                            ; Location      ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ;
++---------------------------------+---------------+---------+---------------------------+--------+----------------------+------------------+
+; DigitalTubeCounter:DTC|Mux14~1  ; LC_X11_Y8_N0  ; 12      ; Latch enable              ; yes    ; Global Clock         ; GCLK1            ;
+; Stabilizer:stab|OutputButton~0  ; LC_X10_Y5_N2  ; 16      ; Async. clear, Async. load ; yes    ; Global Clock         ; GCLK3            ;
+; clk                             ; PIN_18        ; 28      ; Clock                     ; yes    ; Global Clock         ; GCLK0            ;
+; counter:maincounter|P1~1        ; LC_X12_Y10_N9 ; 6       ; Sync. clear               ; no     ; --                   ; --               ;
+; crossover1000:crossover|clk_tmp ; LC_X4_Y10_N8  ; 7       ; Clock                     ; yes    ; Global Clock         ; GCLK2            ;
++---------------------------------+---------------+---------+---------------------------+--------+----------------------+------------------+
 
 
 +----------------------------------------------------------------------------------------------------+
@@ -517,10 +522,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+--------------+---------+----------------------+------------------+
 ; Name                            ; Location     ; Fan-Out ; Global Resource Used ; Global Line Name ;
 +---------------------------------+--------------+---------+----------------------+------------------+
-; DigitalTubeCounter:DTC|Mux14~1  ; LC_X8_Y6_N9  ; 12      ; Global Clock         ; GCLK2            ;
-; Stabilizer:stab|OutputButton~0  ; LC_X10_Y8_N5 ; 16      ; Global Clock         ; GCLK3            ;
-; clk                             ; PIN_18       ; 19      ; Global Clock         ; GCLK0            ;
-; crossover1000:crossover|clk_tmp ; LC_X11_Y5_N7 ; 7       ; Global Clock         ; GCLK1            ;
+; DigitalTubeCounter:DTC|Mux14~1  ; LC_X11_Y8_N0 ; 12      ; Global Clock         ; GCLK1            ;
+; Stabilizer:stab|OutputButton~0  ; LC_X10_Y5_N2 ; 16      ; Global Clock         ; GCLK3            ;
+; clk                             ; PIN_18       ; 28      ; Global Clock         ; GCLK0            ;
+; crossover1000:crossover|clk_tmp ; LC_X4_Y10_N8 ; 7       ; Global Clock         ; GCLK2            ;
 +---------------------------------+--------------+---------+----------------------+------------------+
 
 
@@ -529,15 +534,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Name                                   ; Fan-Out ;
 +----------------------------------------+---------+
-; counter:maincounter|cnt_tmp[3]         ; 33      ;
-; dotdisp:dot_array|scan_cnt[1]          ; 32      ;
-; DigitalTubeComp:DigTube|scan_cnt[0]    ; 30      ;
-; counter:maincounter|cnt_tmp[4]         ; 28      ;
+; dotdisp:dot_array|scan_cnt[1]          ; 36      ;
+; counter:maincounter|cnt_tmp[3]         ; 34      ;
+; DigitalTubeComp:DigTube|scan_cnt[0]    ; 31      ;
+; counter:maincounter|cnt_tmp[4]         ; 29      ;
 ; counter:maincounter|cnt_tmp[0]         ; 26      ;
 ; counter:maincounter|cnt_tmp[1]         ; 25      ;
 ; counter:maincounter|cnt_tmp[2]         ; 25      ;
-; counter:maincounter|cnt_tmp[5]         ; 22      ;
-; dotdisp:dot_array|scan_cnt[2]          ; 19      ;
+; counter:maincounter|cnt_tmp[5]         ; 23      ;
+; dotdisp:dot_array|scan_cnt[2]          ; 20      ;
+; counter:maincounter|TrafficState[1]~3  ; 9       ;
 ; DigitalTubeCounter:DTC|TubeCode0Out[3] ; 8       ;
 ; DigitalTubeCounter:DTC|TubeCode0Out[2] ; 8       ;
 ; DigitalTubeCounter:DTC|TubeCode0Out[1] ; 8       ;
@@ -547,8 +553,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DigitalTubeCounter:DTC|TubeCode6Out[1] ; 8       ;
 ; DigitalTubeCounter:DTC|TubeCode6Out[0] ; 8       ;
 ; crossover1000:crossover|c[0]           ; 8       ;
-; counter:maincounter|TrafficState[2]~4  ; 8       ;
-; counter:maincounter|TrafficState[1]~3  ; 8       ;
+; Beep:BP|Equal0~1                       ; 8       ;
+; Beep:BP|Equal0~0                       ; 8       ;
 ; crossover1000:crossover|Equal0~1       ; 7       ;
 ; crossover1000:crossover|Equal0~0       ; 7       ;
 ; counter:maincounter|P1~1               ; 6       ;
@@ -563,9 +569,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; crossover1000:crossover|Add0~27        ; 4       ;
 ; Stabilizer:stab|\crossover:c[1]        ; 4       ;
 ; Stabilizer:stab|\crossover:c[0]        ; 4       ;
-; dotdisp:dot_array|Mux25~0              ; 4       ;
+; dotdisp:dot_array|Mux21~0              ; 4       ;
+; counter:maincounter|TrafficState[2]~4  ; 4       ;
+; Beep:BP|Add2~17                        ; 3       ;
 ; Stabilizer:stab|\crossover:c[2]        ; 3       ;
 ; DigitalTubeCounter:DTC|Mux11~0         ; 3       ;
+; Beep:BP|\P2:c2[0]                      ; 3       ;
 ; dotdisp:dot_array|Mux26~0              ; 3       ;
 ; dotdisp:dot_array|Mux20~0              ; 3       ;
 ; crossover1000:crossover|c[2]           ; 2       ;
@@ -575,92 +584,89 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; crossover1000:crossover|c[6]           ; 2       ;
 ; crossover1000:crossover|c[7]           ; 2       ;
 ; crossover1000:crossover|c[8]           ; 2       ;
-; DigitalTubeCounter:DTC|Mux8~1          ; 2       ;
-; Stabilizer:stab|clk_10ms               ; 2       ;
-; Stabilizer:stab|tmp1                   ; 2       ;
-; DigitalTubeComp:DigTube|Mux7~1         ; 2       ;
 +----------------------------------------+---------+
 
 
-+--------------------------------------------------+
-; Interconnect Usage Summary                       ;
-+----------------------------+---------------------+
-; Interconnect Resource Type ; Usage               ;
-+----------------------------+---------------------+
-; C4s                        ; 116 / 2,870 ( 4 % ) ;
-; Direct links               ; 46 / 3,938 ( 1 % )  ;
-; Global clocks              ; 4 / 4 ( 100 % )     ;
-; LAB clocks                 ; 10 / 72 ( 14 % )    ;
-; LUT chains                 ; 17 / 1,143 ( 1 % )  ;
-; Local interconnects        ; 229 / 3,938 ( 6 % ) ;
-; R4s                        ; 131 / 2,832 ( 5 % ) ;
-+----------------------------+---------------------+
++---------------------------------------------------+
+; Interconnect Usage Summary                        ;
++----------------------------+----------------------+
+; Interconnect Resource Type ; Usage                ;
++----------------------------+----------------------+
+; C4s                        ; 164 / 2,870 ( 6 % )  ;
+; Direct links               ; 22 / 3,938 ( < 1 % ) ;
+; Global clocks              ; 4 / 4 ( 100 % )      ;
+; LAB clocks                 ; 15 / 72 ( 21 % )     ;
+; LUT chains                 ; 19 / 1,143 ( 2 % )   ;
+; Local interconnects        ; 248 / 3,938 ( 6 % )  ;
+; R4s                        ; 154 / 2,832 ( 5 % )  ;
++----------------------------+----------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 7.62) ; Number of LABs  (Total = 21) ;
+; Number of Logic Elements  (Average = 8.57) ; Number of LABs  (Total = 21) ;
 +--------------------------------------------+------------------------------+
-; 1                                          ; 3                            ;
-; 2                                          ; 2                            ;
+; 1                                          ; 1                            ;
+; 2                                          ; 1                            ;
 ; 3                                          ; 0                            ;
 ; 4                                          ; 0                            ;
-; 5                                          ; 0                            ;
-; 6                                          ; 1                            ;
-; 7                                          ; 1                            ;
+; 5                                          ; 1                            ;
+; 6                                          ; 2                            ;
+; 7                                          ; 0                            ;
 ; 8                                          ; 0                            ;
 ; 9                                          ; 0                            ;
-; 10                                         ; 14                           ;
+; 10                                         ; 16                           ;
 +--------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 0.38) ; Number of LABs  (Total = 21) ;
+; LAB-wide Signals  (Average = 0.57) ; Number of LABs  (Total = 21) ;
 +------------------------------------+------------------------------+
 ; 1 Async. clear                     ; 2                            ;
 ; 1 Async. load                      ; 1                            ;
-; 1 Clock                            ; 5                            ;
+; 1 Clock                            ; 8                            ;
+; 1 Sync. clear                      ; 1                            ;
 +------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 7.67) ; Number of LABs  (Total = 21) ;
+; Number of Signals Sourced  (Average = 8.67) ; Number of LABs  (Total = 21) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
-; 1                                           ; 3                            ;
-; 2                                           ; 2                            ;
+; 1                                           ; 1                            ;
+; 2                                           ; 1                            ;
 ; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
-; 5                                           ; 0                            ;
-; 6                                           ; 1                            ;
-; 7                                           ; 1                            ;
+; 5                                           ; 1                            ;
+; 6                                           ; 2                            ;
+; 7                                           ; 0                            ;
 ; 8                                           ; 0                            ;
 ; 9                                           ; 0                            ;
-; 10                                          ; 13                           ;
-; 11                                          ; 1                            ;
+; 10                                          ; 14                           ;
+; 11                                          ; 2                            ;
 +---------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 4.95) ; Number of LABs  (Total = 21) ;
+; Number of Signals Sourced Out  (Average = 5.71) ; Number of LABs  (Total = 21) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 4                            ;
-; 2                                               ; 3                            ;
-; 3                                               ; 0                            ;
-; 4                                               ; 3                            ;
+; 1                                               ; 2                            ;
+; 2                                               ; 2                            ;
+; 3                                               ; 2                            ;
+; 4                                               ; 2                            ;
 ; 5                                               ; 3                            ;
 ; 6                                               ; 1                            ;
 ; 7                                               ; 1                            ;
 ; 8                                               ; 3                            ;
-; 9                                               ; 1                            ;
+; 9                                               ; 3                            ;
 ; 10                                              ; 1                            ;
 ; 11                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
@@ -669,27 +675,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 7.71) ; Number of LABs  (Total = 21) ;
+; Number of Distinct Inputs  (Average = 8.52) ; Number of LABs  (Total = 21) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
 ; 1                                           ; 0                            ;
-; 2                                           ; 3                            ;
-; 3                                           ; 2                            ;
-; 4                                           ; 2                            ;
+; 2                                           ; 2                            ;
+; 3                                           ; 1                            ;
+; 4                                           ; 0                            ;
 ; 5                                           ; 0                            ;
-; 6                                           ; 2                            ;
-; 7                                           ; 3                            ;
-; 8                                           ; 0                            ;
+; 6                                           ; 4                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 4                            ;
 ; 9                                           ; 0                            ;
 ; 10                                          ; 1                            ;
-; 11                                          ; 2                            ;
-; 12                                          ; 1                            ;
+; 11                                          ; 1                            ;
+; 12                                          ; 3                            ;
 ; 13                                          ; 0                            ;
-; 14                                          ; 0                            ;
-; 15                                          ; 1                            ;
-; 16                                          ; 2                            ;
-; 17                                          ; 0                            ;
-; 18                                          ; 1                            ;
+; 14                                          ; 1                            ;
+; 15                                          ; 3                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -721,7 +724,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Fitter
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Tue Oct 13 14:40:54 2020
+    Info: Processing started: Tue Oct 13 19:19:09 2020
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off TrafficLightsControl -c TrafficLightsControl
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Selected device EPM1270T144C5 for design "TrafficLightsControl"
@@ -734,6 +737,8 @@ Info: Device migration not selected. If you intend to use device migration later
     Info: Device EPM570T144A5 is compatible
     Info: Device EPM1270T144I5 is compatible
     Info: Device EPM1270T144A5 is compatible
+Critical Warning: No exact pin location assignment(s) for 1 pins of 42 total pins
+    Info: Pin BeepOut not assigned to an exact location on the device
 Info: Timing-driven compilation is using the Classic Timing Analyzer
 Info: Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
     Info: Assuming a global fmax requirement of 1000 MHz
@@ -752,33 +757,42 @@ Info: Fitter is using Normal packing mode for logic elements with Auto setting f
 Info: Started processing fast register assignments
 Info: Finished processing fast register assignments
 Info: Finished register packing
+Info: Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
+    Info: Number of I/O pins in group: 1 (unused VREF, 3.3V VCCIO, 0 input, 1 output, 0 bidirectional)
+        Info: I/O standards used: 3.3-V LVTTL.
+Info: I/O bank details before I/O pin placement
+    Info: Statistics of I/O banks
+        Info: I/O bank number 1 does not use VREF pins and has 3.3V VCCIO pins. 19 total pin(s) used --  7 pins available
+        Info: I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  29 pins available
+        Info: I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  30 pins available
+        Info: I/O bank number 4 does not use VREF pins and has 3.3V VCCIO pins. 21 total pin(s) used --  9 pins available
 Info: Fitter preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
 Info: Fitter placement was successful
 Info: Fitter placement operations ending: elapsed time is 00:00:00
-Info: Estimated most critical path is register to pin delay of 10.098 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X8_Y7; Fanout = 4; REG Node = 'DigitalTubeCounter:DTC|TubeCode7Out[0]'
-    Info: 2: + IC(1.820 ns) + CELL(0.511 ns) = 2.331 ns; Loc. = LAB_X7_Y5; Fanout = 1; COMB Node = 'DigitalTubeComp:DigTube|Mux9~0'
-    Info: 3: + IC(1.610 ns) + CELL(0.740 ns) = 4.681 ns; Loc. = LAB_X6_Y8; Fanout = 1; COMB Node = 'DigitalTubeComp:DigTube|Mux9~2'
-    Info: 4: + IC(3.095 ns) + CELL(2.322 ns) = 10.098 ns; Loc. = PIN_53; Fanout = 0; PIN Node = 'TubeDispOut[1]'
-    Info: Total cell delay = 3.573 ns ( 35.38 % )
-    Info: Total interconnect delay = 6.525 ns ( 64.62 % )
+Info: Estimated most critical path is register to pin delay of 10.669 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X9_Y7; Fanout = 7; REG Node = 'DigitalTubeCounter:DTC|TubeCode0Out[3]'
+    Info: 2: + IC(2.043 ns) + CELL(0.200 ns) = 2.243 ns; Loc. = LAB_X12_Y7; Fanout = 1; COMB Node = 'DigitalTube:DT0|Mux3~0'
+    Info: 3: + IC(2.760 ns) + CELL(0.200 ns) = 5.203 ns; Loc. = LAB_X10_Y10; Fanout = 1; COMB Node = 'DigitalTubeComp:DigTube|Mux7~1'
+    Info: 4: + IC(3.144 ns) + CELL(2.322 ns) = 10.669 ns; Loc. = PIN_57; Fanout = 0; PIN Node = 'TubeDispOut[3]'
+    Info: Total cell delay = 2.722 ns ( 25.51 % )
+    Info: Total interconnect delay = 7.947 ns ( 74.49 % )
 Info: Fitter routing operations beginning
-Info: Average interconnect usage is 4% of the available device resources
-    Info: Peak interconnect usage is 7% of the available device resources in the region that extends from location X0_Y0 to location X8_Y11
+Info: Average interconnect usage is 5% of the available device resources
+    Info: Peak interconnect usage is 6% of the available device resources in the region that extends from location X9_Y0 to location X17_Y11
 Info: Fitter routing operations ending: elapsed time is 00:00:00
 Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info: Optimizations that may affect the design's routability were skipped
     Info: Optimizations that may affect the design's timing were skipped
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Generated suppressed messages file C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsControl.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 1 warning
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 4514 megabytes
-    Info: Processing ended: Tue Oct 13 14:40:55 2020
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Processing ended: Tue Oct 13 19:19:11 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
 +----------------------------+

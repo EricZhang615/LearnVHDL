@@ -64,7 +64,7 @@ begin
     elsif TrafficState="010" or TrafficState="011" then
       BeepSig <= fastclk AND alert;
     else
-      BeepSig <= '0'
+      BeepSig <= '0'; 
     end if;
   end process;
 end Beep_arch;

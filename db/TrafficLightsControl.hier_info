@@ -3,6 +3,7 @@ clk => Stabilizer:stab.clk
 clk => crossover1000:crossover.clk
 clk => DigitalTubeComp:DigTube.clk
 clk => dotdisp:dot_array.clk
+clk => Beep:BP.clk
 rst => Stabilizer:stab.InputButton
 row[0] <= dotdisp:dot_array.row[0]
 row[1] <= dotdisp:dot_array.row[1]
@@ -43,6 +44,7 @@ TubeDispScan[4] <= DigitalTubeComp:DigTube.TubeDispScan[4]
 TubeDispScan[5] <= DigitalTubeComp:DigTube.TubeDispScan[5]
 TubeDispScan[6] <= DigitalTubeComp:DigTube.TubeDispScan[6]
 TubeDispScan[7] <= DigitalTubeComp:DigTube.TubeDispScan[7]
+BeepOut <= Beep:BP.BeepSig
 
 
 |TrafficLightsControl|Stabilizer:stab
@@ -507,5 +509,33 @@ col_g[4] <= col_g[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
 col_g[5] <= col_g[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
 col_g[6] <= col_g[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
 col_g[7] <= col_g[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TrafficLightsControl|Beep:BP
+clk => \P2:c3[0].CLK
+clk => \P2:c3[1].CLK
+clk => \P2:c3[2].CLK
+clk => \P2:c3[3].CLK
+clk => \P2:c3[4].CLK
+clk => \P2:c3[5].CLK
+clk => \P2:c3[6].CLK
+clk => \P2:c3[7].CLK
+clk => \P2:c2[0].CLK
+clk => \P2:c2[1].CLK
+clk => alert.CLK
+clk => \P1:c1.CLK
+TrafficState[0] => Equal2.IN5
+TrafficState[0] => Equal3.IN5
+TrafficState[0] => Equal4.IN5
+TrafficState[0] => Equal5.IN5
+TrafficState[1] => Equal2.IN4
+TrafficState[1] => Equal3.IN4
+TrafficState[1] => Equal4.IN4
+TrafficState[1] => Equal5.IN4
+TrafficState[2] => Equal2.IN3
+TrafficState[2] => Equal3.IN3
+TrafficState[2] => Equal4.IN3
+TrafficState[2] => Equal5.IN3
+BeepSig <= BeepSig.DB_MAX_OUTPUT_PORT_TYPE
 
 
