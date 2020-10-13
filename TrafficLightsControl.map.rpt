@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TrafficLightsControl
-Tue Oct 13 14:26:38 2020
+Tue Oct 13 14:40:54 2020
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -44,13 +44,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue Oct 13 14:26:38 2020    ;
+; Analysis & Synthesis Status ; Successful - Tue Oct 13 14:40:54 2020    ;
 ; Quartus II 64-Bit Version   ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name               ; TrafficLightsControl                     ;
 ; Top-level Entity Name       ; TrafficLightsControl                     ;
 ; Family                      ; MAX II                                   ;
-; Total logic elements        ; 166                                      ;
-; Total pins                  ; 37                                       ;
+; Total logic elements        ; 162                                      ;
+; Total pins                  ; 41                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
 +-----------------------------+------------------------------------------+
@@ -161,20 +161,20 @@ applicable agreement for further details.
 +---------------------------------------------+--------------------------------+
 ; Resource                                    ; Usage                          ;
 +---------------------------------------------+--------------------------------+
-; Total logic elements                        ; 166                            ;
-;     -- Combinational with no register       ; 141                            ;
+; Total logic elements                        ; 162                            ;
+;     -- Combinational with no register       ; 137                            ;
 ;     -- Register only                        ; 5                              ;
 ;     -- Combinational with a register        ; 20                             ;
 ;                                             ;                                ;
 ; Logic element usage by number of LUT inputs ;                                ;
-;     -- 4 input functions                    ; 95                             ;
-;     -- 3 input functions                    ; 39                             ;
-;     -- 2 input functions                    ; 23                             ;
+;     -- 4 input functions                    ; 94                             ;
+;     -- 3 input functions                    ; 35                             ;
+;     -- 2 input functions                    ; 24                             ;
 ;     -- 1 input functions                    ; 3                              ;
 ;     -- 0 input functions                    ; 1                              ;
 ;                                             ;                                ;
 ; Logic elements by mode                      ;                                ;
-;     -- normal mode                          ; 153                            ;
+;     -- normal mode                          ; 149                            ;
 ;     -- arithmetic mode                      ; 13                             ;
 ;     -- qfbk mode                            ; 0                              ;
 ;     -- register cascade mode                ; 0                              ;
@@ -183,11 +183,11 @@ applicable agreement for further details.
 ;                                             ;                                ;
 ; Total registers                             ; 25                             ;
 ; Total logic cells in carry chains           ; 15                             ;
-; I/O pins                                    ; 37                             ;
+; I/O pins                                    ; 41                             ;
 ; Maximum fan-out node                        ; counter:maincounter|cnt_tmp[3] ;
-; Maximum fan-out                             ; 35                             ;
-; Total fan-out                               ; 633                            ;
-; Average fan-out                             ; 3.12                           ;
+; Maximum fan-out                             ; 34                             ;
+; Total fan-out                               ; 619                            ;
+; Average fan-out                             ; 3.05                           ;
 +---------------------------------------------+--------------------------------+
 
 
@@ -196,15 +196,15 @@ applicable agreement for further details.
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
 ; Compilation Hierarchy Node   ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                           ; Library Name ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
-; |TrafficLightsControl        ; 166 (1)     ; 25           ; 0          ; 37   ; 0            ; 141 (1)      ; 5 (0)             ; 20 (0)           ; 15 (0)          ; 0 (0)      ; |TrafficLightsControl                         ; work         ;
+; |TrafficLightsControl        ; 162 (1)     ; 25           ; 0          ; 41   ; 0            ; 137 (1)      ; 5 (0)             ; 20 (0)           ; 15 (0)          ; 0 (0)      ; |TrafficLightsControl                         ; work         ;
 ;    |DigitalTube:DT0|         ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTube:DT0         ; work         ;
 ;    |DigitalTube:DT6|         ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTube:DT6         ; work         ;
 ;    |DigitalTubeComp:DigTube| ; 18 (18)     ; 1            ; 0          ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTubeComp:DigTube ; work         ;
-;    |DigitalTubeCounter:DTC|  ; 60 (60)     ; 0            ; 0          ; 0    ; 0            ; 60 (60)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTubeCounter:DTC  ; work         ;
+;    |DigitalTubeCounter:DTC|  ; 56 (56)     ; 0            ; 0          ; 0    ; 0            ; 56 (56)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTubeCounter:DTC  ; work         ;
 ;    |Stabilizer:stab|         ; 7 (7)       ; 6            ; 0          ; 0    ; 0            ; 1 (1)        ; 2 (2)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|Stabilizer:stab         ; work         ;
-;    |counter:maincounter|     ; 15 (15)     ; 6            ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 6 (6)            ; 6 (6)           ; 0 (0)      ; |TrafficLightsControl|counter:maincounter     ; work         ;
+;    |counter:maincounter|     ; 14 (14)     ; 6            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 6 (6)            ; 6 (6)           ; 0 (0)      ; |TrafficLightsControl|counter:maincounter     ; work         ;
 ;    |crossover1000:crossover| ; 21 (21)     ; 10           ; 0          ; 0    ; 0            ; 11 (11)      ; 3 (3)             ; 7 (7)            ; 9 (9)           ; 0 (0)      ; |TrafficLightsControl|crossover1000:crossover ; work         ;
-;    |dotdisp:dot_array|       ; 30 (30)     ; 2            ; 0          ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|dotdisp:dot_array       ; work         ;
+;    |dotdisp:dot_array|       ; 31 (31)     ; 2            ; 0          ; 0    ; 0            ; 29 (29)      ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|dotdisp:dot_array       ; work         ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -291,7 +291,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Tue Oct 13 14:26:37 2020
+    Info: Processing started: Tue Oct 13 14:40:52 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TrafficLightsControl -c TrafficLightsControl
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 2 design units, including 1 entities, in source file maincomp.vhd
@@ -407,9 +407,9 @@ Warning: Latch DigitalTubeCounter:DTC|TubeCode6Out[2] has unsafe behavior
 Warning: Latch DigitalTubeCounter:DTC|TubeCode6Out[3] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[5]
 Warning: Latch DigitalTubeCounter:DTC|TubeCode1Out[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[0]
 Warning: Latch DigitalTubeCounter:DTC|TubeCode7Out[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[2]
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[0]
 Warning: Latch DigitalTubeCounter:DTC|TubeCode0Out[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[4]
 Warning: Latch DigitalTubeCounter:DTC|TubeCode0Out[1] has unsafe behavior
@@ -419,23 +419,27 @@ Warning: Latch DigitalTubeCounter:DTC|TubeCode0Out[2] has unsafe behavior
 Warning: Latch DigitalTubeCounter:DTC|TubeCode0Out[3] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[3]
 Warning: Latch DigitalTubeCounter:DTC|TubeCode1Out[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[3]
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[5]
 Warning: Latch DigitalTubeCounter:DTC|TubeCode7Out[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[4]
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[5]
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "col_r[3]" is stuck at GND
     Warning (13410): Pin "col_r[4]" is stuck at GND
     Warning (13410): Pin "col_g[3]" is stuck at GND
     Warning (13410): Pin "col_g[4]" is stuck at GND
+    Warning (13410): Pin "TubeDispScan[2]" is stuck at VCC
+    Warning (13410): Pin "TubeDispScan[3]" is stuck at VCC
+    Warning (13410): Pin "TubeDispScan[4]" is stuck at VCC
+    Warning (13410): Pin "TubeDispScan[5]" is stuck at VCC
 Info: Registers with preset signals will power-up high
 Info: Implemented 203 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 35 output pins
-    Info: Implemented 166 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 61 warnings
+    Info: Implemented 39 output pins
+    Info: Implemented 162 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 65 warnings
     Info: Peak virtual memory: 4458 megabytes
-    Info: Processing ended: Tue Oct 13 14:26:38 2020
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Tue Oct 13 14:40:54 2020
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

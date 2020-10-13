@@ -1,5 +1,5 @@
 Flow report for TrafficLightsControl
-Tue Oct 13 14:26:42 2020
+Tue Oct 13 14:40:58 2020
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+
 ; Flow Summary                                                         ;
 +---------------------------+------------------------------------------+
-; Flow Status               ; Successful - Tue Oct 13 14:26:42 2020    ;
+; Flow Status               ; Successful - Tue Oct 13 14:40:58 2020    ;
 ; Quartus II 64-Bit Version ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name             ; TrafficLightsControl                     ;
 ; Top-level Entity Name     ; TrafficLightsControl                     ;
@@ -46,8 +46,8 @@ applicable agreement for further details.
 ; Device                    ; EPM1270T144C5                            ;
 ; Timing Models             ; Final                                    ;
 ; Met timing requirements   ; No                                       ;
-; Total logic elements      ; 164 / 1,270 ( 13 % )                     ;
-; Total pins                ; 37 / 116 ( 32 % )                        ;
+; Total logic elements      ; 160 / 1,270 ( 13 % )                     ;
+; Total pins                ; 41 / 116 ( 35 % )                        ;
 ; Total virtual pins        ; 0                                        ;
 ; UFM blocks                ; 0 / 1 ( 0 % )                            ;
 +---------------------------+------------------------------------------+
@@ -58,7 +58,7 @@ applicable agreement for further details.
 +-------------------+----------------------+
 ; Option            ; Setting              ;
 +-------------------+----------------------+
-; Start date & time ; 10/13/2020 14:26:37  ;
+; Start date & time ; 10/13/2020 14:40:52  ;
 ; Main task         ; Compilation          ;
 ; Revision Name     ; TrafficLightsControl ;
 +-------------------+----------------------+
@@ -69,7 +69,7 @@ applicable agreement for further details.
 +---------------------------------------+------------------------------------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                       ; Value                                                                              ; Default Value ; Entity Name ; Section Id     ;
 +---------------------------------------+------------------------------------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                 ; 53447169460197.160257039719724                                                     ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                 ; 53447169460197.160257125209120                                                     ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP                ; 85                                                                                 ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP                ; 0                                                                                  ; --            ; --          ; --             ;
 ; MISC_FILE                             ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/TrafficLightsControl.dpf ; --            ; --          ; --             ;
@@ -86,8 +86,8 @@ applicable agreement for further details.
 ; Analysis & Synthesis    ; 00:00:02     ; 1.0                     ; 4458 MB             ; 00:00:02                           ;
 ; Fitter                  ; 00:00:01     ; 1.0                     ; 4514 MB             ; 00:00:01                           ;
 ; Assembler               ; 00:00:00     ; 1.0                     ; 4371 MB             ; 00:00:00                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 4348 MB             ; 00:00:01                           ;
-; Total                   ; 00:00:03     ; --                      ; --                  ; 00:00:04                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 4348 MB             ; 00:00:01                           ;
+; Total                   ; 00:00:04     ; --                      ; --                  ; 00:00:04                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -97,8 +97,8 @@ GNDIO                        : 26        : gnd    :                   :         
 GND*                         : 27        :        :                   :         : 1         :                
 GND*                         : 28        :        :                   :         : 1         :                
 GND*                         : 29        :        :                   :         : 1         :                
-TubeDispScan[2]              : 30        : output : 3.3-V LVTTL       :         : 1         : Y              
-TubeDispScan[3]              : 31        : output : 3.3-V LVTTL       :         : 1         : Y              
+TubeDispScan[6]              : 30        : output : 3.3-V LVTTL       :         : 1         : Y              
+TubeDispScan[7]              : 31        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : 32        :        :                   :         : 1         :                
 TMS                          : 33        : input  :                   :         : 1         :                
 TDI                          : 34        : input  :                   :         : 1         :                
@@ -134,10 +134,10 @@ TubeDispScan[0]              : 63        : output : 3.3-V LVTTL       :         
 VCCIO4                       : 64        : power  :                   : 3.3V    : 4         :                
 GNDIO                        : 65        : gnd    :                   :         :           :                
 TubeDispScan[1]              : 66        : output : 3.3-V LVTTL       :         : 4         : Y              
-GND*                         : 67        :        :                   :         : 4         :                
-GND*                         : 68        :        :                   :         : 4         :                
-GND*                         : 69        :        :                   :         : 4         :                
-GND*                         : 70        :        :                   :         : 4         :                
+TubeDispScan[2]              : 67        : output : 3.3-V LVTTL       :         : 4         : Y              
+TubeDispScan[3]              : 68        : output : 3.3-V LVTTL       :         : 4         : Y              
+TubeDispScan[4]              : 69        : output : 3.3-V LVTTL       :         : 4         : Y              
+TubeDispScan[5]              : 70        : output : 3.3-V LVTTL       :         : 4         : Y              
 GND*                         : 71        :        :                   :         : 4         :                
 GND*                         : 72        :        :                   :         : 4         :                
 GND*                         : 73        :        :                   :         : 3         :                

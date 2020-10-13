@@ -39,6 +39,10 @@ TubeDispScan[0] <= DigitalTubeComp:DigTube.TubeDispScan[0]
 TubeDispScan[1] <= DigitalTubeComp:DigTube.TubeDispScan[1]
 TubeDispScan[2] <= DigitalTubeComp:DigTube.TubeDispScan[2]
 TubeDispScan[3] <= DigitalTubeComp:DigTube.TubeDispScan[3]
+TubeDispScan[4] <= DigitalTubeComp:DigTube.TubeDispScan[4]
+TubeDispScan[5] <= DigitalTubeComp:DigTube.TubeDispScan[5]
+TubeDispScan[6] <= DigitalTubeComp:DigTube.TubeDispScan[6]
+TubeDispScan[7] <= DigitalTubeComp:DigTube.TubeDispScan[7]
 
 
 |TrafficLightsControl|Stabilizer:stab
@@ -401,8 +405,12 @@ TubeDispOut[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
 TubeDispOut[6] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
 TubeDispScan[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
 TubeDispScan[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
-TubeDispScan[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
-TubeDispScan[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+TubeDispScan[2] <= <VCC>
+TubeDispScan[3] <= <VCC>
+TubeDispScan[4] <= <VCC>
+TubeDispScan[5] <= <VCC>
+TubeDispScan[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+TubeDispScan[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |TrafficLightsControl|dotdisp:dot_array

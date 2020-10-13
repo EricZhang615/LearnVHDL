@@ -11,7 +11,7 @@ entity DigitalTubeComp is
   TubeDisp1In: in STD_LOGIC_VECTOR(6 downto 0);
   TubeDisp0In: in STD_LOGIC_VECTOR(6 downto 0);
   TubeDispOut: out STD_LOGIC_VECTOR(6 downto 0);
-  TubeDispScan: out STD_LOGIC_VECTOR(3 downto 0)
+  TubeDispScan: out STD_LOGIC_VECTOR(7 downto 0)
   );
 end DigitalTubeComp;
 
@@ -33,10 +33,10 @@ begin
   P2:process(scan_cnt)
   begin
     case scan_cnt is
-      when 0 => TubeDispScan <= "0111"; TubeDispOut <= TubeDisp7In;
-      when 1 => TubeDispScan <= "1011"; TubeDispOut <= TubeDisp6In;
-      when 2 => TubeDispScan <= "1101"; TubeDispOut <= TubeDisp1In;
-      when 3 => TubeDispScan <= "1110"; TubeDispOut <= TubeDisp0In;
+      when 0 => TubeDispScan <= "01111111"; TubeDispOut <= TubeDisp7In;
+      when 1 => TubeDispScan <= "10111111"; TubeDispOut <= TubeDisp6In;
+      when 2 => TubeDispScan <= "11111101"; TubeDispOut <= TubeDisp1In;
+      when 3 => TubeDispScan <= "11111110"; TubeDispOut <= TubeDisp0In;
       when others => null;
     end case;
   end process P2;

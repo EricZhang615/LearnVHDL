@@ -129,61 +129,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-DigitalTubeCounter
-# storage
-db|TrafficLightsControl.(4).cnf
-db|TrafficLightsControl.(4).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-digitaltubecounter.vhd
-cf3bfd6bafc63279ec52a22511de3
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(countsec)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(tubecode7out)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(tubecode6out)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(tubecode1out)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(tubecode0out)
-3 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-DigitalTubeCounter:DTC
-}
-# lmf
-|altera|91|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 DigitalTube
 # storage
 db|TrafficLightsControl.(5).cnf
@@ -292,7 +237,7 @@ ON
 # case_insensitive
 # source_file
 maincomp.vhd
-321e042c92a11e1adc4665cce26e6
+a6e7e9fb217b3aedbcc39f128d4890e1
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -314,6 +259,61 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
+DigitalTubeCounter
+# storage
+db|TrafficLightsControl.(4).cnf
+db|TrafficLightsControl.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+digitaltubecounter.vhd
+441dad22f54dfbaa4227d888e1a56b19
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(countsec)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(tubecode7out)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(tubecode6out)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(tubecode1out)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(tubecode0out)
+3 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+DigitalTubeCounter:DTC
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
 DigitalTubeComp
 # storage
 db|TrafficLightsControl.(7).cnf
@@ -325,7 +325,7 @@ ON
 # case_insensitive
 # source_file
 digitaltubecomp.vhd
-691cbf8a6b2d2b76e1bd13a3243534aa
+83fe0ecc3a513716e9ce414b39bf382
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -359,7 +359,7 @@ USR
 PARAMETER_STRING
 USR
  constraint(tubedispscan)
-3 downto 0
+7 downto 0
 PARAMETER_STRING
 USR
 }

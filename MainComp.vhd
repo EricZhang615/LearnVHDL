@@ -15,7 +15,7 @@ entity TrafficLightsControl is
   --TubeDisp1Out: out STD_LOGIC_VECTOR(6 downto 0);
   --TubeDisp0Out: out STD_LOGIC_VECTOR(6 downto 0)
   TubeDispOut: out STD_LOGIC_VECTOR(6 downto 0);
-  TubeDispScan: out STD_LOGIC_VECTOR(3 downto 0)
+  TubeDispScan: out STD_LOGIC_VECTOR(7 downto 0)
   );
 end TrafficLightsControl;
 
@@ -72,7 +72,7 @@ architecture TrafficLightsControl_arch of TrafficLightsControl is
     TubeDisp1In: in STD_LOGIC_VECTOR(6 downto 0);
     TubeDisp0In: in STD_LOGIC_VECTOR(6 downto 0);
     TubeDispOut: out STD_LOGIC_VECTOR(6 downto 0);
-    TubeDispScan: out STD_LOGIC_VECTOR(3 downto 0)
+    TubeDispScan: out STD_LOGIC_VECTOR(7 downto 0)
     );
   end component;
 
