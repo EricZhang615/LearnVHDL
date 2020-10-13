@@ -65,9 +65,9 @@ begin
       when "100111" => TubeCode1Out <= "0000"; TubeCode0Out <= "0001"; TubeCode7Out <= "0000"; TubeCode6Out <= "0001";
 
 
-      when "101000" => TubeCode7Out <= "0011"; TubeCode6Out <= "0011"; TubeCode1Out <= "0011"; TubeCode0Out <= "0011";
-      when "101001" => TubeCode7Out <= "0010"; TubeCode6Out <= "0010"; TubeCode1Out <= "0010"; TubeCode0Out <= "0010";
-      when "101010" => TubeCode7Out <= "0001"; TubeCode6Out <= "0001"; TubeCode1Out <= "0001"; TubeCode0Out <= "0001";
+      when "101000" => TubeCode7Out <= "0000"; TubeCode6Out <= "0011"; TubeCode1Out <= "0000"; TubeCode0Out <= "0011";
+      when "101001" => TubeCode7Out <= "0000"; TubeCode6Out <= "0010"; TubeCode1Out <= "0000"; TubeCode0Out <= "0010";
+      when "101010" => TubeCode7Out <= "0000"; TubeCode6Out <= "0001"; TubeCode1Out <= "0000"; TubeCode0Out <= "0001";
       when others => null;
     end case;
   end process P1;
