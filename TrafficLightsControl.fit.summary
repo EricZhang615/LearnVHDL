@@ -1,11 +1,11 @@
-Fitter Status : Successful - Sat Oct 10 19:29:10 2020
+Fitter Status : Successful - Tue Oct 13 14:26:40 2020
 Quartus II 64-Bit Version : 9.1 Build 222 10/21/2009 SJ Full Version
 Revision Name : TrafficLightsControl
 Top-level Entity Name : TrafficLightsControl
 Family : MAX II
 Device : EPM1270T144C5
 Timing Models : Final
-Total logic elements : 152 / 1,270 ( 12 % )
-Total pins : 54 / 116 ( 47 % )
+Total logic elements : 164 / 1,270 ( 13 % )
+Total pins : 37 / 116 ( 32 % )
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

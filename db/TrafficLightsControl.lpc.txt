@@ -4,6 +4,7 @@
 ; Hierarchy   ; Input ; Constant Input ; Unused Input ; Floating Input ; Output ; Constant Output ; Unused Output ; Floating Output ; Bidir ; Constant Bidir ; Unused Bidir ; Input only Bidir ; Output only Bidir ;
 +-------------+-------+----------------+--------------+----------------+--------+-----------------+---------------+-----------------+-------+----------------+--------------+------------------+-------------------+
 ; dot_array   ; 4     ; 0              ; 0            ; 0              ; 24     ; 0               ; 0             ; 0               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
+; DigTube     ; 29    ; 0              ; 0            ; 0              ; 11     ; 0               ; 0             ; 0               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
 ; DT0         ; 4     ; 0              ; 0            ; 0              ; 7      ; 0               ; 0             ; 0               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
 ; DT1         ; 4     ; 0              ; 0            ; 0              ; 7      ; 0               ; 0             ; 0               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
 ; DT6         ; 4     ; 0              ; 0            ; 0              ; 7      ; 0               ; 0             ; 0               ; 0     ; 0              ; 0            ; 0                ; 0                 ;

@@ -1,6 +1,7 @@
 |TrafficLightsControl
 clk => Stabilizer:stab.clk
 clk => crossover1000:crossover.clk
+clk => DigitalTubeComp:DigTube.clk
 clk => dotdisp:dot_array.clk
 rst => Stabilizer:stab.InputButton
 row[0] <= dotdisp:dot_array.row[0]
@@ -27,34 +28,17 @@ col_g[4] <= dotdisp:dot_array.col_g[4]
 col_g[5] <= dotdisp:dot_array.col_g[5]
 col_g[6] <= dotdisp:dot_array.col_g[6]
 col_g[7] <= dotdisp:dot_array.col_g[7]
-TubeDisp7Out[0] <= DigitalTube:DT7.TubeDispOut[0]
-TubeDisp7Out[1] <= DigitalTube:DT7.TubeDispOut[1]
-TubeDisp7Out[2] <= DigitalTube:DT7.TubeDispOut[2]
-TubeDisp7Out[3] <= DigitalTube:DT7.TubeDispOut[3]
-TubeDisp7Out[4] <= DigitalTube:DT7.TubeDispOut[4]
-TubeDisp7Out[5] <= DigitalTube:DT7.TubeDispOut[5]
-TubeDisp7Out[6] <= DigitalTube:DT7.TubeDispOut[6]
-TubeDisp6Out[0] <= DigitalTube:DT6.TubeDispOut[0]
-TubeDisp6Out[1] <= DigitalTube:DT6.TubeDispOut[1]
-TubeDisp6Out[2] <= DigitalTube:DT6.TubeDispOut[2]
-TubeDisp6Out[3] <= DigitalTube:DT6.TubeDispOut[3]
-TubeDisp6Out[4] <= DigitalTube:DT6.TubeDispOut[4]
-TubeDisp6Out[5] <= DigitalTube:DT6.TubeDispOut[5]
-TubeDisp6Out[6] <= DigitalTube:DT6.TubeDispOut[6]
-TubeDisp1Out[0] <= DigitalTube:DT1.TubeDispOut[0]
-TubeDisp1Out[1] <= DigitalTube:DT1.TubeDispOut[1]
-TubeDisp1Out[2] <= DigitalTube:DT1.TubeDispOut[2]
-TubeDisp1Out[3] <= DigitalTube:DT1.TubeDispOut[3]
-TubeDisp1Out[4] <= DigitalTube:DT1.TubeDispOut[4]
-TubeDisp1Out[5] <= DigitalTube:DT1.TubeDispOut[5]
-TubeDisp1Out[6] <= DigitalTube:DT1.TubeDispOut[6]
-TubeDisp0Out[0] <= DigitalTube:DT0.TubeDispOut[0]
-TubeDisp0Out[1] <= DigitalTube:DT0.TubeDispOut[1]
-TubeDisp0Out[2] <= DigitalTube:DT0.TubeDispOut[2]
-TubeDisp0Out[3] <= DigitalTube:DT0.TubeDispOut[3]
-TubeDisp0Out[4] <= DigitalTube:DT0.TubeDispOut[4]
-TubeDisp0Out[5] <= DigitalTube:DT0.TubeDispOut[5]
-TubeDisp0Out[6] <= DigitalTube:DT0.TubeDispOut[6]
+TubeDispOut[0] <= DigitalTubeComp:DigTube.TubeDispOut[0]
+TubeDispOut[1] <= DigitalTubeComp:DigTube.TubeDispOut[1]
+TubeDispOut[2] <= DigitalTubeComp:DigTube.TubeDispOut[2]
+TubeDispOut[3] <= DigitalTubeComp:DigTube.TubeDispOut[3]
+TubeDispOut[4] <= DigitalTubeComp:DigTube.TubeDispOut[4]
+TubeDispOut[5] <= DigitalTubeComp:DigTube.TubeDispOut[5]
+TubeDispOut[6] <= DigitalTubeComp:DigTube.TubeDispOut[6]
+TubeDispScan[0] <= DigitalTubeComp:DigTube.TubeDispScan[0]
+TubeDispScan[1] <= DigitalTubeComp:DigTube.TubeDispScan[1]
+TubeDispScan[2] <= DigitalTubeComp:DigTube.TubeDispScan[2]
+TubeDispScan[3] <= DigitalTubeComp:DigTube.TubeDispScan[3]
 
 
 |TrafficLightsControl|Stabilizer:stab
@@ -375,6 +359,50 @@ TubeDispOut[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
 TubeDispOut[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
 TubeDispOut[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 TubeDispOut[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TrafficLightsControl|DigitalTubeComp:DigTube
+clk => scan_cnt[0].CLK
+clk => scan_cnt[1].CLK
+TubeDisp7In[0] => Mux10.IN0
+TubeDisp7In[1] => Mux9.IN0
+TubeDisp7In[2] => Mux8.IN0
+TubeDisp7In[3] => Mux7.IN0
+TubeDisp7In[4] => Mux6.IN0
+TubeDisp7In[5] => Mux5.IN0
+TubeDisp7In[6] => Mux4.IN0
+TubeDisp6In[0] => Mux10.IN1
+TubeDisp6In[1] => Mux9.IN1
+TubeDisp6In[2] => Mux8.IN1
+TubeDisp6In[3] => Mux7.IN1
+TubeDisp6In[4] => Mux6.IN1
+TubeDisp6In[5] => Mux5.IN1
+TubeDisp6In[6] => Mux4.IN1
+TubeDisp1In[0] => Mux10.IN2
+TubeDisp1In[1] => Mux9.IN2
+TubeDisp1In[2] => Mux8.IN2
+TubeDisp1In[3] => Mux7.IN2
+TubeDisp1In[4] => Mux6.IN2
+TubeDisp1In[5] => Mux5.IN2
+TubeDisp1In[6] => Mux4.IN2
+TubeDisp0In[0] => Mux10.IN3
+TubeDisp0In[1] => Mux9.IN3
+TubeDisp0In[2] => Mux8.IN3
+TubeDisp0In[3] => Mux7.IN3
+TubeDisp0In[4] => Mux6.IN3
+TubeDisp0In[5] => Mux5.IN3
+TubeDisp0In[6] => Mux4.IN3
+TubeDispOut[0] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+TubeDispOut[1] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+TubeDispOut[2] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+TubeDispOut[3] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+TubeDispOut[4] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+TubeDispOut[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+TubeDispOut[6] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+TubeDispScan[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+TubeDispScan[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+TubeDispScan[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+TubeDispScan[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |TrafficLightsControl|dotdisp:dot_array

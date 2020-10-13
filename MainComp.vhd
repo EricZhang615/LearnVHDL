@@ -10,10 +10,12 @@ entity TrafficLightsControl is
   row: out STD_LOGIC_VECTOR(7 downto 0);
   col_r: out STD_LOGIC_VECTOR(7 downto 0);	--output signal for selecting columns of red lights
   col_g: out STD_LOGIC_VECTOR(7 downto 0);		--output signal for selecting columns of green lights
-  TubeDisp7Out: out STD_LOGIC_VECTOR(6 downto 0);
-  TubeDisp6Out: out STD_LOGIC_VECTOR(6 downto 0);
-  TubeDisp1Out: out STD_LOGIC_VECTOR(6 downto 0);
-  TubeDisp0Out: out STD_LOGIC_VECTOR(6 downto 0)
+  --TubeDisp7Out: out STD_LOGIC_VECTOR(6 downto 0);
+  --TubeDisp6Out: out STD_LOGIC_VECTOR(6 downto 0);
+  --TubeDisp1Out: out STD_LOGIC_VECTOR(6 downto 0);
+  --TubeDisp0Out: out STD_LOGIC_VECTOR(6 downto 0)
+  TubeDispOut: out STD_LOGIC_VECTOR(6 downto 0);
+  TubeDispScan: out STD_LOGIC_VECTOR(3 downto 0)
   );
 end TrafficLightsControl;
 
@@ -62,6 +64,18 @@ architecture TrafficLightsControl_arch of TrafficLightsControl is
     );
   end component;
 
+  component DigitalTubeComp is
+    port(
+    clk: in STD_LOGIC;
+    TubeDisp7In: in STD_LOGIC_VECTOR(6 downto 0);
+    TubeDisp6In: in STD_LOGIC_VECTOR(6 downto 0);
+    TubeDisp1In: in STD_LOGIC_VECTOR(6 downto 0);
+    TubeDisp0In: in STD_LOGIC_VECTOR(6 downto 0);
+    TubeDispOut: out STD_LOGIC_VECTOR(6 downto 0);
+    TubeDispScan: out STD_LOGIC_VECTOR(3 downto 0)
+    );
+  end component;
+
   component Stabilizer
     port(
     clk: in STD_LOGIC;
@@ -79,15 +93,21 @@ architecture TrafficLightsControl_arch of TrafficLightsControl is
   signal TubeCode1: STD_LOGIC_VECTOR(3 downto 0);
   signal TubeCode0: STD_LOGIC_VECTOR(3 downto 0);
 
+  signal TubeDisp7Sig: STD_LOGIC_VECTOR(6 downto 0);
+  signal TubeDisp6Sig: STD_LOGIC_VECTOR(6 downto 0);
+  signal TubeDisp1Sig: STD_LOGIC_VECTOR(6 downto 0);
+  signal TubeDisp0Sig: STD_LOGIC_VECTOR(6 downto 0);
+
 
 begin
   stab:Stabilizer port map(clk=>clk,InputButton=>rst,OutputButton=>rst_stb);
   crossover:crossover1000 port map(clk=>clk,rst=>rst_stb,clkout=>clk_1s);
   maincounter:counter port map(clk=>clk_1s,rst=>rst_stb,TrafficState=>ts,CountSec=>cs);
   DTC:DigitalTubeCounter port map(CountSec=>cs,TubeCode7Out=>TubeCode7,TubeCode6Out=>TubeCode6,TubeCode1Out=>TubeCode1,TubeCode0Out=>TubeCode0);
-  DT7:DigitalTube port map(TubeCodeIn=>TubeCode7,TubeDispOut=>TubeDisp7Out);
-  DT6:DigitalTube port map(TubeCodeIn=>TubeCode6,TubeDispOut=>TubeDisp6Out);
-  DT1:DigitalTube port map(TubeCodeIn=>TubeCode1,TubeDispOut=>TubeDisp1Out);
-  DT0:DigitalTube port map(TubeCodeIn=>TubeCode0,TubeDispOut=>TubeDisp0Out);
+  DT7:DigitalTube port map(TubeCodeIn=>TubeCode7,TubeDispOut=>TubeDisp7Sig);
+  DT6:DigitalTube port map(TubeCodeIn=>TubeCode6,TubeDispOut=>TubeDisp6Sig);
+  DT1:DigitalTube port map(TubeCodeIn=>TubeCode1,TubeDispOut=>TubeDisp1Sig);
+  DT0:DigitalTube port map(TubeCodeIn=>TubeCode0,TubeDispOut=>TubeDisp0Sig);
+  DigTube:DigitalTubeComp port map(clk=>clk,TubeDisp7In=>TubeDisp7Sig,TubeDisp6In=>TubeDisp6Sig,TubeDisp1In=>TubeDisp1Sig,TubeDisp0In=>TubeDisp0Sig,TubeDispOut=>TubeDispOut,TubeDispScan=>TubeDispScan);
   dot_array:dotdisp port map(clk=>clk,TrafficState=>ts,row=>row,col_r=>col_r,col_g=>col_g);
 end TrafficLightsControl_arch;

@@ -20,10 +20,43 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-crossover1000
+Stabilizer
 # storage
 db|TrafficLightsControl.(1).cnf
 db|TrafficLightsControl.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+stabilizer.vhd
+c992646e35c13573fa1321ce3b5b2e1c
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Stabilizer:stab
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+crossover1000
+# storage
+db|TrafficLightsControl.(2).cnf
+db|TrafficLightsControl.(2).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -55,8 +88,8 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 counter
 # storage
-db|TrafficLightsControl.(2).cnf
-db|TrafficLightsControl.(2).cnf
+db|TrafficLightsControl.(3).cnf
+db|TrafficLightsControl.(3).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -88,57 +121,6 @@ USR
 }
 # hierarchies {
 counter:maincounter
-}
-# lmf
-|altera|91|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-dotdisp
-# storage
-db|TrafficLightsControl.(3).cnf
-db|TrafficLightsControl.(3).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-dotdisp.vhd
-958fcbc165ede21723e5cf409f0e75a
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(trafficstate)
-2 downto 0
-PARAMETER_STRING
-USR
- constraint(row)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(col_r)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(col_g)
-7 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-dotdisp:dot_array
 }
 # lmf
 |altera|91|quartus|lmf|maxplus2.lmf
@@ -248,6 +230,57 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
+dotdisp
+# storage
+db|TrafficLightsControl.(6).cnf
+db|TrafficLightsControl.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+dotdisp.vhd
+958fcbc165ede21723e5cf409f0e75a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(trafficstate)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(row)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(col_r)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(col_g)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+dotdisp:dot_array
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
 TrafficLightsControl
 # storage
 db|TrafficLightsControl.(0).cnf
@@ -259,7 +292,7 @@ ON
 # case_insensitive
 # source_file
 maincomp.vhd
-cdc72982991c80c5f4a8be86ad1b6dab
+321e042c92a11e1adc4665cce26e6
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -281,18 +314,18 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-Stabilizer
+DigitalTubeComp
 # storage
-db|TrafficLightsControl.(6).cnf
-db|TrafficLightsControl.(6).cnf
+db|TrafficLightsControl.(7).cnf
+db|TrafficLightsControl.(7).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-stabilizer.vhd
-c992646e35c13573fa1321ce3b5b2e1c
+digitaltubecomp.vhd
+691cbf8a6b2d2b76e1bd13a3243534aa
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -304,8 +337,34 @@ ON
 AUTO_ROM_RECOGNITION
 ON
 }
+# user_parameter {
+ constraint(tubedisp7in)
+6 downto 0
+PARAMETER_STRING
+USR
+ constraint(tubedisp6in)
+6 downto 0
+PARAMETER_STRING
+USR
+ constraint(tubedisp1in)
+6 downto 0
+PARAMETER_STRING
+USR
+ constraint(tubedisp0in)
+6 downto 0
+PARAMETER_STRING
+USR
+ constraint(tubedispout)
+6 downto 0
+PARAMETER_STRING
+USR
+ constraint(tubedispscan)
+3 downto 0
+PARAMETER_STRING
+USR
+}
 # hierarchies {
-Stabilizer:stab
+DigitalTubeComp:DigTube
 }
 # lmf
 |altera|91|quartus|lmf|maxplus2.lmf
