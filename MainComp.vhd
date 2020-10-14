@@ -7,6 +7,7 @@ entity TrafficLightsControl is
   port(
   clk: in STD_LOGIC;
   rst: in STD_LOGIC;
+  adjust: in STD_LOGIC;
   row: out STD_LOGIC_VECTOR(7 downto 0);
   col_r: out STD_LOGIC_VECTOR(7 downto 0);	--output signal for selecting columns of red lights
   col_g: out STD_LOGIC_VECTOR(7 downto 0);		--output signal for selecting columns of green lights
@@ -33,6 +34,7 @@ architecture TrafficLightsControl_arch of TrafficLightsControl is
     port(
     clk: in STD_LOGIC;
     rst: in STD_LOGIC;
+    adjust: in STD_LOGIC;
     TrafficState: out STD_LOGIC_VECTOR(2 downto 0);
     CountSec: out STD_LOGIC_VECTOR(5 downto 0)
     );
@@ -51,6 +53,7 @@ architecture TrafficLightsControl_arch of TrafficLightsControl is
   component DigitalTubeCounter
     port(
     CountSec: in STD_LOGIC_VECTOR(5 downto 0);
+    adjust: in STD_LOGIC;
     TubeCode7Out: out STD_LOGIC_VECTOR(3 downto 0);
     TubeCode6Out: out STD_LOGIC_VECTOR(3 downto 0);
     TubeCode1Out: out STD_LOGIC_VECTOR(3 downto 0);
@@ -111,8 +114,8 @@ architecture TrafficLightsControl_arch of TrafficLightsControl is
 begin
   stab:Stabilizer port map(clk=>clk,InputButton=>rst,OutputButton=>rst_stb);
   crossover:crossover1000 port map(clk=>clk,rst=>rst_stb,clkout=>clk_1s);
-  maincounter:counter port map(clk=>clk_1s,rst=>rst_stb,TrafficState=>ts,CountSec=>cs);
-  DTC:DigitalTubeCounter port map(CountSec=>cs,TubeCode7Out=>TubeCode7,TubeCode6Out=>TubeCode6,TubeCode1Out=>TubeCode1,TubeCode0Out=>TubeCode0);
+  maincounter:counter port map(clk=>clk_1s,rst=>rst_stb,adjust=>adjust,TrafficState=>ts,CountSec=>cs);
+  DTC:DigitalTubeCounter port map(CountSec=>cs,adjust=>adjust,TubeCode7Out=>TubeCode7,TubeCode6Out=>TubeCode6,TubeCode1Out=>TubeCode1,TubeCode0Out=>TubeCode0);
   DT7:DigitalTube port map(TubeCodeIn=>TubeCode7,TubeDispOut=>TubeDisp7Sig);
   DT6:DigitalTube port map(TubeCodeIn=>TubeCode6,TubeDispOut=>TubeDisp6Sig);
   DT1:DigitalTube port map(TubeCodeIn=>TubeCode1,TubeDispOut=>TubeDisp1Sig);

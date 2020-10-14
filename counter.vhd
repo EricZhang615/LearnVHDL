@@ -7,6 +7,7 @@ entity counter is
   port(
   clk: in STD_LOGIC;
   rst: in STD_LOGIC;
+  adjust: in STD_LOGIC;
   TrafficState: out STD_LOGIC_VECTOR(2 downto 0);
   CountSec: out STD_LOGIC_VECTOR(5 downto 0)
   );
@@ -34,16 +35,30 @@ begin
 
   P2:process(cnt_tmp)
   begin
-    if cnt_tmp <= 14 then
-      TrafficState <= "000";
-    elsif cnt_tmp <= 19 then
-      TrafficState <= "001";
-    elsif cnt_tmp <= 34 then
-      TrafficState <= "010";
-    elsif cnt_tmp <= 39 then
-      TrafficState <= "011";
+    if adjust='0' then
+      if cnt_tmp <= 14 then
+        TrafficState <= "000";
+      elsif cnt_tmp <= 19 then
+        TrafficState <= "001";
+      elsif cnt_tmp <= 34 then
+        TrafficState <= "010";
+      elsif cnt_tmp <= 39 then
+        TrafficState <= "011";
+      else
+        TrafficState <= "100";
+      end if;
     else
-      TrafficState <= "100";
+      if cnt_tmp <= 9 then
+        TrafficState <= "000";
+      elsif cnt_tmp <= 14 then
+        TrafficState <= "001";
+      elsif cnt_tmp <= 34 then
+        TrafficState <= "010";
+      elsif cnt_tmp <= 39 then
+        TrafficState <= "011";
+      else
+        TrafficState <= "100";
+      end if;
     end if;
   end process P2;
 
