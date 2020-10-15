@@ -101,3 +101,7 @@ set_location_assignment PIN_30 -to TubeDispScan[6]
 set_location_assignment PIN_70 -to TubeDispScan[5]
 set_location_assignment PIN_69 -to TubeDispScan[4]
 set_global_assignment -name VHDL_FILE Beep.vhd
+set_location_assignment PIN_134 -to adjust
+set_location_assignment PIN_60 -to BeepOut
+set_location_assignment PIN_133 -to LightSens
+set_location_assignment PIN_77 -to TestSigOut

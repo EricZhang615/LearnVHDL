@@ -127,7 +127,7 @@ VCCINT                       : 56        : power  :                   : 2.5V/3.3
 TubeDispOut[3]               : 57        : output : 3.3-V LVTTL       :         : 4         : Y              
 TubeDispOut[4]               : 58        : output : 3.3-V LVTTL       :         : 4         : Y              
 TubeDispOut[5]               : 59        : output : 3.3-V LVTTL       :         : 4         : Y              
-GND*                         : 60        :        :                   :         : 4         :                
+BeepOut                      : 60        : output : 3.3-V LVTTL       :         : 4         : Y              
 GND*                         : 61        :        :                   :         : 4         :                
 TubeDispOut[6]               : 62        : output : 3.3-V LVTTL       :         : 4         : Y              
 TubeDispScan[0]              : 63        : output : 3.3-V LVTTL       :         : 4         : Y              
@@ -164,7 +164,7 @@ GND*                         : 93        :        :                   :         
 GND*                         : 94        :        :                   :         : 3         :                
 GND*                         : 95        :        :                   :         : 3         :                
 GND*                         : 96        :        :                   :         : 3         :                
-BeepOut                      : 97        : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : 97        :        :                   :         : 3         :                
 GND*                         : 98        :        :                   :         : 3         :                
 GNDIO                        : 99        : gnd    :                   :         :           :                
 VCCIO3                       : 100       : power  :                   : 3.3V    : 3         :                
@@ -201,7 +201,7 @@ GND*                         : 130       :        :                   :         
 GND*                         : 131       :        :                   :         : 2         :                
 GND*                         : 132       :        :                   :         : 2         :                
 GND*                         : 133       :        :                   :         : 2         :                
-GND*                         : 134       :        :                   :         : 2         :                
+adjust                       : 134       : input  : 3.3-V LVTTL       :         : 2         : Y              
 GNDIO                        : 135       : gnd    :                   :         :           :                
 VCCIO2                       : 136       : power  :                   : 3.3V    : 2         :                
 GND*                         : 137       :        :                   :         : 2         :                
