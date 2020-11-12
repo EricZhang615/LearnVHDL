@@ -21,8 +21,8 @@ entity TrafficLightsControl is
   TubeDispScan: out STD_LOGIC_VECTOR(7 downto 0);
   BeepOut: out STD_LOGIC;
   --TestSigOut: out STD_LOGIC
-  LCDSigOut: out STD_LOGIC_VECTOR(9 downto 0)
-  -- LCDEnable: out STD_LOGIC
+  LCDSigOut: out STD_LOGIC_VECTOR(9 downto 0);
+  LCDEnable: out STD_LOGIC
   );
 end TrafficLightsControl;
 
@@ -105,12 +105,15 @@ architecture TrafficLightsControl_arch of TrafficLightsControl is
     port(
     LightSigIn: in STD_LOGIC;
     clk: in STD_LOGIC;
+    TrafficState: in STD_LOGIC_VECTOR(2 downto 0);
     --TestSigOut: out STD_LOGIC;
-
+    clk_4s: out STD_LOGIC;
     LCDSigOut: out STD_LOGIC_VECTOR(9 downto 0)
     --LCDEnable: out STD_LOGIC
     );
   end component;
+
+
 
   signal rst_stb: STD_LOGIC;
   signal clk_1s: STD_LOGIC;
@@ -128,6 +131,7 @@ architecture TrafficLightsControl_arch of TrafficLightsControl is
 
 
 begin
+
   stab:Stabilizer port map(clk=>clk,InputButton=>rst,OutputButton=>rst_stb);
   crossover:crossover1000 port map(clk=>clk,rst=>rst_stb,clkout=>clk_1s);
   maincounter:counter port map(clk=>clk_1s,rst=>rst_stb,adjust=>adjust,TrafficState=>ts,CountSec=>cs);
@@ -139,5 +143,5 @@ begin
   DigTube:DigitalTubeComp port map(clk=>clk,TubeDisp7In=>TubeDisp7Sig,TubeDisp6In=>TubeDisp6Sig,TubeDisp1In=>TubeDisp1Sig,TubeDisp0In=>TubeDisp0Sig,TubeDispOut=>TubeDispOut,TubeDispScan=>TubeDispScan);
   dot_array:dotdisp port map(clk=>clk,TrafficState=>ts,row=>row,col_r=>col_r,col_g=>col_g);
   BP:Beep port map(clk=>clk,TrafficState=>ts,BeepSig=>BeepOut);
-  LS:LightSensor port map(LightSigIn=>LightSens,clk=>clk,LCDSigOut=>LCDSigOut);
+  LS:LightSensor port map(LightSigIn=>LightSens,clk=>clk,TrafficState=>ts,LCDSigOut=>LCDSigOut,clk_4s=>LCDEnable);
 end TrafficLightsControl_arch;

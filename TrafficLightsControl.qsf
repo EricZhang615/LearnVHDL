@@ -105,3 +105,14 @@ set_location_assignment PIN_134 -to adjust
 set_location_assignment PIN_60 -to BeepOut
 set_location_assignment PIN_133 -to LightSens
 set_location_assignment PIN_77 -to TestSigOut
+set_location_assignment PIN_48 -to LCDSigOut[9]
+set_location_assignment PIN_109 -to LCDSigOut[8]
+set_location_assignment PIN_107 -to LCDSigOut[7]
+set_location_assignment PIN_106 -to LCDSigOut[6]
+set_location_assignment PIN_105 -to LCDSigOut[5]
+set_location_assignment PIN_104 -to LCDSigOut[4]
+set_location_assignment PIN_103 -to LCDSigOut[3]
+set_location_assignment PIN_102 -to LCDSigOut[2]
+set_location_assignment PIN_110 -to LCDSigOut[1]
+set_location_assignment PIN_101 -to LCDSigOut[0]
+set_location_assignment PIN_108 -to LCDEnable

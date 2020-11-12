@@ -59,6 +59,7 @@ LCDSigOut[6] <= LightSensor:LS.LCDSigOut[6]
 LCDSigOut[7] <= LightSensor:LS.LCDSigOut[7]
 LCDSigOut[8] <= LightSensor:LS.LCDSigOut[8]
 LCDSigOut[9] <= LightSensor:LS.LCDSigOut[9]
+LCDEnable <= LightSensor:LS.clk_4s
 
 
 |TrafficLightsControl|Stabilizer:stab
@@ -647,18 +648,29 @@ BeepSig <= BeepSig.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |TrafficLightsControl|LightSensor:LS
-LightSigIn => NextState.printS.DATAB
-LightSigIn => Selector4.IN2
-clk => CurrentState~1.DATAIN
-LCDSigOut[0] <= LCDSigOut[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
-LCDSigOut[1] <= LCDSigOut[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
-LCDSigOut[2] <= LCDSigOut[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
-LCDSigOut[3] <= LCDSigOut[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
-LCDSigOut[4] <= LCDSigOut[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
-LCDSigOut[5] <= LCDSigOut[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
-LCDSigOut[6] <= LCDSigOut[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LightSigIn => NextState.DATAB
+LightSigIn => NextState.OUTPUTSELECT
+LightSigIn => NextState.OUTPUTSELECT
+LightSigIn => NextState.DATAB
+clk => clk_tmp.CLK
+clk => c[0].CLK
+clk => c[1].CLK
+TrafficState[0] => Equal1.IN5
+TrafficState[0] => Equal2.IN5
+TrafficState[1] => Equal1.IN4
+TrafficState[1] => Equal2.IN4
+TrafficState[2] => Equal1.IN3
+TrafficState[2] => Equal2.IN3
+clk_4s <= clk_tmp.DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[0] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[1] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[2] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[5] <= LCDSigOut[5].DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 LCDSigOut[7] <= <GND>
 LCDSigOut[8] <= <GND>
-LCDSigOut[9] <= LCDSigOut[9]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[9] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 

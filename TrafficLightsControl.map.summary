@@ -1,9 +1,9 @@
-Analysis & Synthesis Status : Successful - Thu Nov 12 11:46:05 2020
+Analysis & Synthesis Status : Successful - Thu Nov 12 17:27:59 2020
 Quartus II 64-Bit Version : 9.1 Build 222 10/21/2009 SJ Full Version
 Revision Name : TrafficLightsControl
 Top-level Entity Name : TrafficLightsControl
 Family : MAX II
-Total logic elements : 241
-Total pins : 54
+Total logic elements : 239
+Total pins : 55
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

@@ -379,39 +379,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-TrafficLightsControl
-# storage
-db|TrafficLightsControl.(0).cnf
-db|TrafficLightsControl.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-maincomp.vhd
-120f0551eab8e0a44051f667b95b64
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-|
-}
-# lmf
-|altera|91|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 LightSensor
 # storage
 db|TrafficLightsControl.(9).cnf
@@ -423,7 +390,7 @@ ON
 # case_insensitive
 # source_file
 lightsensor.vhd
-1a3345496f3c94867e5e398b7f3db67c
+654d30f9b9b7f687b37fffd53a377
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -443,6 +410,39 @@ USR
 }
 # hierarchies {
 LightSensor:LS
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+TrafficLightsControl
+# storage
+db|TrafficLightsControl.(0).cnf
+db|TrafficLightsControl.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+maincomp.vhd
+3747758fc9072e478dd57499ee41f2f
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
 }
 # lmf
 |altera|91|quartus|lmf|maxplus2.lmf

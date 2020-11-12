@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 1.850 ns
-From           : rst
-To             : Stabilizer:stab|tmp1
+Actual Time    : 2.307 ns
+From           : adjust
+To             : LightSensor:LS|CurrentState.readIn
 From Clock     : --
 To Clock       : clk
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 31.491 ns
-From           : DigitalTubeCounter:DTC|TubeCode0Out[3]
-To             : TubeDispOut[2]
+Actual Time    : 31.631 ns
+From           : DigitalTubeCounter:DTC|TubeCode0Out[0]
+To             : TubeDispOut[6]
 From Clock     : clk
 To Clock       : --
 Failed Paths   : 0
@@ -25,7 +25,7 @@ Failed Paths   : 0
 Type           : Worst-case tpd
 Slack          : N/A
 Required Time  : None
-Actual Time    : 19.297 ns
+Actual Time    : 17.824 ns
 From           : adjust
 To             : col_r[1]
 From Clock     : --
@@ -35,7 +35,7 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 10.598 ns
+Actual Time    : 12.813 ns
 From           : adjust
 To             : DigitalTubeCounter:DTC|TubeCode7Out[0]
 From Clock     : --
@@ -45,9 +45,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clk'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 128.85 MHz ( period = 7.761 ns )
-From           : Beep:BP|\P2:c3[3]
-To             : Beep:BP|\P2:c3[4]
+Actual Time    : 46.32 MHz ( period = 21.588 ns )
+From           : counter:maincounter|cnt_tmp[3]
+To             : LightSensor:LS|CurrentState.readIn
 From Clock     : clk
 To Clock       : clk
 Failed Paths   : 0
@@ -57,10 +57,10 @@ Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
 From           : counter:maincounter|cnt_tmp[5]
-To             : DigitalTubeCounter:DTC|TubeCode1Out[0]
+To             : DigitalTubeCounter:DTC|TubeCode6Out[3]
 From Clock     : clk
 To Clock       : clk
-Failed Paths   : 98
+Failed Paths   : 65
 
 Type           : Total number of failed paths
 Slack          : 
@@ -70,7 +70,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 98
+Failed Paths   : 65
 
 --------------------------------------------------------------------------------------
 

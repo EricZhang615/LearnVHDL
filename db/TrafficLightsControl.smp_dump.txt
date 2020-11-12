@@ -1,16 +1,17 @@
 
 State Machine - |TrafficLightsControl|LightSensor:LS|CurrentState
-Name CurrentState.clear CurrentState.printY CurrentState.printB CurrentState.printUndersc CurrentState.printD CurrentState.printN CurrentState.printA CurrentState.printT CurrentState.printS CurrentState.readIn CurrentState.init3 CurrentState.init2 CurrentState.init1 
-CurrentState.init1 0 0 0 0 0 0 0 0 0 0 0 0 0 
-CurrentState.init2 0 0 0 0 0 0 0 0 0 0 0 1 1 
-CurrentState.init3 0 0 0 0 0 0 0 0 0 0 1 0 1 
-CurrentState.readIn 0 0 0 0 0 0 0 0 0 1 0 0 1 
-CurrentState.printS 0 0 0 0 0 0 0 0 1 0 0 0 1 
-CurrentState.printT 0 0 0 0 0 0 0 1 0 0 0 0 1 
-CurrentState.printA 0 0 0 0 0 0 1 0 0 0 0 0 1 
-CurrentState.printN 0 0 0 0 0 1 0 0 0 0 0 0 1 
-CurrentState.printD 0 0 0 0 1 0 0 0 0 0 0 0 1 
-CurrentState.printUndersc 0 0 0 1 0 0 0 0 0 0 0 0 1 
-CurrentState.printB 0 0 1 0 0 0 0 0 0 0 0 0 1 
-CurrentState.printY 0 1 0 0 0 0 0 0 0 0 0 0 1 
-CurrentState.clear 1 0 0 0 0 0 0 0 0 0 0 0 1 
+Name CurrentState.clear CurrentState.printY CurrentState.printB CurrentState.printUndersc CurrentState.printD CurrentState.printN CurrentState.printA CurrentState.printT CurrentState.printS CurrentState.readIn2 CurrentState.readIn CurrentState.init3 CurrentState.init2 CurrentState.init1 
+CurrentState.init1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+CurrentState.init2 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+CurrentState.init3 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+CurrentState.readIn 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+CurrentState.readIn2 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+CurrentState.printS 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+CurrentState.printT 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+CurrentState.printA 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+CurrentState.printN 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+CurrentState.printD 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+CurrentState.printUndersc 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+CurrentState.printB 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.printY 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.clear 1 0 0 0 0 0 0 0 0 0 0 0 0 1 

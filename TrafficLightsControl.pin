@@ -115,7 +115,7 @@ col_g[1]                     : 44        : output : 3.3-V LVTTL       :         
 col_g[0]                     : 45        : output : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : 46        : power  :                   : 3.3V    : 4         :                
 GNDIO                        : 47        : gnd    :                   :         :           :                
-GND*                         : 48        :        :                   :         : 4         :                
+LCDSigOut[9]                 : 48        : output : 3.3-V LVTTL       :         : 4         : Y              
 GND*                         : 49        :        :                   :         : 4         :                
 GND*                         : 50        :        :                   :         : 4         :                
 GND*                         : 51        :        :                   :         : 4         :                
@@ -153,14 +153,14 @@ VCCIO3                       : 82        : power  :                   : 3.3V    
 GNDIO                        : 83        : gnd    :                   :         :           :                
 GND*                         : 84        :        :                   :         : 3         :                
 GND*                         : 85        :        :                   :         : 3         :                
-LCDSigOut[2]                 : 86        : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : 86        :        :                   :         : 3         :                
 GND*                         : 87        :        :                   :         : 3         :                
 GND*                         : 88        :        :                   :         : 3         :                
 GND*                         : 89        :        :                   :         : 3         :                
 VCCINT                       : 90        : power  :                   : 2.5V/3.3V :           :                
 GND*                         : 91        :        :                   :         : 3         :                
 GNDINT                       : 92        : gnd    :                   :         :           :                
-LCDSigOut[7]                 : 93        : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : 93        :        :                   :         : 3         :                
 GND*                         : 94        :        :                   :         : 3         :                
 GND*                         : 95        :        :                   :         : 3         :                
 GND*                         : 96        :        :                   :         : 3         :                
@@ -168,16 +168,16 @@ GND*                         : 97        :        :                   :         
 GND*                         : 98        :        :                   :         : 3         :                
 GNDIO                        : 99        : gnd    :                   :         :           :                
 VCCIO3                       : 100       : power  :                   : 3.3V    : 3         :                
-GND*                         : 101       :        :                   :         : 3         :                
-GND*                         : 102       :        :                   :         : 3         :                
-LCDSigOut[8]                 : 103       : output : 3.3-V LVTTL       :         : 3         : N              
-GND*                         : 104       :        :                   :         : 3         :                
-GND*                         : 105       :        :                   :         : 3         :                
-LCDSigOut[4]                 : 106       : output : 3.3-V LVTTL       :         : 3         : N              
-GND*                         : 107       :        :                   :         : 3         :                
-GND*                         : 108       :        :                   :         : 3         :                
-GND*                         : 109       :        :                   :         : 2         :                
-GND*                         : 110       :        :                   :         : 2         :                
+LCDSigOut[0]                 : 101       : output : 3.3-V LVTTL       :         : 3         : Y              
+LCDSigOut[2]                 : 102       : output : 3.3-V LVTTL       :         : 3         : Y              
+LCDSigOut[3]                 : 103       : output : 3.3-V LVTTL       :         : 3         : Y              
+LCDSigOut[4]                 : 104       : output : 3.3-V LVTTL       :         : 3         : Y              
+LCDSigOut[5]                 : 105       : output : 3.3-V LVTTL       :         : 3         : Y              
+LCDSigOut[6]                 : 106       : output : 3.3-V LVTTL       :         : 3         : Y              
+LCDSigOut[7]                 : 107       : output : 3.3-V LVTTL       :         : 3         : Y              
+LCDEnable                    : 108       : output : 3.3-V LVTTL       :         : 3         : Y              
+LCDSigOut[8]                 : 109       : output : 3.3-V LVTTL       :         : 2         : Y              
+LCDSigOut[1]                 : 110       : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 111       :        :                   :         : 2         :                
 GND*                         : 112       :        :                   :         : 2         :                
 GND*                         : 113       :        :                   :         : 2         :                
@@ -188,8 +188,8 @@ GND*                         : 117       :        :                   :         
 GND*                         : 118       :        :                   :         : 2         :                
 GND*                         : 119       :        :                   :         : 2         :                
 GND*                         : 120       :        :                   :         : 2         :                
-LCDSigOut[0]                 : 121       : output : 3.3-V LVTTL       :         : 2         : N              
-LCDSigOut[5]                 : 122       : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 121       :        :                   :         : 2         :                
+GND*                         : 122       :        :                   :         : 2         :                
 GND*                         : 123       :        :                   :         : 2         :                
 rst                          : 124       : input  : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 125       :        :                   :         : 2         :                
@@ -199,16 +199,16 @@ GNDINT                       : 128       : gnd    :                   :         
 GND*                         : 129       :        :                   :         : 2         :                
 GND*                         : 130       :        :                   :         : 2         :                
 GND*                         : 131       :        :                   :         : 2         :                
-LCDSigOut[6]                 : 132       : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 132       :        :                   :         : 2         :                
 LightSens                    : 133       : input  : 3.3-V LVTTL       :         : 2         : Y              
 adjust                       : 134       : input  : 3.3-V LVTTL       :         : 2         : Y              
 GNDIO                        : 135       : gnd    :                   :         :           :                
 VCCIO2                       : 136       : power  :                   : 3.3V    : 2         :                
 GND*                         : 137       :        :                   :         : 2         :                
 GND*                         : 138       :        :                   :         : 2         :                
-LCDSigOut[1]                 : 139       : output : 3.3-V LVTTL       :         : 2         : N              
-LCDSigOut[3]                 : 140       : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 139       :        :                   :         : 2         :                
+GND*                         : 140       :        :                   :         : 2         :                
 GND*                         : 141       :        :                   :         : 2         :                
 GND*                         : 142       :        :                   :         : 2         :                
 GND*                         : 143       :        :                   :         : 2         :                
-LCDSigOut[9]                 : 144       : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 144       :        :                   :         : 2         :                
