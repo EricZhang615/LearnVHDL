@@ -19,7 +19,7 @@ entity TrafficLightsControl is
   --TubeDisp0Out: out STD_LOGIC_VECTOR(6 downto 0)
   TubeDispOut: out STD_LOGIC_VECTOR(6 downto 0);
   TubeDispScan: out STD_LOGIC_VECTOR(7 downto 0);
-  BeepOut: out STD_LOGIC
+  BeepOut: out STD_LOGIC;
   --TestSigOut: out STD_LOGIC
   LCDSigOut: out STD_LOGIC_VECTOR(9 downto 0)
   -- LCDEnable: out STD_LOGIC
@@ -139,5 +139,5 @@ begin
   DigTube:DigitalTubeComp port map(clk=>clk,TubeDisp7In=>TubeDisp7Sig,TubeDisp6In=>TubeDisp6Sig,TubeDisp1In=>TubeDisp1Sig,TubeDisp0In=>TubeDisp0Sig,TubeDispOut=>TubeDispOut,TubeDispScan=>TubeDispScan);
   dot_array:dotdisp port map(clk=>clk,TrafficState=>ts,row=>row,col_r=>col_r,col_g=>col_g);
   BP:Beep port map(clk=>clk,TrafficState=>ts,BeepSig=>BeepOut);
-  LS:LightSensor port map(LightSigIn=>LightSens,clk=>clk,LCDSigOut=>LCDSigOute);
+  LS:LightSensor port map(LightSigIn=>LightSens,clk=>clk,LCDSigOut=>LCDSigOut);
 end TrafficLightsControl_arch;

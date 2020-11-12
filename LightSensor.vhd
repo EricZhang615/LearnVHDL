@@ -13,8 +13,8 @@ entity LightSensor is
 end LightSensor;            --dark 1 light 0
 
 architecture LightSensor_arch of LightSensor is
-  type state_type is (init1,init2,init3,readIn,printS,printT,printA,printN,printD,print_,printB,printY,clear);
-  signal CurrentState,NextState : state_type := init;
+  type state_type is (init1,init2,init3,readIn,printS,printT,printA,printN,printD,printUndersc,printB,printY,clear);
+  signal CurrentState,NextState : state_type := init1;
 
   begin
     P1:process(CurrentState,LightSigIn)
@@ -53,8 +53,8 @@ architecture LightSensor_arch of LightSensor is
           NextState <= printD;
         when printD =>
           LCDSigOut <= "1001000100";
-          NextState <= print_;
-        when print_ =>
+          NextState <= printUndersc;
+        when printUndersc =>
           LCDSigOut <= "1001011111";
           NextState <= printB;
         when printB =>

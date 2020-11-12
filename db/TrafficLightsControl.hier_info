@@ -4,9 +4,11 @@ clk => crossover1000:crossover.clk
 clk => DigitalTubeComp:DigTube.clk
 clk => dotdisp:dot_array.clk
 clk => Beep:BP.clk
+clk => LightSensor:LS.clk
 rst => Stabilizer:stab.InputButton
 adjust => counter:maincounter.adjust
 adjust => DigitalTubeCounter:DTC.adjust
+LightSens => LightSensor:LS.LightSigIn
 row[0] <= dotdisp:dot_array.row[0]
 row[1] <= dotdisp:dot_array.row[1]
 row[2] <= dotdisp:dot_array.row[2]
@@ -47,6 +49,16 @@ TubeDispScan[5] <= DigitalTubeComp:DigTube.TubeDispScan[5]
 TubeDispScan[6] <= DigitalTubeComp:DigTube.TubeDispScan[6]
 TubeDispScan[7] <= DigitalTubeComp:DigTube.TubeDispScan[7]
 BeepOut <= Beep:BP.BeepSig
+LCDSigOut[0] <= LightSensor:LS.LCDSigOut[0]
+LCDSigOut[1] <= LightSensor:LS.LCDSigOut[1]
+LCDSigOut[2] <= LightSensor:LS.LCDSigOut[2]
+LCDSigOut[3] <= LightSensor:LS.LCDSigOut[3]
+LCDSigOut[4] <= LightSensor:LS.LCDSigOut[4]
+LCDSigOut[5] <= LightSensor:LS.LCDSigOut[5]
+LCDSigOut[6] <= LightSensor:LS.LCDSigOut[6]
+LCDSigOut[7] <= LightSensor:LS.LCDSigOut[7]
+LCDSigOut[8] <= LightSensor:LS.LCDSigOut[8]
+LCDSigOut[9] <= LightSensor:LS.LCDSigOut[9]
 
 
 |TrafficLightsControl|Stabilizer:stab
@@ -632,5 +644,21 @@ TrafficState[2] => Equal3.IN3
 TrafficState[2] => Equal4.IN3
 TrafficState[2] => Equal5.IN3
 BeepSig <= BeepSig.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TrafficLightsControl|LightSensor:LS
+LightSigIn => NextState.printS.DATAB
+LightSigIn => Selector4.IN2
+clk => CurrentState~1.DATAIN
+LCDSigOut[0] <= LCDSigOut[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[1] <= LCDSigOut[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[2] <= LCDSigOut[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[3] <= LCDSigOut[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[4] <= LCDSigOut[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[5] <= LCDSigOut[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[6] <= LCDSigOut[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LCDSigOut[7] <= <GND>
+LCDSigOut[8] <= <GND>
+LCDSigOut[9] <= LCDSigOut[9]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 

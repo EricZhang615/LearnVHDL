@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TrafficLightsControl
-Thu Oct 15 17:57:03 2020
+Thu Nov 12 11:46:05 2020
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -13,12 +13,13 @@ Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Analysis & Synthesis Messages
+  8. State Machine - |TrafficLightsControl|LightSensor:LS|CurrentState
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -44,13 +45,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu Oct 15 17:57:03 2020    ;
+; Analysis & Synthesis Status ; Successful - Thu Nov 12 11:46:05 2020    ;
 ; Quartus II 64-Bit Version   ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name               ; TrafficLightsControl                     ;
 ; Top-level Entity Name       ; TrafficLightsControl                     ;
 ; Family                      ; MAX II                                   ;
-; Total logic elements        ; 213                                      ;
-; Total pins                  ; 43                                       ;
+; Total logic elements        ; 241                                      ;
+; Total pins                  ; 54                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
 +-----------------------------+------------------------------------------+
@@ -140,21 +141,22 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                  ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                     ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+
-; MainComp.vhd                     ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/MainComp.vhd           ;
-; crossover1000.vhd                ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/crossover1000.vhd      ;
-; counter.vhd                      ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/counter.vhd            ;
-; dotdisp.vhd                      ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/dotdisp.vhd            ;
-; DigitalTube.vhd                  ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/DigitalTube.vhd        ;
-; DigitalTubeCounter.vhd           ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/DigitalTubeCounter.vhd ;
-; Stabilizer.vhd                   ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/Stabilizer.vhd         ;
-; DigitalTubeComp.vhd              ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/DigitalTubeComp.vhd    ;
-; Beep.vhd                         ; yes             ; User VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/Beep.vhd               ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                     ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------------+
+; MainComp.vhd                     ; yes             ; User VHDL File        ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/MainComp.vhd           ;
+; crossover1000.vhd                ; yes             ; User VHDL File        ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/crossover1000.vhd      ;
+; counter.vhd                      ; yes             ; User VHDL File        ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/counter.vhd            ;
+; dotdisp.vhd                      ; yes             ; User VHDL File        ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/dotdisp.vhd            ;
+; DigitalTube.vhd                  ; yes             ; User VHDL File        ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/DigitalTube.vhd        ;
+; DigitalTubeCounter.vhd           ; yes             ; User VHDL File        ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/DigitalTubeCounter.vhd ;
+; Stabilizer.vhd                   ; yes             ; User VHDL File        ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/Stabilizer.vhd         ;
+; DigitalTubeComp.vhd              ; yes             ; User VHDL File        ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/DigitalTubeComp.vhd    ;
+; Beep.vhd                         ; yes             ; User VHDL File        ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/Beep.vhd               ;
+; lightsensor.vhd                  ; yes             ; Auto-Found VHDL File  ; C:/Users/1/Desktop/documents/DigitalExperiments/LearnVHDL/lightsensor.vhd        ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------+
@@ -162,33 +164,33 @@ applicable agreement for further details.
 +---------------------------------------------+--------------------------------+
 ; Resource                                    ; Usage                          ;
 +---------------------------------------------+--------------------------------+
-; Total logic elements                        ; 213                            ;
-;     -- Combinational with no register       ; 179                            ;
-;     -- Register only                        ; 6                              ;
-;     -- Combinational with a register        ; 28                             ;
+; Total logic elements                        ; 241                            ;
+;     -- Combinational with no register       ; 194                            ;
+;     -- Register only                        ; 14                             ;
+;     -- Combinational with a register        ; 33                             ;
 ;                                             ;                                ;
 ; Logic element usage by number of LUT inputs ;                                ;
-;     -- 4 input functions                    ; 123                            ;
-;     -- 3 input functions                    ; 46                             ;
-;     -- 2 input functions                    ; 34                             ;
-;     -- 1 input functions                    ; 3                              ;
-;     -- 0 input functions                    ; 1                              ;
+;     -- 4 input functions                    ; 126                            ;
+;     -- 3 input functions                    ; 59                             ;
+;     -- 2 input functions                    ; 36                             ;
+;     -- 1 input functions                    ; 4                              ;
+;     -- 0 input functions                    ; 2                              ;
 ;                                             ;                                ;
 ; Logic elements by mode                      ;                                ;
-;     -- normal mode                          ; 194                            ;
+;     -- normal mode                          ; 222                            ;
 ;     -- arithmetic mode                      ; 19                             ;
 ;     -- qfbk mode                            ; 0                              ;
 ;     -- register cascade mode                ; 0                              ;
 ;     -- synchronous clear/load mode          ; 6                              ;
 ;     -- asynchronous clear/load mode         ; 16                             ;
 ;                                             ;                                ;
-; Total registers                             ; 34                             ;
+; Total registers                             ; 47                             ;
 ; Total logic cells in carry chains           ; 22                             ;
-; I/O pins                                    ; 43                             ;
+; I/O pins                                    ; 54                             ;
 ; Maximum fan-out node                        ; counter:maincounter|cnt_tmp[4] ;
 ; Maximum fan-out                             ; 44                             ;
-; Total fan-out                               ; 799                            ;
-; Average fan-out                             ; 3.12                           ;
+; Total fan-out                               ; 884                            ;
+; Average fan-out                             ; 3.00                           ;
 +---------------------------------------------+--------------------------------+
 
 
@@ -197,7 +199,7 @@ applicable agreement for further details.
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
 ; Compilation Hierarchy Node   ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                           ; Library Name ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
-; |TrafficLightsControl        ; 213 (1)     ; 34           ; 0          ; 43   ; 0            ; 179 (1)      ; 6 (0)             ; 28 (0)           ; 22 (0)          ; 0 (0)      ; |TrafficLightsControl                         ; work         ;
+; |TrafficLightsControl        ; 241 (1)     ; 47           ; 0          ; 54   ; 0            ; 194 (1)      ; 14 (0)            ; 33 (0)           ; 22 (0)          ; 0 (0)      ; |TrafficLightsControl                         ; work         ;
 ;    |Beep:BP|                 ; 20 (20)     ; 9            ; 0          ; 0    ; 0            ; 11 (11)      ; 1 (1)             ; 8 (8)            ; 7 (7)           ; 0 (0)      ; |TrafficLightsControl|Beep:BP                 ; work         ;
 ;    |DigitalTube:DT0|         ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTube:DT0         ; work         ;
 ;    |DigitalTube:DT1|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTube:DT1         ; work         ;
@@ -205,6 +207,7 @@ applicable agreement for further details.
 ;    |DigitalTube:DT7|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTube:DT7         ; work         ;
 ;    |DigitalTubeComp:DigTube| ; 18 (18)     ; 1            ; 0          ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTubeComp:DigTube ; work         ;
 ;    |DigitalTubeCounter:DTC|  ; 82 (82)     ; 0            ; 0          ; 0    ; 0            ; 82 (82)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|DigitalTubeCounter:DTC  ; work         ;
+;    |LightSensor:LS|          ; 28 (28)     ; 13           ; 0          ; 0    ; 0            ; 15 (15)      ; 8 (8)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|LightSensor:LS          ; work         ;
 ;    |Stabilizer:stab|         ; 7 (7)       ; 6            ; 0          ; 0    ; 0            ; 1 (1)        ; 2 (2)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |TrafficLightsControl|Stabilizer:stab         ; work         ;
 ;    |counter:maincounter|     ; 18 (18)     ; 6            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 6 (6)            ; 6 (6)           ; 0 (0)      ; |TrafficLightsControl|counter:maincounter     ; work         ;
 ;    |crossover1000:crossover| ; 21 (21)     ; 10           ; 0          ; 0    ; 0            ; 11 (11)      ; 3 (3)             ; 7 (7)            ; 9 (9)           ; 0 (0)      ; |TrafficLightsControl|crossover1000:crossover ; work         ;
@@ -213,25 +216,55 @@ applicable agreement for further details.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                         ;
-+-----------------------------------------------------+------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal          ; Free of Timing Hazards ;
-+-----------------------------------------------------+------------------------------+------------------------+
-; DigitalTubeCounter:DTC|TubeCode1Out[1]              ; DigitalTubeCounter:DTC|Mux27 ; yes                    ;
-; DigitalTubeCounter:DTC|TubeCode6Out[0]              ; DigitalTubeCounter:DTC|Mux27 ; yes                    ;
-; DigitalTubeCounter:DTC|TubeCode6Out[1]              ; DigitalTubeCounter:DTC|Mux27 ; yes                    ;
-; DigitalTubeCounter:DTC|TubeCode6Out[2]              ; DigitalTubeCounter:DTC|Mux27 ; yes                    ;
-; DigitalTubeCounter:DTC|TubeCode6Out[3]              ; DigitalTubeCounter:DTC|Mux27 ; yes                    ;
-; DigitalTubeCounter:DTC|TubeCode7Out[1]              ; DigitalTubeCounter:DTC|Mux27 ; yes                    ;
-; DigitalTubeCounter:DTC|TubeCode0Out[0]              ; DigitalTubeCounter:DTC|Mux27 ; yes                    ;
-; DigitalTubeCounter:DTC|TubeCode0Out[1]              ; DigitalTubeCounter:DTC|Mux27 ; yes                    ;
-; DigitalTubeCounter:DTC|TubeCode0Out[2]              ; DigitalTubeCounter:DTC|Mux27 ; yes                    ;
-; DigitalTubeCounter:DTC|TubeCode0Out[3]              ; DigitalTubeCounter:DTC|Mux27 ; yes                    ;
-; DigitalTubeCounter:DTC|TubeCode1Out[0]              ; DigitalTubeCounter:DTC|Mux27 ; yes                    ;
-; DigitalTubeCounter:DTC|TubeCode7Out[0]              ; DigitalTubeCounter:DTC|Mux27 ; yes                    ;
-; Number of user-specified and inferred latches = 12  ;                              ;                        ;
-+-----------------------------------------------------+------------------------------+------------------------+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TrafficLightsControl|LightSensor:LS|CurrentState                                                                                                                                                                                                                                                         ;
++---------------------------+--------------------+---------------------+---------------------+---------------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+--------------------+--------------------+--------------------+
+; Name                      ; CurrentState.clear ; CurrentState.printY ; CurrentState.printB ; CurrentState.printUndersc ; CurrentState.printD ; CurrentState.printN ; CurrentState.printA ; CurrentState.printT ; CurrentState.printS ; CurrentState.readIn ; CurrentState.init3 ; CurrentState.init2 ; CurrentState.init1 ;
++---------------------------+--------------------+---------------------+---------------------+---------------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+--------------------+--------------------+--------------------+
+; CurrentState.init1        ; 0                  ; 0                   ; 0                   ; 0                         ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                  ; 0                  ;
+; CurrentState.init2        ; 0                  ; 0                   ; 0                   ; 0                         ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 1                  ; 1                  ;
+; CurrentState.init3        ; 0                  ; 0                   ; 0                   ; 0                         ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                  ; 0                  ; 1                  ;
+; CurrentState.readIn       ; 0                  ; 0                   ; 0                   ; 0                         ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                  ; 0                  ; 1                  ;
+; CurrentState.printS       ; 0                  ; 0                   ; 0                   ; 0                         ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                  ; 0                  ; 1                  ;
+; CurrentState.printT       ; 0                  ; 0                   ; 0                   ; 0                         ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                  ; 0                  ; 1                  ;
+; CurrentState.printA       ; 0                  ; 0                   ; 0                   ; 0                         ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                  ; 1                  ;
+; CurrentState.printN       ; 0                  ; 0                   ; 0                   ; 0                         ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                  ; 1                  ;
+; CurrentState.printD       ; 0                  ; 0                   ; 0                   ; 0                         ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                  ; 1                  ;
+; CurrentState.printUndersc ; 0                  ; 0                   ; 0                   ; 1                         ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                  ; 1                  ;
+; CurrentState.printB       ; 0                  ; 0                   ; 1                   ; 0                         ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                  ; 1                  ;
+; CurrentState.printY       ; 0                  ; 1                   ; 0                   ; 0                         ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                  ; 1                  ;
+; CurrentState.clear        ; 1                  ; 0                   ; 0                   ; 0                         ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                  ; 1                  ;
++---------------------------+--------------------+---------------------+---------------------+---------------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+--------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                               ;
++-----------------------------------------------------+------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------------+------------------------+
+; DigitalTubeCounter:DTC|TubeCode1Out[1]              ; DigitalTubeCounter:DTC|Mux27       ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode6Out[0]              ; DigitalTubeCounter:DTC|Mux27       ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode6Out[1]              ; DigitalTubeCounter:DTC|Mux27       ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode6Out[2]              ; DigitalTubeCounter:DTC|Mux27       ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode6Out[3]              ; DigitalTubeCounter:DTC|Mux27       ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode7Out[1]              ; DigitalTubeCounter:DTC|Mux27       ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode0Out[0]              ; DigitalTubeCounter:DTC|Mux27       ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode0Out[1]              ; DigitalTubeCounter:DTC|Mux27       ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode0Out[2]              ; DigitalTubeCounter:DTC|Mux27       ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode0Out[3]              ; DigitalTubeCounter:DTC|Mux27       ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode1Out[0]              ; DigitalTubeCounter:DTC|Mux27       ; yes                    ;
+; DigitalTubeCounter:DTC|TubeCode7Out[0]              ; DigitalTubeCounter:DTC|Mux27       ; yes                    ;
+; LightSensor:LS|LCDSigOut[0]                         ; LightSensor:LS|CurrentState.readIn ; yes                    ;
+; LightSensor:LS|LCDSigOut[1]                         ; LightSensor:LS|CurrentState.readIn ; yes                    ;
+; LightSensor:LS|LCDSigOut[2]                         ; LightSensor:LS|CurrentState.readIn ; yes                    ;
+; LightSensor:LS|LCDSigOut[3]                         ; LightSensor:LS|CurrentState.readIn ; yes                    ;
+; LightSensor:LS|LCDSigOut[4]                         ; LightSensor:LS|CurrentState.readIn ; yes                    ;
+; LightSensor:LS|LCDSigOut[5]                         ; LightSensor:LS|CurrentState.readIn ; yes                    ;
+; LightSensor:LS|LCDSigOut[6]                         ; LightSensor:LS|CurrentState.readIn ; yes                    ;
+; LightSensor:LS|LCDSigOut[9]                         ; LightSensor:LS|CurrentState.readIn ; yes                    ;
+; Number of user-specified and inferred latches = 20  ;                                    ;                        ;
++-----------------------------------------------------+------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -254,7 +287,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 34    ;
+; Total registers                              ; 47    ;
 ; Number of registers using Synchronous Clear  ; 6     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 10    ;
@@ -280,11 +313,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux9        ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux29             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux0              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux16             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux15             ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |TrafficLightsControl|DigitalTubeComp:DigTube|Mux8        ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux28             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux19             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux17             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux18             ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux22             ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TrafficLightsControl|dotdisp:dot_array|Mux20             ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |TrafficLightsControl|counter:maincounter|TrafficState[2] ;
@@ -298,7 +331,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Thu Oct 15 17:57:00 2020
+    Info: Processing started: Thu Nov 12 11:46:03 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TrafficLightsControl -c TrafficLightsControl
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 2 design units, including 1 entities, in source file maincomp.vhd
@@ -394,6 +427,21 @@ Warning (10492): VHDL Process Statement warning at Beep.vhd(63): signal "slowclk
 Warning (10492): VHDL Process Statement warning at Beep.vhd(63): signal "alert" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at Beep.vhd(65): signal "fastclk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at Beep.vhd(65): signal "alert" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning: Using design file lightsensor.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: LightSensor-LightSensor_arch
+    Info: Found entity 1: LightSensor
+Info: Elaborating entity "LightSensor" for hierarchy "LightSensor:LS"
+Warning (10631): VHDL Process Statement warning at lightsensor.vhd(20): inferring latch(es) for signal or variable "LCDSigOut", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "LCDSigOut[0]" at lightsensor.vhd(20)
+Info (10041): Inferred latch for "LCDSigOut[1]" at lightsensor.vhd(20)
+Info (10041): Inferred latch for "LCDSigOut[2]" at lightsensor.vhd(20)
+Info (10041): Inferred latch for "LCDSigOut[3]" at lightsensor.vhd(20)
+Info (10041): Inferred latch for "LCDSigOut[4]" at lightsensor.vhd(20)
+Info (10041): Inferred latch for "LCDSigOut[5]" at lightsensor.vhd(20)
+Info (10041): Inferred latch for "LCDSigOut[6]" at lightsensor.vhd(20)
+Info (10041): Inferred latch for "LCDSigOut[7]" at lightsensor.vhd(20)
+Info (10041): Inferred latch for "LCDSigOut[8]" at lightsensor.vhd(20)
+Info (10041): Inferred latch for "LCDSigOut[9]" at lightsensor.vhd(20)
 Warning: LATCH primitive "dotdisp:dot_array|row[0]" is permanently enabled
 Warning: LATCH primitive "dotdisp:dot_array|row[1]" is permanently enabled
 Warning: LATCH primitive "dotdisp:dot_array|row[2]" is permanently enabled
@@ -414,6 +462,8 @@ Warning: LATCH primitive "dotdisp:dot_array|col_g[2]" is permanently enabled
 Warning: LATCH primitive "dotdisp:dot_array|col_g[5]" is permanently enabled
 Warning: LATCH primitive "dotdisp:dot_array|col_g[6]" is permanently enabled
 Warning: LATCH primitive "dotdisp:dot_array|col_g[7]" is permanently enabled
+Info: Duplicate LATCH primitives merged into single LATCH primitive
+    Info: Duplicate LATCH primitive "LightSensor:LS|LCDSigOut[9]" merged with LATCH primitive "LightSensor:LS|LCDSigOut[6]"
 Warning: Latch DigitalTubeCounter:DTC|TubeCode1Out[1] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal counter:maincounter|cnt_tmp[0]
 Warning: Latch DigitalTubeCounter:DTC|TubeCode6Out[0] has unsafe behavior
@@ -447,15 +497,17 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "TubeDispScan[3]" is stuck at VCC
     Warning (13410): Pin "TubeDispScan[4]" is stuck at VCC
     Warning (13410): Pin "TubeDispScan[5]" is stuck at VCC
+    Warning (13410): Pin "LCDSigOut[7]" is stuck at GND
+    Warning (13410): Pin "LCDSigOut[8]" is stuck at GND
 Info: Registers with preset signals will power-up high
-Info: Implemented 256 device resources after synthesis - the final resource count might be different
-    Info: Implemented 3 input pins
-    Info: Implemented 40 output pins
-    Info: Implemented 213 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 70 warnings
+Info: Implemented 295 device resources after synthesis - the final resource count might be different
+    Info: Implemented 4 input pins
+    Info: Implemented 50 output pins
+    Info: Implemented 241 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 74 warnings
     Info: Peak virtual memory: 4458 megabytes
-    Info: Processing ended: Thu Oct 15 17:57:03 2020
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Thu Nov 12 11:46:05 2020
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:03
 
 
