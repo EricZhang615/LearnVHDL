@@ -7,125 +7,71 @@ entity LightSensor is
   port(
   LightSigIn: in STD_LOGIC;
   clk: in STD_LOGIC;
-  TestSigOut: out STD_LOGIC;
 
-  LCDSigOut: out STD_LOGIC_VECTOR(9 downto 0);
-  LCDEnable: out STD_LOGIC
+  LCDSigOut: out STD_LOGIC_VECTOR(9 downto 0)
   );
 end LightSensor;            --dark 1 light 0
 
 architecture LightSensor_arch of LightSensor is
-  signal tmp1: STD_LOGIC:='1';
-begin
+  type state_type is (init1,init2,init3,readIn,printS,printT,printA,printN,printD,print_,printB,printY,clear);
+  signal CurrentState,NextState : state_type := init;
 
-  process
   begin
-    if tmp1 = '1' then
-      LCDEnable <= '1';
-      LCDSigOut <= "0000000110";
-    else
-      null;
-    end if;
-    wait until rising_edge(clk);
-  end process;
+    P1:process(CurrentState,LightSigIn)
+    begin
+      case( CurrentState ) is
 
-  process
-  begin
-    if tmp1 = '1' then
-      LCDSigOut <= "0000001100";
-    else
-      null;
-    end if;
-    wait until rising_edge(clk);
-  end process;
+        when init1 =>
+          LCDSigOut <= "0000110000";
+          NextState <= init2;
+        when init2 =>
+          LCDSigOut <= "0000001100";
+          NextState <= init3;
+        when init3 =>
+          LCDSigOut <= "0000000110";
+          NextState <= clear;
+        when clear =>
+          LCDSigOut <= "0000000001";
+          NextState <= readIn;
+        when readIn =>
+          if LightSigIn = '0' then
+            NextState <= clear;
+          else
+            NextState <= printS;
+          end if;
+        when printS =>
+          LCDSigOut <= "1001010011";
+          NextState <= printT;
+        when printT =>
+          LCDSigOut <= "1001010100";
+          NextState <= printA;
+        when printA =>
+          LCDSigOut <= "1001000001";
+          NextState <= printN;
+        when printN =>
+          LCDSigOut <= "1001001110";
+          NextState <= printD;
+        when printD =>
+          LCDSigOut <= "1001000100";
+          NextState <= print_;
+        when print_ =>
+          LCDSigOut <= "1001011111";
+          NextState <= printB;
+        when printB =>
+          LCDSigOut <= "1001000010";
+          NextState <= printY;
+        when printY =>
+          LCDSigOut <= "1001011001";
+          NextState <= readIn;
+        when others =>
+          NextState <= init1;
+      end case;
+    end process P1;
 
-  process
-  begin
-    if tmp1 = '1' then
-      LCDSigOut <= "0000111011";
-    else
-      null;
-    end if;
-    wait until rising_edge(clk);
-  end process;
-
-  process
-  begin
-    if tmp1 = '1' then
-      LCDSigOut <= "0000000001";
-    else
-      null;
-    end if;
-    wait until rising_edge(clk);
-  end process;
-
-  tmp1 <= '0';
-
-  P1 : process(LightSigIn)
-  begin
-    TestSigOut <= LightSigIn;
-  end process;
-
-  LCDSigOut <= "0010000000";
-  --wait until rising_edge(clk);
-
-  Disp : process
-  begin
-    if LightSigIn = '1' then
-
-      LCDSigOut <= "1001010011";
-
-
-      -- LCDSigOut <= "0010000001";
-      -- wait until rising_edge(clk);
-      -- LCDSigOut <= "1001010100";
-      -- wait until rising_edge(clk);
-      --
-      -- LCDSigOut <= "0010000010";
-      -- wait until rising_edge(clk);
-      -- LCDSigOut <= "1001000001";
-      -- wait until rising_edge(clk);
-      --
-      -- LCDSigOut <= "0010000011";
-      -- wait until rising_edge(clk);
-      -- LCDSigOut <= "1001001110";
-      -- wait until rising_edge(clk);
-      --
-      -- LCDSigOut <= "0010000100";
-      -- wait until rising_edge(clk);
-      -- LCDSigOut <= "1001000100";
-      -- wait until rising_edge(clk);
-      --
-      --
-      -- LCDSigOut <= "0010000101";
-      -- wait until rising_edge(clk);
-      -- LCDSigOut <= "1000100000";
-      -- wait until rising_edge(clk);
-      --
-      --
-      -- LCDSigOut <= "0010000110";
-      -- wait until rising_edge(clk);
-      -- LCDSigOut <= "1001000010";
-      -- wait until rising_edge(clk);
-      --
-      -- LCDSigOut <= "0010000111";
-      -- wait until rising_edge(clk);
-      -- LCDSigOut <= "1001011001";
-      -- wait until rising_edge(clk);
-    else
-      -- LCDSigOut <= "0000000001";
-      -- wait until rising_edge(clk);
-      -- LCDSigOut <= "0000000001";
-      -- wait until rising_edge(clk);
-      -- LCDSigOut <= "0000000001";
-      -- wait until rising_edge(clk);
-      -- LCDSigOut <= "0000000001";
-      -- wait until rising_edge(clk);
-      null;
-    end if;
-    wait until rising_edge(clk);
-  end process;
-
-
-
+    P2:process(clk)
+    begin
+      if clk'event and clk = '1' then
+        CurrentState <= NextState;
+      end if;
+    end process P2;
 end LightSensor_arch;

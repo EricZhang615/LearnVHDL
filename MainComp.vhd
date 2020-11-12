@@ -8,7 +8,7 @@ entity TrafficLightsControl is
   clk: in STD_LOGIC;
   rst: in STD_LOGIC;
   adjust: in STD_LOGIC;
-  --LightSens: in STD_LOGIC;
+  LightSens: in STD_LOGIC;
 
   row: out STD_LOGIC_VECTOR(7 downto 0);
   col_r: out STD_LOGIC_VECTOR(7 downto 0);	--output signal for selecting columns of red lights
@@ -21,7 +21,7 @@ entity TrafficLightsControl is
   TubeDispScan: out STD_LOGIC_VECTOR(7 downto 0);
   BeepOut: out STD_LOGIC
   --TestSigOut: out STD_LOGIC
-  -- LCDSigOut: out STD_LOGIC_VECTOR(9 downto 0);
+  LCDSigOut: out STD_LOGIC_VECTOR(9 downto 0)
   -- LCDEnable: out STD_LOGIC
   );
 end TrafficLightsControl;
@@ -101,16 +101,16 @@ architecture TrafficLightsControl_arch of TrafficLightsControl is
     );
   end component;
 
-  -- component LightSensor
-  --   port(
-  --   LightSigIn: in STD_LOGIC;
-  --   clk: in STD_LOGIC;
-  --   TestSigOut: out STD_LOGIC;
-  --
-  --   LCDSigOut: out STD_LOGIC_VECTOR(9 downto 0);
-  --   LCDEnable: out STD_LOGIC
-  --   );
-  -- end component;
+  component LightSensor
+    port(
+    LightSigIn: in STD_LOGIC;
+    clk: in STD_LOGIC;
+    --TestSigOut: out STD_LOGIC;
+
+    LCDSigOut: out STD_LOGIC_VECTOR(9 downto 0)
+    --LCDEnable: out STD_LOGIC
+    );
+  end component;
 
   signal rst_stb: STD_LOGIC;
   signal clk_1s: STD_LOGIC;
@@ -139,5 +139,5 @@ begin
   DigTube:DigitalTubeComp port map(clk=>clk,TubeDisp7In=>TubeDisp7Sig,TubeDisp6In=>TubeDisp6Sig,TubeDisp1In=>TubeDisp1Sig,TubeDisp0In=>TubeDisp0Sig,TubeDispOut=>TubeDispOut,TubeDispScan=>TubeDispScan);
   dot_array:dotdisp port map(clk=>clk,TrafficState=>ts,row=>row,col_r=>col_r,col_g=>col_g);
   BP:Beep port map(clk=>clk,TrafficState=>ts,BeepSig=>BeepOut);
-  --LS:LightSensor port map(LightSigIn=>LightSens,clk=>clk,TestSigOut=>TestSigOut,LCDSigOut=>LCDSigOut,LCDEnable=>LCDEnable);
+  LS:LightSensor port map(LightSigIn=>LightSens,clk=>clk,LCDSigOut=>LCDSigOute);
 end TrafficLightsControl_arch;
