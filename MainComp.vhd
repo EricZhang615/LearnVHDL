@@ -3,31 +3,28 @@ use IEEE.std_logic_1164.all;
 use IEEE.std_logic_unsigned.all;
 use IEEE.std_logic_arith.all;				--import libraries
 
-entity TrafficLightsControl is
+entity TrafficLightsControl is      --顶层设计模块
   port(
-  clk: in STD_LOGIC;
-  rst: in STD_LOGIC;
-  adjust: in STD_LOGIC;
-  LightSens: in STD_LOGIC;
+  clk: in STD_LOGIC;                --输入时钟 1khz
+  rst: in STD_LOGIC;                --复位信号
+  adjust: in STD_LOGIC;             --潮汐功能
+  LightSens: in STD_LOGIC;          --光敏信号输入
 
-  row: out STD_LOGIC_VECTOR(7 downto 0);
+  row: out STD_LOGIC_VECTOR(7 downto 0);    --点阵行扫描
   col_r: out STD_LOGIC_VECTOR(7 downto 0);	--output signal for selecting columns of red lights
   col_g: out STD_LOGIC_VECTOR(7 downto 0);		--output signal for selecting columns of green lights
-  --TubeDisp7Out: out STD_LOGIC_VECTOR(6 downto 0);
-  --TubeDisp6Out: out STD_LOGIC_VECTOR(6 downto 0);
-  --TubeDisp1Out: out STD_LOGIC_VECTOR(6 downto 0);
-  --TubeDisp0Out: out STD_LOGIC_VECTOR(6 downto 0)
-  TubeDispOut: out STD_LOGIC_VECTOR(6 downto 0);
-  TubeDispScan: out STD_LOGIC_VECTOR(7 downto 0);
-  BeepOut: out STD_LOGIC;
+
+  TubeDispOut: out STD_LOGIC_VECTOR(6 downto 0);  --数码管选通输出信号
+  TubeDispScan: out STD_LOGIC_VECTOR(7 downto 0); --数码管扫描驱动信号
+  BeepOut: out STD_LOGIC;                         --蜂鸣器驱动信号
   --TestSigOut: out STD_LOGIC
-  LCDSigOut: out STD_LOGIC_VECTOR(9 downto 0);
-  LCDEnable: out STD_LOGIC
+  LCDSigOut: out STD_LOGIC_VECTOR(9 downto 0);    --LCD屏幕驱动信号
+  LCDEnable: out STD_LOGIC                        --LCD屏幕使能端信号（直连时钟信号）
   );
 end TrafficLightsControl;
 
 architecture TrafficLightsControl_arch of TrafficLightsControl is
-  component crossover1000
+  component crossover1000                         --定义元件
     port(
     clk: in STD_LOGIC;
     rst: in STD_LOGIC;
@@ -114,7 +111,7 @@ architecture TrafficLightsControl_arch of TrafficLightsControl is
   end component;
 
 
-
+  --定义接线
   signal rst_stb: STD_LOGIC;
   signal clk_1s: STD_LOGIC;
   signal ts: STD_LOGIC_VECTOR(2 downto 0);
@@ -130,17 +127,19 @@ architecture TrafficLightsControl_arch of TrafficLightsControl is
   signal TubeDisp0Sig: STD_LOGIC_VECTOR(6 downto 0);
 
 
-begin
+begin       --端口连接
 
   stab:Stabilizer port map(clk=>clk,InputButton=>rst,OutputButton=>rst_stb);
   crossover:crossover1000 port map(clk=>clk,rst=>rst_stb,clkout=>clk_1s);
   maincounter:counter port map(clk=>clk_1s,rst=>rst_stb,adjust=>adjust,TrafficState=>ts,CountSec=>cs);
-  DTC:DigitalTubeCounter port map(CountSec=>cs,adjust=>adjust,TubeCode7Out=>TubeCode7,TubeCode6Out=>TubeCode6,TubeCode1Out=>TubeCode1,TubeCode0Out=>TubeCode0);
+  DTC:DigitalTubeCounter port map(CountSec=>cs,adjust=>adjust,TubeCode7Out=>TubeCode7,TubeCode6Out=>TubeCode6,
+  TubeCode1Out=>TubeCode1,TubeCode0Out=>TubeCode0);
   DT7:DigitalTube port map(TubeCodeIn=>TubeCode7,TubeDispOut=>TubeDisp7Sig);
   DT6:DigitalTube port map(TubeCodeIn=>TubeCode6,TubeDispOut=>TubeDisp6Sig);
   DT1:DigitalTube port map(TubeCodeIn=>TubeCode1,TubeDispOut=>TubeDisp1Sig);
   DT0:DigitalTube port map(TubeCodeIn=>TubeCode0,TubeDispOut=>TubeDisp0Sig);
-  DigTube:DigitalTubeComp port map(clk=>clk,TubeDisp7In=>TubeDisp7Sig,TubeDisp6In=>TubeDisp6Sig,TubeDisp1In=>TubeDisp1Sig,TubeDisp0In=>TubeDisp0Sig,TubeDispOut=>TubeDispOut,TubeDispScan=>TubeDispScan);
+  DigTube:DigitalTubeComp port map(clk=>clk,TubeDisp7In=>TubeDisp7Sig,TubeDisp6In=>TubeDisp6Sig,
+  TubeDisp1In=>TubeDisp1Sig,TubeDisp0In=>TubeDisp0Sig,TubeDispOut=>TubeDispOut,TubeDispScan=>TubeDispScan);
   dot_array:dotdisp port map(clk=>clk,TrafficState=>ts,row=>row,col_r=>col_r,col_g=>col_g);
   BP:Beep port map(clk=>clk,TrafficState=>ts,BeepSig=>BeepOut);
   LS:LightSensor port map(LightSigIn=>LightSens,clk=>clk,TrafficState=>ts,LCDSigOut=>LCDSigOut,clk_4s=>LCDEnable);

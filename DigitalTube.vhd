@@ -5,8 +5,8 @@ use IEEE.std_logic_arith.all;				--import libraries
 
 entity DigitalTube is
   port(
-  TubeCodeIn: in STD_LOGIC_VECTOR(3 downto 0);
-  TubeDispOut: out STD_LOGIC_VECTOR(6 downto 0)
+  TubeCodeIn: in STD_LOGIC_VECTOR(3 downto 0);      --输入信号 指示要输出的数字
+  TubeDispOut: out STD_LOGIC_VECTOR(6 downto 0)     --输出信号 驱动对应数码管以显示数字
   );
 end DigitalTube;
 
@@ -15,7 +15,7 @@ architecture DigitalTube_arch of DigitalTube is
 begin
   P1:process(TubeCodeIn)
   begin
-    case TubeCodeIn is
+    case TubeCodeIn is                               --case语句实现数码管译码电路
       when "0000" => TubeDispOut <= "1111110";--0
       when "0001" => TubeDispOut <= "0110000";--1
       when "0010" => TubeDispOut <= "1101101";--2

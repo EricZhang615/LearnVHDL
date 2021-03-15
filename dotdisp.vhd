@@ -6,7 +6,7 @@ use IEEE.std_logic_arith.all;				--import libraries
 entity dotdisp is
   port(
   clk: in STD_LOGIC;
-  TrafficState: in STD_LOGIC_VECTOR(2 downto 0);
+  TrafficState: in STD_LOGIC_VECTOR(2 downto 0); --当前交通状态
   row: out STD_LOGIC_VECTOR(7 downto 0);		--output signal for selecting and scanning rows of the displayer
   col_r: out STD_LOGIC_VECTOR(7 downto 0);	--output signal for selecting columns of red lights
   col_g: out STD_LOGIC_VECTOR(7 downto 0)		--output signal for selecting columns of green lights
@@ -31,7 +31,7 @@ begin
   P2:process(scan_cnt,TrafficState)
   begin
     case TrafficState is
-      when "000" => case scan_cnt is
+      when "000" => case scan_cnt is    --左红右绿
         when 0 => row <= "01111111"; col_r <= "00000000"; col_g <= "01100000";
         when 1 => row <= "10111111"; col_r <= "00000011"; col_g <= "01100000";
         when 2 => row <= "11011111"; col_r <= "00000011"; col_g <= "00000000";
@@ -42,7 +42,7 @@ begin
         when 7 => row <= "11111110"; col_r <= "00000000"; col_g <= "00000110";
         when others => null;
       end case;
-      when "001" => case scan_cnt is
+      when "001" => case scan_cnt is    --左红右黄
         when 0 => row <= "01111111"; col_r <= "01100000"; col_g <= "01100000";
         when 1 => row <= "10111111"; col_r <= "01100011"; col_g <= "01100000";
         when 2 => row <= "11011111"; col_r <= "00000011"; col_g <= "00000000";
@@ -53,7 +53,7 @@ begin
         when 7 => row <= "11111110"; col_r <= "00000110"; col_g <= "00000110";
         when others => null;
       end case;
-      when "010" => case scan_cnt is
+      when "010" => case scan_cnt is    --左绿右红
         when 0 => row <= "01111111"; col_r <= "01100000"; col_g <= "00000000";
         when 1 => row <= "10111111"; col_r <= "01100000"; col_g <= "00000011";
         when 2 => row <= "11011111"; col_r <= "00000000"; col_g <= "00000011";
@@ -64,7 +64,7 @@ begin
         when 7 => row <= "11111110"; col_r <= "00000110"; col_g <= "00000000";
         when others => null;
       end case;
-      when "011" => case scan_cnt is
+      when "011" => case scan_cnt is    --左黄右红
         when 0 => row <= "01111111"; col_r <= "01100000"; col_g <= "00000000";
         when 1 => row <= "10111111"; col_r <= "01100011"; col_g <= "00000011";
         when 2 => row <= "11011111"; col_r <= "00000011"; col_g <= "00000011";
@@ -75,7 +75,7 @@ begin
         when 7 => row <= "11111110"; col_r <= "00000110"; col_g <= "00000000";
         when others => null;
       end case;
-      when "100" => case scan_cnt is
+      when "100" => case scan_cnt is    --复位态 全红
         when 0 => row <= "01111111"; col_r <= "01100000"; col_g <= "00000000";
         when 1 => row <= "10111111"; col_r <= "01100011"; col_g <= "00000000";
         when 2 => row <= "11011111"; col_r <= "00000011"; col_g <= "00000000";

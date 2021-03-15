@@ -15,7 +15,7 @@ architecture crossover1000_arch of crossover1000 is	--define architecture
 signal clk_tmp: STD_LOGIC:='1';
 begin
    process(clk,rst)
-	 variable c: integer range 0 to 499:= 0;
+	 variable c: integer range 0 to 499:= 0;					--计数分频 
  	 begin
 		if rst = '1' then
 			clk_tmp <= '1';
